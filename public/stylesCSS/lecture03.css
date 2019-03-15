@@ -1,0 +1,47 @@
+p.post {
+	font-size: 16px;
+}
+
+li {
+	font-size: 18px;
+}
+
+#article li {
+	font-size: 18px;
+}
+
+p {
+	font-size: 18px;
+}
+
+p.date {
+	font-size: 18px;
+}
+
+p.Tchat {
+	font-size: 18px;
+}
+
+p.utilisateurs {
+	font-size: 18px;
+}
+
+p.article {
+	font-size: 18px;
+}
+
+p.corpsDossier {
+	font-size: 20px;
+}
+
+p.sous-titre {
+	font-size: 21px;
+}
+
+p.titre {
+	font-size: 22px;
+}
+
+p.titreDossier {
+	font-size: 24px;
+}

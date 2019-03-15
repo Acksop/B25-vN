@@ -1,0 +1,17 @@
+<?php
+
+include('../../scriptPHP/repertoire.php');
+include('../../scriptPHP/connectionBDD.php');
+
+$sql = "SELECT * FROM utilisateur";
+$req = faireUneRequeteOffLine($sql);
+
+while( $data = mysql_fetch_assoc($req) ){
+	recreerRepertoiresUtilisateur($data['pseudo']);
+	echo $data['pseudo']."<br/>";
+}
+
+//ERREUR D'ENCODAGE ENTRE PHP ET LINUX ...___...
+
+//header("location: ../index.php");
+?>

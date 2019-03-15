@@ -1,0 +1,200 @@
+/* Responsive Navigation styles begin here */
+@media ( max-width : 767px) {
+	.imageRacine {
+		display: none;
+	}
+	.image3d {
+		display: none;
+	}
+	#sousmenu li:nth-child(2) {
+		display: none;
+	}
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.logotype {
+		float: none;
+		display: block;
+		margin: 5px;
+	}
+	.accueil-row {
+		display: block;
+	}
+	.accueil-cell {
+		display: inline;
+	}
+	.gueuloir-cell {
+		display: block;
+	}
+	div.permanent-gueuloir {
+		padding: 2%;
+	}
+	.table-mobile {
+		display: block;
+	}
+	div.boutonsMenu {
+		position: fixed;
+		top: 2px;
+		right: 2px; !
+		important margin: auto;
+		padding: auto;
+		z-index: 75;
+	}
+	#sousmenu {
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		right: clear;
+		width: 100%;
+		z-index: 72;
+	}
+	div.sousmenu {
+		position: fixed;
+		top: 2px;
+		left: 2px;
+		right: clear;
+		width: 80%;
+		height: 100px;
+	}
+	#sousmenu>li {
+		display: block;
+		width: 100%;
+	}
+	div.limiteur {
+		background-color: black;
+		position: fixed;
+		top: 0px;
+		right: 0px;
+		width: 100%;
+		height: 55px;
+		z-index: 70;
+	}
+	div.menu {
+		background-color: #663333;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: 100%;
+		height: 455px;
+		z-index: 71;
+	}
+	div.corps {
+		position: absolute;
+		top: 500px;
+		margin: 0%;
+		width: 100%;
+	}
+	div.contenu {
+		position: relative;
+		padding: 2px;
+		margin: auto;
+		width: 100%;
+	}
+	#nav ul {
+		/* translate with hardware acceleration */
+		-webkit-transform: translateZ(0);
+		-o-transform: translateZ(0);
+		-moz-transform: translateZ(0);
+		-ms-transform: translateZ(0);
+		transform: translateZ(0);
+		-webkit-transition: .4s;
+		-moz-transition: .4s;
+		-ms-transition: .4s;
+		-o-transition: .4s;
+		transition: .4s;
+	}
+	#nav+* {
+		position: relative;
+	}
+
+	/* Theming opened nav */
+	#nav li {
+		padding: 15px !important;
+		margin: 1px !important;
+		width: 95%;
+	}
+	#nav a:first-letter {
+		font-size: 200%;
+		float: left;
+	}
+	#nav ul {
+		/* global styles */
+		position: relative;
+		display: block;
+		top: 65px;
+		left: 0px;
+		width: 100% !important;
+		list-style: none;
+	}
+	#nav a {
+		display: block;
+		color: #333;
+		background: #fff;
+		margin-bottom: 2px;
+		width: 100%;
+	}
+	#nav a:hover, #nav a:focus, #nav a:active {
+		background: #eee;
+	}
+
+	/* Theming closed nav */
+	#nav.is-closed ul {
+		max-height: 0;
+		overflow: hidden;
+	}
+
+	/* Global styling nav button */
+	#nav>button {
+		display: block;
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		z-index: 73;
+		height: 3.5em;
+		width: 3.5em;
+		background-color: transparent;
+		background-image: -webkit-gradient(linear, left top, right top, from(#333),
+			to(#333)), -webkit-gradient(linear, left top, right top, from(#333),
+			to(#333)), -webkit-gradient(linear, left top, right top, from(#333),
+			to(#333));
+		background-image: -webkit-linear-gradient(left, #333, #333),
+			-webkit-linear-gradient(left, #333, #333),
+			-webkit-linear-gradient(left, #333, #333);
+		background-image: linear-gradient(to right, #333, #333),
+			linear-gradient(to right, #333, #333),
+			linear-gradient(to right, #333, #333);
+		background-position: center top, center, center bottom;
+		background-repeat: no-repeat;
+		-webkit-background-size: 3.5em .9em;
+		background-size: 3.5em .9em;
+		padding: 0;
+		outline: 0;
+		border: 0;
+		cursor: pointer;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		-webkit-transition: .2s;
+		transition: .2s;
+	}
+
+	/*  Removing Firefox's dotted outline on button */
+	#nav>button::-moz-focus-inner {
+		border: 0;
+	}
+
+	/* Theming opened nav button */
+	#nav:not (.is-closed ) >button {
+		-webkit-transform: rotate(180deg) translateZ(0);
+		transform: rotate(180deg) translateZ(0);
+		background-position: center, center, center;
+	}
+
+	/* Hide alternate text except from screen readers */
+	.visually-hidden {
+		position: absolute !important;
+		clip: rect(1px, 1px, 1px, 1px);
+		overflow: hidden;
+		height: 1px;
+		width: 1px;
+	}
+}

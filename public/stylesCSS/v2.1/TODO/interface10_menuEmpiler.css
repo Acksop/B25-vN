@@ -1,0 +1,27 @@
+#limiteur {
+top: 0px !important ;
+}
+#sous-menu {
+top: 15px !important ;
+}
+#menu {
+position: relative !important;
+background: none !important;
+top: -10px !important;
+height: auto !important;
+}
+#nav {
+top: 5px !important ;
+}
+#contenu {
+top: 25px !important ;
+}
+#gueuloir {
+top: 250px !important ;
+}
+#corps{
+top: 55px !important ;
+}
+#en-tete{
+top: -450px !important;
+}

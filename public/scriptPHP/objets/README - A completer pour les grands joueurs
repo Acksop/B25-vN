@@ -1,0 +1,56 @@
+<?php
+
+class Fichier {
+	var $nom;
+	var $type;
+	var $erreurs;
+	var $destination;
+	var $tampon;
+	var $redimentionnement;
+	var $largeurMax;
+	var $hauteurMax;
+	
+	function ($tamponFichier,$RepDestination){
+		$this->erreurs = 0;
+		if( $tamponFichier == NULL ){
+			$this->erreurs = -5;
+		}else{
+			$this->tampon = $tamponFichier;
+		}
+		if($RepDestination == ""){
+			$this->destination = "/";
+		}
+		
+	}
+	function testExtentionNom(){
+		//on teste si le nom ne contient pas un caractère null qui provoquerais une faille de sécurité
+  		if( preg_match('#[\x00-\x1F\x7F-\x9F/\\\\]#', $this->tampon['name']) ){
+  			$this->erreurs = -1;
+  		}
+  		$Fexp = explode(".",$this->tampon['name']);
+  		switch($this->type)
+  			case 0:
+			if($Fexp[1] !== "jpg" || $Fexp[1] !== "JPG"  || $Fexp[1] !== "gif" || $Fexp[1] !== "GIF" || $Fexp[1] !== "png" || $Fexp[1] !== "PNG"){
+				$this->erreurs = -1;
+			}
+			break;
+			case 1:
+			if( $Fexp[1] !== "mp3" ){
+				$this->erreurs = -1;
+			}
+			break;
+			case 2:
+			if( $Fexp[1] !== "txt" || $Fexp[1] !== "odt" || $Fexp !== "pdf" || $Fexp[1] !== "doc" || $Fexp[1] !== "docx" ){
+				$this->erreurs = -1 ;
+			}
+			break;
+		} 
+	}
+	
+	function testExtentionMIME(){
+	
+	}
+	
+}
+
+?>

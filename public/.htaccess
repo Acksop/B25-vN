@@ -1,0 +1,49 @@
+
+ErrorDocument 401 /erreurs/erreur.php?num=1
+ErrorDocument 403 /erreurs/erreur.php?num=3
+ErrorDocument 404 /erreurs/erreur.php?num=4
+ErrorDocument 405 /erreurs/erreur.php?num=5
+ErrorDocument 406 /erreurs/erreur.php?num=6
+ErrorDocument 407 /erreurs/erreur.php?num=7
+ErrorDocument 408 /erreurs/erreur.php?num=8
+ErrorDocument 409 /erreurs/erreur.php?num=9
+ErrorDocument 500 /erreurs/erreur.php?num=26
+ErrorDocument 501 /erreurs/erreur.php?num=27
+ErrorDocument 502 /erreurs/erreur.php?num=28
+ErrorDocument 503 /erreurs/erreur.php?num=29
+ErrorDocument 504 /erreurs/erreur.php?num=30
+ErrorDocument 505 /erreurs/erreur.php?num=31
+ErrorDocument 507 /erreurs/erreur.php?num=32
+#ErrorDocument 509 /erreurs/erreur.php?num=33
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} -f 
+RewriteRule .* - [S=19]
+
+RewriteRule homepage index.php?page=index [L]
+RewriteRule identification index.php?page=identification [L]
+RewriteRule inscription index.php?page=inscription [L]
+RewriteRule recuperation_mot_de_passe index.php?page=oubliMdp [L]
+RewriteRule preferences index.php?page=preferences [L]
+RewriteRule articles_brefs index.php?page=articles [L]
+RewriteRule reagir_a_la_(.*)eme_breve index.php?page=reactionArticle&id=$1 [L]
+RewriteRule article_long index.php?page=dossiers [L]
+RewriteRule annuaire_associations index.php?page=association&type=3 [L]
+RewriteRule annuaire_groupesMusicaux index.php?page=association&type=5 [L]
+RewriteRule annuaire_associations_groupesMusicaux index.php?page=association [L]
+RewriteRule presentation_de_la_(.*)eme_association index.php?page=presentationAssociation&id=$1 [L]
+RewriteRule presentation_du_(.*)eme_artisan index.php?page=presentationArtisans&id=$1 [L]
+RewriteRule annuaire_artistes index.php?page=artistes&type=2 [L]
+RewriteRule annuaire_artisans index.php?page=artistes&type=4 [L]
+RewriteRule annuaire_artistes_artisans index.php?page=artistes [L]
+RewriteRule (.*)eme_tableau_public_du_(.*)eme_type index.php?page=tableauInscrit&id=$1&type=$2 [L]
+RewriteRule (.*)eme_mur_public_du_(.*)eme_type index.php?page=tableauInscrit&id=$1&type=$2 [L]
+RewriteRule tableau_public_de_(.*) index.php?page=tableauInscrit&pseudo=$1 [L]
+RewriteRule mur_public_de_(.*) index.php?page=murInscrit&pseudo=$1 [L]
+RewriteRule radio index.php?page=radio [L]
+RewriteRule hors-serie1 index.php?page=Hors-serie_attentatCharlieHebdo [L]
+RewriteRule hors-serie2 index.php?page=Hors-serie_cultureReligieux [L]
+DirectoryIndex attentat.php attentat2.php index.html index.php 
+

@@ -1,0 +1,25 @@
+.tweet {
+	border: 1px solid black;
+}
+
+.utilisateurs {
+	border: 1px dotted #FFDDDD;
+	background-color: gray;
+}
+
+.utilisateursInverse {
+	border: 1px dotted #FFDDDD;
+	background-color: silver;
+}
+
+td.gris {
+	background-color: #CCCCCC;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	width: 5px;
+	height: 5px;
+}
+
+td.fondgris {
+	background-color: #CCCCCC;
+}

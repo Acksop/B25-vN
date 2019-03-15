@@ -1,0 +1,120 @@
+body {
+	color: #EEE;
+	background-color: DimGray;
+}
+
+div.sousmenu {
+	color: DimGray;
+}
+
+div.limiteur {
+	background-color: DarkSlateGray;
+}
+
+div.entete {
+	background-color: #663333;
+}
+
+.contenu {
+	width: 100%;
+	background: DimGray none repeat fixed;
+	color: #111;
+}
+
+div.piedDePage {
+	background-color: DimGray;
+	color: #EEE;
+}
+
+.cadreGueuloir {
+	background-color: SlateGrey;
+	background-image: url('images/background_simple-1.png');
+}
+
+.cadreExplications {
+	background-image: url('images/background_simple-1.png');
+}
+
+.B25-cadre {
+	background-color: rgba(192, 192, 192, 0.8);
+	color: #FFF;
+	border-color: silver;
+	border-style: solid;
+	border-width: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.B25-cadre-inverse {
+	background-color: rgba(200, 200, 200, 0.8);
+	color: #FFF;
+	border-color: gray;
+	border-style: solid;
+	border-width: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.utilisateurs {
+	border: 1px dotted #FFDDDD;
+	background-color: Gray;
+	color: #EEE;
+}
+
+.utilisateursInverse {
+	border: 1px dotted #FFDDDD;
+	background-color: DarkGray;
+	color: #222;
+}
+
+.navigationListe {
+	border: 1px dotted #FFDDDD;
+	background-color: DarkSlateGray;
+}
+
+.pseudo {
+	color: DimGray;
+}
+
+.image3d {
+	background-color: DimGray;
+}
+
+.imageRacine {
+	background-color: DimGray;
+}
+
+td.titreTableau {
+	border: 1px solid #FFDDDD;
+	background-color: DarkGray;
+}
+
+td.ecriture {
+	border: 1px dotted #FFDDDD;
+	background-color: DarkGray;
+}
+
+td.ecritureInverse {
+	border: 1px dotted #FFDDDD;
+	background-color: Gainsboro;
+}
+
+td.gris {
+	background-color: Gainsboro;
+}
+
+td.fondgris {
+	background-color: LightGrey;
+}
+
+td.breves {
+	background-color: Gainsboro;
+}
+
+td.breve {
+	border: 1px solid #DDDDDD;
+	background-color: Silver;
+}

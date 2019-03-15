@@ -1,0 +1,76 @@
+@media ( max-width : 640px ) {
+	.alert {
+		height: 100px;
+	}
+	.permanent-gueuloir {
+		display: block;
+		padding: 2%;
+		width: 100%;
+		margin: 50px 0px;
+	}
+	.permanent-table {
+		display: block;
+		padding: 2%%;
+		margin: 2%;
+	}
+	div.conteneurGrandArticle {
+		display: block; column-width auto;
+		width: auto;
+	}
+	div.conteneurArticle {
+		display: block;
+		width: 100%;
+		margin: 2px;
+	}
+	.image-descriptive-association {
+		width: 100%;
+		height: auto;
+	}
+	.image-mur-artiste, image-tabloid-artiste {
+		width: 75%;
+		height: auto;
+	}
+	.bloc_murUtilisateur {
+		left: 5px;
+	}
+	iframe, #mymovie {
+		width: 95%;
+		height: auto;
+	}
+	/
+	* CSS pour le tableauInscrit des ARTISTES
+	#bloc_media_connexe {
+		display: inline-block;
+		float: left;
+		width: 450px%;
+		margin-bottom: 15px;
+	}
+	#bloc_sonore {
+		position: relative;
+		display: block;
+		clear: both;
+		float: right;
+		left: 25px;
+		width: 320px;
+		align: left;
+		margin: 5%;
+		margin-bottom: 15px;
+	}
+	#bloc_video {
+		position: relative;
+		display: inline-block;
+		float: right;
+		right: 50px;
+		width: 320px;
+		margin-bottom: 15px;
+	}
+	#bloc_image {
+		position: relative;
+		display: block;
+		clear: both;
+		float: center;
+		align: left;
+		margin: 5%;
+		max-width: auto;
+	}
+}

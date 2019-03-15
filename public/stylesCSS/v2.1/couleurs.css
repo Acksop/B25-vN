@@ -1,0 +1,120 @@
+body {
+	color: #000;
+	background-color: #FFF;
+}
+
+div.sousmenu {
+	color: DimGray;
+}
+
+div.limiteur {
+	background-color: GhostWhite;
+}
+
+div.entete {
+	background-color: DarkGoldenRod;
+}
+
+.contenu {
+	width: 100%;
+	background: White none repeat fixed;
+	color: #111;
+}
+
+div.piedDePage {
+	background-color: WhiteSmoke;
+	color: #222;
+}
+
+.cadreGueuloir {
+	background-color: WhiteSmoke;
+	background-image: url('images/background_simple-1.png');
+}
+
+.cadreExplications {
+	background-image: url('images/background_simple-1.png');
+}
+
+.B25-cadre {
+	background-color: rgba(220, 220, 220, 0.8);
+	border-color: DarkGray;
+	border-style: solid;
+	border-width: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+	color: #000;
+}
+
+.B25-cadre-inverse {
+	background-color: rgba(245, 245, 245, 0.8);
+	border-color: Gray;
+	border-style: solid;
+	border-width: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	color: #111;
+}
+
+.utilisateurs {
+	border: 1px dotted #CCC;
+	background-color: AntiqueWhite;
+	color: #000;
+}
+
+.utilisateursInverse {
+	border: 1px dotted #999;
+	background-color: Ivory;
+	color: #111;
+}
+
+.navigationListe {
+	border: 1px dotted #FFDDDD;
+	background-color: DarkGoldenRod;
+}
+
+.pseudo {
+	color: AntiqueWhite;
+}
+
+.image3d {
+	background-color: #FFF;
+}
+
+.imageRacine {
+	background-color: #FFF;
+}
+
+td.titreTableau {
+	border: 1px solid #FFDDDD;
+	background-color: gray;
+}
+
+td.ecriture {
+	border: 1px dotted #FFDDDD;
+	background-color: gray;
+}
+
+td.ecritureInverse {
+	border: 1px dotted #FFDDDD;
+	background-color: silver;
+}
+
+td.gris {
+	background-color: #CCCCCC;
+}
+
+td.fondgris {
+	background-color: #CCCCCC;
+}
+
+td.breves {
+	background-color: #666666;
+}
+
+td.breve {
+	border: 1px solid #DDDDDD;
+	background-color: #CCCCCC;
+}

@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Secured payment</title>
+<link href="TELIPASS%20-%20Secured%20payment_fichiers/font-faces.css"
+	rel="stylesheet">
+<link href="TELIPASS%20-%20Secured%20payment_fichiers/bars.css"
+	rel="stylesheet">
+<link href="TELIPASS%20-%20Secured%20payment_fichiers/dropdown.css"
+	rel="stylesheet">
+<link href="TELIPASS%20-%20Secured%20payment_fichiers/jquery-ui-1.css"
+	rel="stylesheet">
+<link href="TELIPASS%20-%20Secured%20payment_fichiers/countries.css"
+	rel="stylesheet">
+<link rel="shortcut icon" type="image/png"
+	href="https://telipass.com/merchants/img/logos-telipass/favicon.png">
+<script src="TELIPASS%20-%20Secured%20payment_fichiers/jquery-1.js"></script>
+<script src="TELIPASS%20-%20Secured%20payment_fichiers/jquery-ui-1.js"></script>
+<script src="TELIPASS%20-%20Secured%20payment_fichiers/jquery.js"></script>
+<script src="TELIPASS%20-%20Secured%20payment_fichiers/dropdown.js"></script>
+<script src="TELIPASS%20-%20Secured%20payment_fichiers/default.js"></script>
+<!--[if gte IE 9]>
+        <style type="text/css">
+            .gradient {
+                filter: none;
+            }
+            </style>
+    <![endif]-->
+<script type="text/javascript"
+	src="TELIPASS%20-%20Secured%20payment_fichiers/en.js"></script>
+<link href="TELIPASS%20-%20Secured%20payment_fichiers/default.css"
+	rel="stylesheet">
+</head>
+<body id="doc_body">
+	<form name="form1" method="post"
+		action="/apps/basic/payment/fae123c4694f486e98746f67f0e47596"
+		id="form1" autocomplete="off">
+		<div>
+			<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+			<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""
+				type="hidden"> <input name="__LASTFOCUS" id="__LASTFOCUS"
+				value="" type="hidden"> <input name="__VIEWSTATE"
+				id="__VIEWSTATE"
+				value="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"
+				type="hidden">
+		</div>
+
+		<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+		<script
+			src="TELIPASS%20-%20Secured%20payment_fichiers/WebResource.axd"
+			type="text/javascript"></script>
+
+
+		<script type="text/javascript">
+//<![CDATA[
+var id = $('#selectedItem').val(); $('#mnu_' + id).addClass('active');$(document).ready(function() {init_neosurf();init_qr();init_menu($('#selectedItem').val());});$(document).ready(function() {init_dropdown()});//]]>
+</script>
+
+		<script
+			src="TELIPASS%20-%20Secured%20payment_fichiers/ScriptResource.axd"
+			type="text/javascript"></script>
+		<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+		<script
+			src="TELIPASS%20-%20Secured%20payment_fichiers/ScriptResource_002.axd"
+			type="text/javascript"></script>
+		<div>
+
+			<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR"
+				value="64A3CB0E" type="hidden"> <input
+				name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value=""
+				type="hidden"> <input name="__EVENTVALIDATION"
+				id="__EVENTVALIDATION"
+				value="EuHz90Put9ZQWH1ixFB/klYWruMhk/edMCo6cTRukEyE0EAKLyEa1ldoR494+O671wvqOUePg8cV8YHJhcr02Bvqk6BfpLVhAHmC5e5Tu8PCuY6faiOjjs08y9N8KDyDsOOCRiOb9mehzu0PV/ban39L2xjKScgfjA+4tkkZ32qbNGywHObAiuWC/bFYJbyy15sfnDPgAUPTKvnbSyi/aH1qWiUWVB6MKxtVY1tq76JDIoGl3gXxQmj0mjL+E8Wf6kZruJfhR9liueFF9cQ4PuykNJvPWcPoJ2Ni6nfVpSPxHiP5U84XP/vEi7GICJarGo3lZVPMkf7adCQD4kQxCJUg+5le8XjepS8BmycqNFtMAGaO9HFxnQA9uJm/NWbBAWJoTBJw5naSayPSuHSX3frRjT0RD76oeWrR17x+gI4BJkSfQaDGhUxq20DuJXofphI08PNAU7gtf0BLGbX+TK2YFh9neLOuljXQxLWRR28UtWdhcuBpCh4IkicmEGqK09GR80spwdATg4kCiDLveYe86IbxQj9aLMFmUFxtoox3msloLLrYaWLGebDdmWlsXrpONsdPn4HeuBir62cs95v7Q7svFt6uR0GwC/Iq7Tp4smI03UGnLTceDcfRDGeeDuRWODd/d1d7fsr1knDaNTa57BoTo0E+R0VLRfpoDWPjKW+a7HnzyZsLqkDVTZ4mDlgg46i27tPE+fedqfs4vDT1ovEUIwD8rCxeWDf8a9RTOiPkJ8I/HdB07S0U+ymo+ZcSAgm6ShjmWM+6C9WpFlWxaz8K12CtFOFG+ea1Vq/E1n1oVJzYeT9I6GY6wXIGkPJhHGN1f7KxP3XI8UJPc7jtd7GYAxhAdmBJe8E7fzpO2vaDa7SQKCwTPLXxOYwKX2T52UcB1xBVEZbOvZvOUiNL/E2xey2quBkVxFGUOzjB9JrdlI97Uaxw9YonJaxlN015xgB0owd2SQ2S5rXD+ZX1mZfVpXVwsQYjjldaJAoxKfaNTw1ZCUjDFkXYreeLtUYX8M3QXF5vjKzMUsJvJ/yStdqTkGUmaluPhnPduo5qBv+tJHQ4KNF3wgSaiVuVXJbdMstpVVARL+DSd5s2FkJ7T5/YTb5SUxfkRvN6dpnxBz91T7gccTKWHxY2+7NlnJcUj8+8u3+q3MrCTgSSgGBtJviQUImi82M8+vyrY0J/Xb3L808snZ2N1+XVDoRISO0l2QjIwDOX3mlGm5E1mbG5/+N/8pG9hq6xAJNAQ/iPK6ebuvrMc1nubUGQVO79fODQ1Ms/i9xt3WXNDtoYTeMHoIiPMaTIo1SBpFRzOX6LOhPWib1STeabPTzM2mRgHW3bslWzHx+AgCiHklvCjyStPVZ6tkca2n1PnZV7FeOkJ5vnXtd8IaOiyKsuZTYQDpB2SvudddMjSgQRxTnr43HQ/5j1fCCzlIIbhUVGpz7jW762auh31kyerJ/62qURWnX2QvheWjllgLKbzUw96/XpRffMM5dTuQmgeuO6i9T9VZhQuYu9Sv1O+XNQSrgb/tfHA4ZtrrgvmuDLtfkUig+en+ipQmEQ/5WUADYkKBjAoSu1jrba2UfSn9LNEP0oYuf1jg=="
+				type="hidden">
+		</div>
+		<div>
+			<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tupAudiotel','upAudiotel','tupSMS','upSMS','tupMPME','upMPME','tupCB','upCB','tupTicketpremium','upTicketpremium'], [], [], 1200, '');
+//]]>
+</script>
+
+			<input name="isMobileDevice" id="isMobileDevice" value="false"
+				type="hidden"> <input name="isTabletDevice"
+				id="isTabletDevice" value="false" type="hidden"> <input
+				name="qr_state" id="qr_state" value="1" type="hidden"> <input
+				id="control_states" type="hidden">
+			<div id="panMain">
+
+				<div class="container">
+					<div class="audiotel" id="left-panel">
+						<div class="horizontal-content">
+							<div class="top-menu">
+								<span id="Label72">Select your</span><br> <span
+									id="Label76" class="text-1">MEAN OF PAYMENT</span><br>
+							</div>
+							<input name="selectedItem" id="selectedItem" value="audiotel"
+								type="hidden">
+							<div class="mobile-dropdown">
+								<img
+									src="TELIPASS%20-%20Secured%20payment_fichiers/audiotel.png">
+								<span id="Label84">Premium call</span>
+								<div class="arrow">
+									<div class="arrow-down"></div>
+								</div>
+							</div>
+							<div id="mobilelangage" class="lang-selector">
+								<img id="mobile_country_switch"
+									src="TELIPASS%20-%20Secured%20payment_fichiers/gb.png"
+									style="border-width: 0px;">
+								<div class="arrow">
+									<div class="arrow-down"></div>
+								</div>
+							</div>
+							<div id="mobilelangageselector"></div>
+							<div class="content-menu">
+								<div class="vertical-center">
+									<ul id="left_menu" class="left-menu">
+										<li id="mnu_audiotel" class="menu-item mi audiotel active"
+											onclick="select_menu(this);"><img
+											src="TELIPASS%20-%20Secured%20payment_fichiers/audiotel.png"
+											alt="Premium call"><span class="menu-text">Premium
+												call</span></li>
+										<li id="mnu_cb" class="menu-item mi cb"
+											onclick="select_menu(this);"><img
+											src="TELIPASS%20-%20Secured%20payment_fichiers/cb.png"
+											alt="Credit card"><span class="menu-text">Credit
+												card</span></li>
+										<li id="mnu_mpme" class="menu-item mi mpme"
+											onclick="select_menu(this);"><img
+											src="TELIPASS%20-%20Secured%20payment_fichiers/mpme.png"
+											alt="Mobile payment"><span class="menu-text">Mobile
+												payment</span></li>
+										<li id="mnu_sms" class="menu-item mi sms"
+											onclick="select_menu(this);"><img
+											src="TELIPASS%20-%20Secured%20payment_fichiers/sms.png"
+											alt="Premium SMS"><span class="menu-text">Premium
+												SMS</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="center-panel">
+						<div style="left: 814px; display: block;" id="fixedlangage">
+							<div id="langagecontent">
+								<div id="langageslide" class="langage-top">
+									<div id="langagefader">
+										<span id="Label20">Select your language</span><br> <select
+											name="langSelector"
+											onchange="javascript:setTimeout('__doPostBack(\'langSelector\',\'\')', 0)"
+											id="langSelector" style="width: 180px;">
+											<option value="de" data-image-src="de.png">Deutsch</option>
+											<option selected="selected" value="en"
+												data-image-src="gb.png">English</option>
+											<option value="es" data-image-src="es.png">Español</option>
+											<option value="fr" data-image-src="fr.png">Français</option>
+											<option value="it" data-image-src="it.png">Italiano</option>
+											<option value="nl" data-image-src="nl.png">Nederlands</option>
+											<option value="pt" data-image-src="pt.png">Português</option>
+
+										</select>
+									</div>
+								</div>
+								<div id="langageswitch" class="fade">
+									<img id="country_switch"
+										src="TELIPASS%20-%20Secured%20payment_fichiers/gb.png"
+										style="border-width: 0px;">
+								</div>
+							</div>
+						</div>
+						<div class="center-content">
+							<div class="audiotel" id="pan_solutions">
+
+								<div class="padding-right">
+									<!-- Audiotel -->
+									<div style="display: block;" id="pan_audiotel" class="payment">
+
+										<div id="upAudiotel">
+
+											<div>
+												<div class="block-1">
+													<img alt="Audiotel" class="payment-logo"
+														src="./erreur500.gif"> <span id="Label1"
+														class="payment-title-light audiotel">Pay with</span> <br>
+													<span id="Label15" class="payment-title audiotel">Premium
+														call</span>
+												</div>
+												<div class="block-2">
+													<span id="lblDesc">You are calling a premium rate
+														number which dictates you an access code.</span>
+												</div>
+												<div class="block-3">
+													<table class="sub-block-3">
+														<tbody>
+															<tr>
+																<td style="width: 100px"><span id="Label107">Amount:</span></td>
+																<td><span id="lb_audiotel_amount" class="title">€
+																		15.00</span></td>
+																<td rowspan="3"></td>
+															</tr>
+															<tr>
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+																<td><span id="Label93">Description:</span></td>
+																<td><span id="lb_audiotel_product" class="title">Ce
+																		paiement vous permet de recevoir le fichier pdf du
+																		dossier correspondant dans la police de votre choix.
+																		Voici ce qui se passe la suite de ce paiement: 1) vous
+																		vous retrouverez devant un formulaire vous permettant
+																		de choisir interactivement les police typographiques
+																		de votre pdf Haute définition 2) il vous faudras
+																		choisir parmis 2 typographies, la première étant pour
+																		le tiitre, la seconde pour les paragraphes 3) vous
+																		aurez aussi la possibilité de choisir la couleur de
+																		fond de l'article, le sablé étant la couleur de base,
+																		mais vous pourrez choisir parmis les quelques types
+																		blancs que l'on rencontre sur le Web existant gràce a
+																		nos chers écrans. 4) enfin il vous suffira de valider
+																		le formulaire ( 4clics suffiront ! ), pour recevoir le
+																		fichier a télépcharger par courriel sur votre adresse
+																		( que vous n'aurez pas à remplir si vous êtes incrit
+																		et identifié sur la plate-forme ) ATTENTION: ce module
+																		de paiement ne permet le retour arrière par le bouton
+																		précédent, dans le cas où cela arrivait, choississez
+																		un autre mode de paiement pour être serein. Toutes mes
+																		attentions, Emmanuel ROY</span></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<hr>
+											<div class="step">
+												<div class="step-number audiotel">1</div>
+												<div class="step-container">
+													<div class="step-content">
+														<span id="Label16" class="title-4">Select your
+															country.</span> <br>
+														<div data-selected-index="0"
+															class="cs custom-select audiotel init" tabindex="-1"
+															id="ddl_audiotel_country_custom" style="min-width: 200px">
+															<div class="custom-select-hidden"
+																id="ddl_audiotel_country_custom_hidden">
+																<select name="ddl_audiotel_country"
+																	onchange="javascript:setTimeout('__doPostBack(\'ddl_audiotel_country\',\'\')', 0)"
+																	id="ddl_audiotel_country"
+																	class="custom-select audiotel init"
+																	style="min-width: 200px">
+																	<option selected="selected" value="fr"
+																		class="option-image"
+																		data-image-src="images/flags/16/fr.png">France</option>
+
+																</select>
+															</div>
+															<div class="custom-select-content"
+																id="ddl_audiotel_country_custom_content">
+																<div id="ddl_audiotel_country_custom_selector"
+																	class="custom-selector">
+																	<img alt=""
+																		src="TELIPASS%20-%20Secured%20payment_fichiers/fr.png"><span>France</span>
+																	<div class="arrow">
+																		<div class="arrow-down"></div>
+																	</div>
+																</div>
+																<div id="ddl_audiotel_country_content_list"
+																	class="content-list"
+																	style="min-width: 200px; display: none;">
+																	<ul id="ddl_audiotel_country_custom_list"
+																		class="custom-list">
+																		<li id="ddl_audiotel_country_custom_option_0"
+																			class="custom-option" data-index="0"><img alt=""
+																			src="TELIPASS%20-%20Secured%20payment_fichiers/fr.png"><span>France</span></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<br>
+
+													</div>
+												</div>
+											</div>
+											<hr>
+											<div id="pan_audiotel_content" class="fr">
+
+												<div class="step">
+													<div class="step-number audiotel">2</div>
+													<div class="step-container">
+														<div class="step-content info-container">
+															<span id="Label19" class="title-4">To receive an
+																access code, call:</span>
+															<div class="sva-cartouche">
+																<a id="lk_audiotel_num"><span id="lb_audiotel_num"
+																	class="sva-number">0 899 36 90 44</span></a> <span
+																	id="lb_audiotel_svc" class="sva-cost">€ 15.00/
+																	appel</span>
+															</div>
+
+															<div class="price-container">
+																<span id="lb_audiotel_duration">Duration of the
+																	call: 00:00:10.</span> <span id="lb_audiotel_tarif">Estimated
+																	cost: € 15.00</span>
+
+															</div>
+
+															<div class="qr">
+																<span id="Label7">You can also flash this QR code
+																	with your smartphone.</span>
+																<div id="qrcode_audiotel" class="qrcode audiotel">
+																	<img
+																		src="data:image/png;base64,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">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<hr>
+											<div id="pan_audiotel_codes"
+												onkeypress="javascript:return WebForm_FireDefaultButton(event, 'btn_Valide')">
+
+												<div class="step">
+													<div class="step-number audiotel">3</div>
+													<div class="step-container">
+														<div class="step-content">
+															<input name="audiotel_qr_states" id="audiotel_qr_states"
+																value="#qrcode_audiotel|tel:899369044" type="hidden">
+															<div id="panel_audiotel_input">
+
+																<span id="lb_audiotel_nbcode" class="title-4">1
+																	access code required for this purchase.</span> <br> <br>
+																<div id="c1">
+
+																	<span id="Label23">Access code</span> <br> <input
+																		name="tbCode1" maxlength="8" id="tbCode1"
+																		class="audiotel" type="text">
+
+																</div>
+
+
+
+
+																<br> <input id="ch_audiotel_receipt"
+																	class="audiotel"
+																	onchange="$('#pan_audiotel_mail').toggle();save_states();$('#tb_audiotel_email').val('')"
+																	type="checkbox"> <label
+																	id="lb_audiotel_receipt" for="ch_audiotel_receipt">I
+																	would like a payment receipt.</label> <br>
+																<div id="pan_audiotel_mail" style="display: none;">
+																	<br> <span id="Label28">Your e-mail address</span>
+																	<br> <input name="tb_audiotel_email"
+																		id="tb_audiotel_email" class="audiotel" type="text">
+																</div>
+																<div id="aujsms01" class="message">
+																	<div class="message-arrow-up"></div>
+																	<span class="message"></span>
+																</div>
+																<br>
+																<div class="button-content">
+																	<div aria-hidden="true" role="status" id="uprAudiotel"
+																		style="display: none;">
+
+																		<span id="Label135">Please wait a moment...</span> <br>
+																		<div class="bar">
+																			<div class="pic t1 audiotel"></div>
+																			<div class="pic t2 audiotel"></div>
+																			<div class="pic t3 audiotel"></div>
+																			<div class="pic t4 audiotel"></div>
+																			<div class="pic t5 audiotel"></div>
+																		</div>
+																		<br>
+
+																	</div>
+																	<a onclick="return audiotel_pre_validate();"
+																		id="btn_Valide" class="button"
+																		href="javascript:__doPostBack('btn_Valide','')">Validate</a>
+																</div>
+																<br> <a id="audiotel_backlink"
+																	class="link audiotel"
+																	href="http://besancon25.fr/achat_pdf_article-ROY-Emmanuel">Go
+																	back to the merchant site.</a>
+
+															</div>
+
+															<div id="ausvms01" class="server-message">
+																<span class="server-message"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+									<!-- SMS -->
+									<div style="display: none;" id="pan_sms" class="payment ">
+
+										<div id="upSMS">
+
+											<input name="sms_qr_states" id="sms_qr_states"
+												value="#qrcode_sms_fr|smsto:83020:TP5" type="hidden">
+											<div>
+												<div class="block-1">
+													<img alt="SMS" class="payment-logo"
+														src="TELIPASS%20-%20Secured%20payment_fichiers/sms.png">
+													<span id="Label22" class="payment-title-light sms">Pay
+														with</span> <br> <span id="Label40"
+														class="payment-title sms">Premium SMS</span>
+												</div>
+												<div class="block-2">
+													<span id="Label98">Send a Premium SMS to receive an
+														access code via SMS.</span>
+												</div>
+												<div class="block-3">
+													<table class="sub-block-3">
+														<tbody>
+															<tr>
+																<td style="width: 100px"><span id="Label108">Amount:</span></td>
+																<td><span id="lb_sms_amount" class="title">€
+																		4.50</span></td>
+																<td rowspan="3"></td>
+															</tr>
+															<tr>
+																<td></td>
+																<td><span id="lb_sms_merchant" class="title"></span></td>
+															</tr>
+															<tr>
+																<td><span id="Label99">Description:</span></td>
+																<td><span id="lb_sms_product" class="title">Ce
+																		paiement vous permet de recevoir le fichier pdf du
+																		dossier correspondant dans la police de votre choix.
+																		Voici ce qui se passe la suite de ce paiement: 1) vous
+																		vous retrouverez devant un formulaire vous permettant
+																		de choisir interactivement les police typographiques
+																		de votre pdf Haute définition 2) il vous faudras
+																		choisir parmis 2 typographies, la première étant pour
+																		le tiitre, la seconde pour les paragraphes 3) vous
+																		aurez aussi la possibilité de choisir la couleur de
+																		fond de l'article, le sablé étant la couleur de base,
+																		mais vous pourrez choisir parmis les quelques types
+																		blancs que l'on rencontre sur le Web existant gràce a
+																		nos chers écrans. 4) enfin il vous suffira de valider
+																		le formulaire ( 4clics suffiront ! ), pour recevoir le
+																		fichier a télépcharger par courriel sur votre adresse
+																		( que vous n'aurez pas à remplir si vous êtes incrit
+																		et identifié sur la plate-forme ) ATTENTION: ce module
+																		de paiement ne permet le retour arrière par le bouton
+																		précédent, dans le cas où cela arrivait, choississez
+																		un autre mode de paiement pour être serein. Toutes mes
+																		attentions, Emmanuel ROY</span></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<hr>
+											<div class="step">
+												<div class="step-number sms">1</div>
+												<div class="step-container">
+													<div class="step-content">
+														<span id="Label86" class="title-4">Select your
+															country.</span> <br>
+														<div data-selected-index="0"
+															class="cs custom-select sms init" tabindex="-1"
+															id="ddl_sms_country_custom" style="min-width: 200px">
+															<div class="custom-select-hidden"
+																id="ddl_sms_country_custom_hidden">
+																<select name="ddl_sms_country"
+																	onchange="javascript:setTimeout('__doPostBack(\'ddl_sms_country\',\'\')', 0)"
+																	id="ddl_sms_country" class="custom-select sms init"
+																	style="min-width: 200px">
+																	<option selected="selected" value="fr"
+																		class="option-image"
+																		data-image-src="images/flags/16/fr.png">France</option>
+
+																</select>
+															</div>
+															<div class="custom-select-content"
+																id="ddl_sms_country_custom_content">
+																<div id="ddl_sms_country_custom_selector"
+																	class="custom-selector">
+																	<img alt=""
+																		src="TELIPASS%20-%20Secured%20payment_fichiers/fr.png"><span>France</span>
+																	<div class="arrow">
+																		<div class="arrow-down"></div>
+																	</div>
+																</div>
+																<div id="ddl_sms_country_content_list"
+																	class="content-list"
+																	style="min-width: 200px; display: none;">
+																	<ul id="ddl_sms_country_custom_list"
+																		class="custom-list">
+																		<li id="ddl_sms_country_custom_option_0"
+																			class="custom-option" data-index="0"><img alt=""
+																			src="TELIPASS%20-%20Secured%20payment_fichiers/fr.png"><span>France</span></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+
+													</div>
+
+												</div>
+											</div>
+											<hr>
+											<div id="pan_sms_shortcode" class="fr">
+
+												<div class="step">
+													<div class="step-number sms">2</div>
+													<div class="step-container">
+														<div class="step-content info-container">
+															<span id="Label89" class="title-4">To receive an
+																access code via SMS:</span> <br> <span id="Label90"
+																class="title-4 display-1">send</span> &nbsp; <a
+																id="lk_sms"><span id="lb_sms_keyword"
+																class="title-6 keyword">TP5</span></a> &nbsp; <span
+																id="Label106" class="title-4 display-2">to</span> &nbsp;
+															<a id="lk_sms_2"><span id="lb_sms_shortcode"
+																class="title-7 shortcode">83020</span></a> <br> <span
+																id="lb_sms_cost" class="price-container">€ 4.50
+																per SMS + price of a SMS</span>
+
+															<div id="qr_panel" class="qr">
+																<span id="Label95">You can also flash this QR
+																	code with your smartphone.</span>
+																<div id="qrcode_sms_fr" class="qrcode sms">
+																	<img
+																		src="data:image/png;base64,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">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<hr>
+											<div id="pan_sms_code"
+												onkeypress="javascript:return WebForm_FireDefaultButton(event, 'btn_Valide_SMS')">
+
+												<div class="step">
+													<div class="step-number sms">3</div>
+													<div class="step-container">
+														<div class="step-content">
+															<div id="panel_sms_input">
+
+																<span id="lb_sms_nbcode" class="title-4">1 access
+																	code required for this purchase.</span> <br> <br>
+																<div id="sms_tr1">
+
+																	<span id="lb_sms_nbcode3">Access code</span> <br>
+																	<input name="tb_sms_code1" maxlength="8"
+																		id="tb_sms_code1" class="sms" type="text">
+
+																</div>
+
+
+
+
+																<br> <input id="ch_sms_receipt" class="sms"
+																	onchange="$('#pan_sms_mail').toggle();save_states();$('#tb_sms_email').val('')"
+																	type="checkbox"> <label id="lb_sms_receipt"
+																	for="ch_sms_receipt">I would like a payment
+																	receipt.</label> <br>
+																<div id="pan_sms_mail" style="display: none;">
+																	<br> <span id="Label104">Your e-mail
+																		address</span> <br> <input name="tb_sms_email"
+																		id="tb_sms_email" class="sms" type="text">
+																</div>
+
+																<div id="smjsms01" class="message">
+																	<div class="message-arrow-up"></div>
+																	<span class="message"></span>
+																</div>
+																<br>
+																<div class="button-content">
+																	<div aria-hidden="true" role="status" id="uprSMS"
+																		style="display: none;">
+
+																		<span id="Label136">Please wait a moment...</span> <br>
+																		<div class="bar">
+																			<div class="pic t1 sms"></div>
+																			<div class="pic t2 sms"></div>
+																			<div class="pic t3 sms"></div>
+																			<div class="pic t4 sms"></div>
+																			<div class="pic t5 sms"></div>
+																		</div>
+																		<br>
+
+																	</div>
+																	<a onclick="return sms_pre_validate();"
+																		id="btn_Valide_SMS" class="button sms"
+																		href="javascript:__doPostBack('btn_Valide_SMS','')">Validate</a>
+																</div>
+																<br> <a id="sms_backlink" class="link sms"
+																	href="http://besancon25.fr/achat_pdf_article-ROY-Emmanuel">Go
+																	back to the merchant site.</a>
+
+															</div>
+
+															<div id="smsvms01" class="server-message">
+																<span class="server-message"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+									<!-- Neosurf -->
+
+									<!-- Neocode -->
+
+									<!-- MPME -->
+									<div style="display: none;" id="pan_mpme" class="payment">
+
+										<div id="upMPME">
+
+											<div>
+												<div class="block-1">
+													<img alt="mpme" class="payment-logo"
+														src="TELIPASS%20-%20Secured%20payment_fichiers/mpme.png">
+													<span id="Label8" class="payment-title-light mpme">Pay
+														with</span> <br> <span id="Label75"
+														class="payment-title mpme">Mobile payment</span>
+												</div>
+												<div class="block-2">
+													<span id="Label81">You will pay for this purchase on
+														your next mobile bill.</span>
+												</div>
+												<div class="block-3">
+													<table class="sub-block-3">
+														<tbody>
+															<tr>
+																<td style="width: 100px"><span id="Label92">Amount:</span></td>
+																<td><span id="lb_mpme_amount" class="title">€
+																		10.00</span></td>
+																<td rowspan="3"></td>
+															</tr>
+															<tr>
+																<td></td>
+																<td><span id="lb_mpme_merchant" class="title"></span></td>
+															</tr>
+															<tr>
+																<td><span id="Label97">Description:</span></td>
+																<td><span id="lb_mpme_product" class="title">Ce
+																		paiement vous permet de recevoir le fichier pdf du
+																		dossier correspondant dans la police de votre choix.
+																		Voici ce qui se passe la suite de ce paiement: 1) vous
+																		vous retrouverez devant un formulaire vous permettant
+																		de choisir interactivement les police typographiques
+																		de votre pdf Haute définition 2) il vous faudras
+																		choisir parmis 2 typographies, la première étant pour
+																		le tiitre, la seconde pour les paragraphes 3) vous
+																		aurez aussi la possibilité de choisir la couleur de
+																		fond de l'article, le sablé étant la couleur de base,
+																		mais vous pourrez choisir parmis les quelques types
+																		blancs que l'on rencontre sur le Web existant gràce a
+																		nos chers écrans. 4) enfin il vous suffira de valider
+																		le formulaire ( 4clics suffiront ! ), pour recevoir le
+																		fichier a télépcharger par courriel sur votre adresse
+																		( que vous n'aurez pas à remplir si vous êtes incrit
+																		et identifié sur la plate-forme ) ATTENTION: ce module
+																		de paiement ne permet le retour arrière par le bouton
+																		précédent, dans le cas où cela arrivait, choississez
+																		un autre mode de paiement pour être serein. Toutes mes
+																		attentions, Emmanuel ROY</span></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<hr>
+											<div class="step">
+												<div class="step-number mpme">1</div>
+												<div class="step-container">
+													<div class="step-content">
+														<span id="Label111" class="title-4">Select your
+															country.</span> <br>
+														<div data-selected-index="0"
+															class="cs custom-select mpme init" tabindex="-1"
+															id="ddl_mpme_countries_custom" style="min-width: 200px">
+															<div class="custom-select-hidden"
+																id="ddl_mpme_countries_custom_hidden">
+																<select name="ddl_mpme_countries"
+																	onchange="javascript:setTimeout('__doPostBack(\'ddl_mpme_countries\',\'\')', 0)"
+																	id="ddl_mpme_countries" class="custom-select mpme init"
+																	style="min-width: 200px">
+																	<option selected="selected" value="FR"
+																		data-image-src="images/flags/16/fr.png">France</option>
+
+																</select>
+															</div>
+															<div class="custom-select-content"
+																id="ddl_mpme_countries_custom_content">
+																<div id="ddl_mpme_countries_custom_selector"
+																	class="custom-selector">
+																	<img alt=""
+																		src="TELIPASS%20-%20Secured%20payment_fichiers/fr.png"><span>France</span>
+																	<div class="arrow">
+																		<div class="arrow-down"></div>
+																	</div>
+																</div>
+																<div id="ddl_mpme_countries_content_list"
+																	class="content-list"
+																	style="min-width: 200px; display: none;">
+																	<ul id="ddl_mpme_countries_custom_list"
+																		class="custom-list">
+																		<li id="ddl_mpme_countries_custom_option_0"
+																			class="custom-option" data-index="0"><img alt=""
+																			src="TELIPASS%20-%20Secured%20payment_fichiers/fr.png"><span>France</span></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<hr>
+											<div class="step">
+												<div class="step-number mpme">2</div>
+												<div class="step-container">
+													<div class="step-content mpme">
+														<span id="Label18" class="title-4">Enter your phone
+															number.</span> <br> <br>
+														<div id="pan_mpme_connection">
+
+															<span id="Label57">Enter your phone number below<br>
+																and click the send button.
+															</span> <br> <input name="tb_mpme_number" maxlength="10"
+																id="tb_mpme_number" class="mpme" autocomplete="off"
+																style="width: 150px;" type="text"> <br> <br>
+															<input id="ch_mpme_receipt" class="mpme"
+																onchange="$('#pan_mpme_mail').toggle();save_states();$('#tb_mpme_email').val('')"
+																type="checkbox"> <label id="lb_mpme_receipt"
+																for="ch_mpme_receipt">I would like a payment
+																receipt.</label> <br>
+															<div id="pan_mpme_mail" style="display: none;">
+																<br> <span id="Label114">Your e-mail address</span>
+																<br> <input name="tb_mpme_email" maxlength="250"
+																	id="tb_mpme_email" class="mpme" type="text">
+															</div>
+															<div id="mpjsms01" class="message">
+																<div class="message-arrow-up"></div>
+																<span class="message"></span>
+															</div>
+															<br>
+															<div class="button-content">
+																<div aria-hidden="true" role="status" id="uprMPME"
+																	style="display: none;">
+
+																	<span id="Label109">Please wait a moment...</span> <br>
+																	<div class="bar">
+																		<div class="pic t1 mpme"></div>
+																		<div class="pic t2 mpme"></div>
+																		<div class="pic t3 mpme"></div>
+																		<div class="pic t4 mpme"></div>
+																		<div class="pic t5 mpme"></div>
+																	</div>
+																	<br>
+
+																</div>
+																<a onclick="return mpme_pre_validate();"
+																	id="btn_MPME_Connect" class="button mpme"
+																	href="javascript:__doPostBack('btn_MPME_Connect','')">Sign
+																	In</a>
+															</div>
+															<br> <a id="MPME_backlink" class="link mpme"
+																href="http://besancon25.fr/achat_pdf_article-ROY-Emmanuel">Go
+																back to the merchant site.</a>
+
+														</div>
+
+														<div id="mpsvms01" class="server-message">
+															<span class="server-message"></span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+									<!-- PayPal -->
+
+									<!-- CB -->
+									<div style="display: none;" id="pan_cb" class="payment">
+
+										<div id="upCB">
+
+											<div>
+												<div class="block-1">
+													<img alt="CB" class="payment-logo"
+														src="TELIPASS%20-%20Secured%20payment_fichiers/cb.png">
+													<span id="Label44" class="payment-title-light cb">Pay
+														with</span> <br> <span id="Label46" class="payment-title cb">Credit
+														card</span>
+												</div>
+												<div class="block-2">
+													<span id="Label54">You are paying for this purchase
+														with your credit card.</span> <br> <img
+														src="TELIPASS%20-%20Secured%20payment_fichiers/cb-logos.png"
+														alt="" class="cb-logos">
+												</div>
+												<div class="block-3">
+													<table class="sub-block-3">
+														<tbody>
+															<tr>
+																<td style="width: 100px"><span id="Label62">Amount:</span></td>
+																<td><span id="lb_cb_amount" class="title">€
+																		30.00</span></td>
+																<td rowspan="3"></td>
+															</tr>
+															<tr>
+																<td></td>
+																<td><span id="lb_cb_merchant" class="title"></span></td>
+															</tr>
+															<tr>
+																<td><span id="Label59">Description:</span></td>
+																<td><span id="lb_cb_product" class="title">Ce
+																		paiement vous permet de recevoir le fichier pdf du
+																		dossier correspondant dans la police de votre choix.
+																		Voici ce qui se passe la suite de ce paiement: 1) vous
+																		vous retrouverez devant un formulaire vous permettant
+																		de choisir interactivement les police typographiques
+																		de votre pdf Haute définition 2) il vous faudras
+																		choisir parmis 2 typographies, la première étant pour
+																		le tiitre, la seconde pour les paragraphes 3) vous
+																		aurez aussi la possibilité de choisir la couleur de
+																		fond de l'article, le sablé étant la couleur de base,
+																		mais vous pourrez choisir parmis les quelques types
+																		blancs que l'on rencontre sur le Web existant gràce a
+																		nos chers écrans. 4) enfin il vous suffira de valider
+																		le formulaire ( 4clics suffiront ! ), pour recevoir le
+																		fichier a télépcharger par courriel sur votre adresse
+																		( que vous n'aurez pas à remplir si vous êtes incrit
+																		et identifié sur la plate-forme ) ATTENTION: ce module
+																		de paiement ne permet le retour arrière par le bouton
+																		précédent, dans le cas où cela arrivait, choississez
+																		un autre mode de paiement pour être serein. Toutes mes
+																		attentions, Emmanuel ROY</span></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<hr>
+											<div class="step">
+												<div class="step-number cb">1</div>
+												<div class="step-container">
+													<div class="step-content">
+														<div id="pan_cb_form"
+															onkeypress="javascript:return WebForm_FireDefaultButton(event, 'btn_cb_validate')">
+
+															<span id="Label50" class="title-4">Enter your
+																credit card details.</span> <br> <br>
+															<div style="text-align: center; padding-top: 10px;">
+																<span id="Label49">Card type</span> <br>
+																<div class="cb">
+																	<div data-selected-index="0"
+																		class="cs custom-select cb init" tabindex="-1"
+																		id="ddl_cb_cardtype_custom" style="min-width: 200px">
+																		<div class="custom-select-hidden"
+																			id="ddl_cb_cardtype_custom_hidden">
+																			<select name="ddl_cb_cardtype"
+																				onchange="javascript:setTimeout('__doPostBack(\'ddl_cb_cardtype\',\'\')', 0)"
+																				id="ddl_cb_cardtype" class="custom-select cb init"
+																				style="min-width: 200px">
+																				<option selected="selected" value="CB">Carte
+																					Bleue</option>
+																				<option value="VISA">Visa</option>
+																				<option value="MASTERCARD">Mastercard</option>
+																				<option value="MAESTRO">Maestro</option>
+																				<option value="AMEX">American Express</option>
+																				<option value="JCB">JCB</option>
+																				<option value="E-CARTEBLEUE">E-Carte bleue</option>
+
+																			</select>
+																		</div>
+																		<div class="custom-select-content"
+																			id="ddl_cb_cardtype_custom_content">
+																			<div id="ddl_cb_cardtype_custom_selector"
+																				class="custom-selector">
+																				<span>Carte Bleue</span>
+																				<div class="arrow">
+																					<div class="arrow-down"></div>
+																				</div>
+																			</div>
+																			<div id="ddl_cb_cardtype_content_list"
+																				class="content-list"
+																				style="min-width: 200px; display: none;">
+																				<ul id="ddl_cb_cardtype_custom_list"
+																					class="custom-list">
+																					<li id="ddl_cb_cardtype_custom_option_0"
+																						class="custom-option" data-index="0"><span>Carte
+																							Bleue</span></li>
+																					<li id="ddl_cb_cardtype_custom_option_1"
+																						class="custom-option" data-index="1"><span>Visa</span></li>
+																					<li id="ddl_cb_cardtype_custom_option_2"
+																						class="custom-option" data-index="2"><span>Mastercard</span></li>
+																					<li id="ddl_cb_cardtype_custom_option_3"
+																						class="custom-option" data-index="3"><span>Maestro</span></li>
+																					<li id="ddl_cb_cardtype_custom_option_4"
+																						class="custom-option" data-index="4"><span>American
+																							Express</span></li>
+																					<li id="ddl_cb_cardtype_custom_option_5"
+																						class="custom-option" data-index="5"><span>JCB</span></li>
+																					<li id="ddl_cb_cardtype_custom_option_6"
+																						class="custom-option" data-index="6"><span>E-Carte
+																							bleue</span></li>
+																				</ul>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div
+																style="text-align: center; padding-top: 15px; vertical-align: top;">
+																<span id="Label10">Name of the card holder</span> <br>
+																<input name="tb_cb_owner" maxlength="250"
+																	id="tb_cb_owner" class="cb" type="text">
+															</div>
+															<div
+																style="text-align: center; padding-top: 15px; vertical-align: top;">
+																<span id="Label30">Card number</span> <br> <input
+																	name="tb_cb_number" maxlength="19" id="tb_cb_number"
+																	class="cb" type="text">
+															</div>
+															<div
+																style="text-align: center; padding-top: 15px; vertical-align: top;"
+																class="cb">
+																<span id="Label32">Expiration date</span> <br>
+																<div data-selected-index="0"
+																	class="cs custom-select cb init" tabindex="-1"
+																	id="ddl_cb_month_custom" style="min-width: 50px">
+																	<div class="custom-select-hidden"
+																		id="ddl_cb_month_custom_hidden">
+																		<select name="ddl_cb_month" id="ddl_cb_month"
+																			class="custom-select cb init" style="min-width: 50px">
+																			<option selected="selected" value="01">01</option>
+																			<option value="02">02</option>
+																			<option value="03">03</option>
+																			<option value="04">04</option>
+																			<option value="05">05</option>
+																			<option value="06">06</option>
+																			<option value="07">07</option>
+																			<option value="08">08</option>
+																			<option value="09">09</option>
+																			<option value="10">10</option>
+																			<option value="11">11</option>
+																			<option value="12">12</option>
+
+																		</select>
+																	</div>
+																	<div class="custom-select-content"
+																		id="ddl_cb_month_custom_content">
+																		<div id="ddl_cb_month_custom_selector"
+																			class="custom-selector">
+																			<span>01</span>
+																			<div class="arrow">
+																				<div class="arrow-down"></div>
+																			</div>
+																		</div>
+																		<div id="ddl_cb_month_content_list"
+																			class="content-list"
+																			style="min-width: 50px; display: none;">
+																			<ul id="ddl_cb_month_custom_list" class="custom-list">
+																				<li id="ddl_cb_month_custom_option_0"
+																					class="custom-option" data-index="0"><span>01</span></li>
+																				<li id="ddl_cb_month_custom_option_1"
+																					class="custom-option" data-index="1"><span>02</span></li>
+																				<li id="ddl_cb_month_custom_option_2"
+																					class="custom-option" data-index="2"><span>03</span></li>
+																				<li id="ddl_cb_month_custom_option_3"
+																					class="custom-option" data-index="3"><span>04</span></li>
+																				<li id="ddl_cb_month_custom_option_4"
+																					class="custom-option" data-index="4"><span>05</span></li>
+																				<li id="ddl_cb_month_custom_option_5"
+																					class="custom-option" data-index="5"><span>06</span></li>
+																				<li id="ddl_cb_month_custom_option_6"
+																					class="custom-option" data-index="6"><span>07</span></li>
+																				<li id="ddl_cb_month_custom_option_7"
+																					class="custom-option" data-index="7"><span>08</span></li>
+																				<li id="ddl_cb_month_custom_option_8"
+																					class="custom-option" data-index="8"><span>09</span></li>
+																				<li id="ddl_cb_month_custom_option_9"
+																					class="custom-option" data-index="9"><span>10</span></li>
+																				<li id="ddl_cb_month_custom_option_10"
+																					class="custom-option" data-index="10"><span>11</span></li>
+																				<li id="ddl_cb_month_custom_option_11"
+																					class="custom-option" data-index="11"><span>12</span></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div data-selected-index="0"
+																	class="cs custom-select cb init" tabindex="-1"
+																	id="ddl_cb_year_custom" style="min-width: 80px">
+																	<div class="custom-select-hidden"
+																		id="ddl_cb_year_custom_hidden">
+																		<select name="ddl_cb_year"
+																			onchange="javascript:setTimeout('__doPostBack(\'ddl_cb_year\',\'\')', 0)"
+																			id="ddl_cb_year" class="custom-select cb init"
+																			style="min-width: 80px">
+																			<option selected="selected" value="2016">2016</option>
+																			<option value="2017">2017</option>
+																			<option value="2018">2018</option>
+																			<option value="2019">2019</option>
+																			<option value="2020">2020</option>
+																			<option value="2021">2021</option>
+																			<option value="2022">2022</option>
+																			<option value="2023">2023</option>
+																			<option value="2024">2024</option>
+																			<option value="2025">2025</option>
+																			<option value="2026">2026</option>
+
+																		</select>
+																	</div>
+																	<div class="custom-select-content"
+																		id="ddl_cb_year_custom_content">
+																		<div id="ddl_cb_year_custom_selector"
+																			class="custom-selector">
+																			<span>2016</span>
+																			<div class="arrow">
+																				<div class="arrow-down"></div>
+																			</div>
+																		</div>
+																		<div id="ddl_cb_year_content_list"
+																			class="content-list"
+																			style="min-width: 80px; display: none;">
+																			<ul id="ddl_cb_year_custom_list" class="custom-list">
+																				<li id="ddl_cb_year_custom_option_0"
+																					class="custom-option" data-index="0"><span>2016</span></li>
+																				<li id="ddl_cb_year_custom_option_1"
+																					class="custom-option" data-index="1"><span>2017</span></li>
+																				<li id="ddl_cb_year_custom_option_2"
+																					class="custom-option" data-index="2"><span>2018</span></li>
+																				<li id="ddl_cb_year_custom_option_3"
+																					class="custom-option" data-index="3"><span>2019</span></li>
+																				<li id="ddl_cb_year_custom_option_4"
+																					class="custom-option" data-index="4"><span>2020</span></li>
+																				<li id="ddl_cb_year_custom_option_5"
+																					class="custom-option" data-index="5"><span>2021</span></li>
+																				<li id="ddl_cb_year_custom_option_6"
+																					class="custom-option" data-index="6"><span>2022</span></li>
+																				<li id="ddl_cb_year_custom_option_7"
+																					class="custom-option" data-index="7"><span>2023</span></li>
+																				<li id="ddl_cb_year_custom_option_8"
+																					class="custom-option" data-index="8"><span>2024</span></li>
+																				<li id="ddl_cb_year_custom_option_9"
+																					class="custom-option" data-index="9"><span>2025</span></li>
+																				<li id="ddl_cb_year_custom_option_10"
+																					class="custom-option" data-index="10"><span>2026</span></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div
+																style="text-align: center; padding-top: 15px; vertical-align: top;">
+																<span id="Label39">Visual cryptogram</span>
+																<div class="help-cb deviceHidden"
+																	onmouseover="$('#cvv_help').fadeIn('slow');"
+																	onmouseout="$('#cvv_help').fadeOut('slow');">?</div>
+																<br> <input name="tb_cb_cvv" maxlength="3"
+																	id="tb_cb_cvv" class="cb" style="width: 50px"
+																	type="text"> <span>(CVV2/CVC2)</span>
+															</div>
+															<div id="cvv_help" class="tooltip-cb">
+																<img
+																	src="TELIPASS%20-%20Secured%20payment_fichiers/cb-cvv2.gif">
+															</div>
+															<br> <br> <input id="ch_cb_receipt" class="cb"
+																onchange="$('#pan_cb_mail').toggle();save_states();$('#tb_cb_email').val('')"
+																type="checkbox"> <label id="lb_cb_receipt"
+																for="ch_cb_receipt">I would like a payment
+																receipt.</label> <br>
+															<div id="pan_cb_mail" style="display: none;">
+																<br> <span id="Label51">Your e-mail address</span>
+																<br> <input name="tb_cb_email" maxlength="250"
+																	id="tb_cb_email" class="cb" type="text">
+															</div>
+															<div id="cbjsms01" class="message">
+																<div class="message-arrow-up"></div>
+																<span class="message"></span>
+															</div>
+															<br>
+															<div class="button-content">
+																<div aria-hidden="true" role="status" id="uprCB"
+																	style="display: none;">
+
+																	<span id="Label133">Please wait a moment...</span> <br>
+																	<div class="bar">
+																		<div class="pic t1 cb"></div>
+																		<div class="pic t2 cb"></div>
+																		<div class="pic t3 cb"></div>
+																		<div class="pic t4 cb"></div>
+																		<div class="pic t5 cb"></div>
+																	</div>
+																	<br>
+
+																</div>
+																<a onclick="return cb_pre_validate();"
+																	id="btn_cb_validate" class="button cb"
+																	href="javascript:__doPostBack('btn_cb_validate','')">Validate</a>
+															</div>
+															<br> <a id="cb_backlink" class="link cb"
+																href="http://besancon25.fr/achat_pdf_article-ROY-Emmanuel">Go
+																back to the merchant site.</a>
+
+														</div>
+
+														<div id="cbsvms01" class="server-message">
+															<span class="server-message"></span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+									<!-- Coupon -->
+
+									<!-- Ticket Premium -->
+									<div style="display: none;" id="pan_ticketpremium"
+										class="payment">
+
+										<div id="upTicketpremium">
+
+											<div>
+												<div class="block-1">
+													<img alt="Ticket Premium" class="payment-logo"
+														src="TELIPASS%20-%20Secured%20payment_fichiers/ticketpremium.png">
+													<span id="Label17"
+														class="payment-title-light ticketpremium">Pay with</span>
+													<br> <span id="Label34"
+														class="payment-title ticketpremium">Ticket Premium</span>
+												</div>
+												<div class="block-2">
+													<span id="Label48">You buy a Ticket Premium using
+														cash at a tobacconist.</span> <br>
+												</div>
+												<div class="block-3">
+													<table class="sub-block-3">
+														<tbody>
+															<tr>
+																<td style="width: 100px"><span id="Label56">Amount:</span></td>
+																<td><span id="lb_ticketpremium_amount"
+																	class="title">€ 0.00</span></td>
+																<td rowspan="3"></td>
+															</tr>
+															<tr>
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+																<td><span id="Label61">Description:</span></td>
+																<td><span id="lb_ticketpremium_product"
+																	class="title"></span></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<hr>
+											<div class="step">
+												<div class="step-number ticketpremium">1</div>
+												<div class="step-container">
+													<div class="step-content ticketpremium">
+														<span id="Label53" class="title-4">Purchase a
+															Ticket Premium.</span> <br> <br> <span id="Label55">Ticket
+															Premium, a simple, reliable and secure payment method.<br>Distributed
+															online or through retailers. With Ticket Premium pay for
+															your online purchases in cash.
+														</span> <br> <a id="HyperLink3" class="link ticketpremium"
+															href="https://www.ticket-premium.com/en/purchase-online"
+															target="_blank">Click here</a> <span>to find your
+															nearest retail outlets.</span>
+													</div>
+												</div>
+											</div>
+											<hr>
+											<div class="step">
+												<div class="step-number ticketpremium">2</div>
+												<div class="step-container">
+													<div class="step-content ticketpremium">
+														<div id="pan_ticketpremium_input"
+															onkeypress="javascript:return WebForm_FireDefaultButton(event, 'btn_ticketpremium_validate')">
+
+															<span id="Label79" class="title-4">Enter the
+																Ticket Premium code.</span> <br> <br> <img
+																alt="Ticket Premium"
+																src="TELIPASS%20-%20Secured%20payment_fichiers/ticketpremium-logo.png"
+																width="150"> <br> <br> <span
+																id="LbTicketPremium">Enter below the code of your
+																Ticket Premium<br> then click the validate button.
+															</span> <br> <br> <input name="tb_ticketpremium_pin"
+																maxlength="16" id="tb_ticketpremium_pin"
+																class="ticketpremium" autocomplete="off"
+																style="width: 200px;" type="text"> <br>
+															<div id="pan_ticket_premium_mail">
+
+																<br> <input id="ch_ticketpremium_receipt"
+																	class="ticketpremium"
+																	onchange="$('#pan_ticketpremium_mail').toggle();save_states();$('#tb_ticketpremium_email').val('')"
+																	type="checkbox"> <label
+																	id="lb_ticketpremium_receipt"
+																	for="ch_ticketpremium_receipt">Je souhaite un
+																	reçu de paiement.</label> <br>
+																<div id="pan_ticketpremium_mail" style="display: none;">
+																	<br> <span id="Label85">Your e-mail address</span>
+																	<br> <input name="tb_ticketpremium_email"
+																		maxlength="250" id="tb_ticketpremium_email"
+																		class="ticketpremium" type="text">
+																</div>
+
+															</div>
+															<div id="tpjsms01" class="message">
+																<div class="message-arrow-up"></div>
+																<span class="message"></span>
+															</div>
+															<br>
+															<div class="button-content">
+																<div aria-hidden="true" role="status"
+																	id="uprTicketpremium" style="display: none;">
+
+																	<span id="Label142">Please wait a moment...</span> <br>
+																	<div class="bar">
+																		<div class="pic t1 ticketpremium"></div>
+																		<div class="pic t2 ticketpremium"></div>
+																		<div class="pic t3 ticketpremium"></div>
+																		<div class="pic t4 ticketpremium"></div>
+																		<div class="pic t5 ticketpremium"></div>
+																	</div>
+																	<br>
+
+																</div>
+																<a onclick="return ticketpremium_pre_validate();"
+																	id="btn_ticketpremium_validate"
+																	class="button ticketpremium"
+																	href="javascript:__doPostBack('btn_ticketpremium_validate','')">Validate</a>
+																<input name="Hidden2" id="Hidden2" type="hidden">
+															</div>
+															<br> <a id="ticketpremium_backlink"
+																class="link ticketpremium"
+																href="http://besancon25.fr/achat_pdf_article-ROY-Emmanuel">Go
+																back to the merchant site.</a>
+
+														</div>
+
+														<div id="tpsvms01" class="server-message">
+															<span class="server-message"></span>
+														</div>
+													</div>
+												</div>
+												<div class="clear"></div>
+											</div>
+
+										</div>
+
+									</div>
+									<!-- Paysafecard -->
+
+								</div>
+								<hr>
+								<div class="help">
+									<div id="help_logo" class="help-logo audiotel">?</div>
+									<span id="help_label">Are you encountering problems with
+										the payment?</span><br> <a id="help_link" class="link audiotel"
+										href="https://telipass.com/contacts.aspx" target="_blank">Click
+										here</a> <span id="Label124">to contact us.</span> <br> <br>
+								</div>
+								<hr class="min">
+								<div class="footer">
+									<table>
+										<tbody>
+											<tr>
+												<td><img
+													src="TELIPASS%20-%20Secured%20payment_fichiers/logo-ssl.png"
+													alt="SSL" class="ssl"></td>
+												<td><a class="link" href="https://telipass.com/"
+													target="_blank">Payment secured by Telipass™</a> <br>
+													© 2016 <span id="Label126">All rights reserved.</span>&nbsp;|&nbsp;<a
+													class="link"
+													href="https://telipass.com/terms-of-sales.aspx"
+													target="_blank">Terms</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clean"></div>
+
+			</div>
+
+		</div>
+
+
+		<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"upAudiotel","displayAfter":500,"dynamicLayout":true}, null, null, $get("uprAudiotel"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"upSMS","displayAfter":500,"dynamicLayout":true}, null, null, $get("uprSMS"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"upMPME","displayAfter":500,"dynamicLayout":true}, null, null, $get("uprMPME"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"upCB","displayAfter":500,"dynamicLayout":true}, null, null, $get("uprCB"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"upTicketpremium","displayAfter":500,"dynamicLayout":true}, null, null, $get("uprTicketpremium"));
+});
+//]]>
+</script>
+	</form>
+
+
+
+</body>
+</html>

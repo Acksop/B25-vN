@@ -1,0 +1,68 @@
+/* Switching box model for all elements */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.accueil {
+	display: block;
+	witdh: 100%;
+	align: center;
+}
+
+.accueil-row, .accueil-cell {
+	vertical-align: top;
+	padding: 10px;
+	margin: 0px 5px;
+	min-width: 250px;
+}
+
+.gueuloir-cell {
+	padding: 15px;
+	vertical-align: top;
+}
+
+.table-mobile {
+	display: table-cell;
+	padding: 10px;
+}
+
+@media ( min-width : 1101px ) {
+	.accueil-cell {
+		display: table-cell;
+	}
+	.accueil-row {
+		display: table-cell;
+	}
+	.gueuloir-cell {
+		display: block;
+	}
+	div.permanent-gueuloir {
+		position: absolute;
+		display: block;
+		width: 25%;
+		top: 65px;
+		right: 0px;
+		z-index: 50;
+	}
+}
+
+@media ( min-width : 641px ) and ( max-width: 1100px ) {
+	.accueil-cell {
+		display: table-cell;
+	}
+	.accueil-row {
+		display: table-row;
+	}
+	.gueuloir-cell {
+		display: block;
+	}
+	div.permanent-gueuloir {
+		position: relative;
+		display: block;
+		padding: 5%;
+		top: 15px;
+		z-index: 50;
+	}
+}

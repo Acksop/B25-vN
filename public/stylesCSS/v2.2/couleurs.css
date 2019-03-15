@@ -1,0 +1,120 @@
+body {
+	color: #111;
+	background-color: DarkGray;
+}
+
+div.sousmenu {
+	color: LightSlateGray;
+}
+
+div.limiteur {
+	background-color: LightSlateGray;
+}
+
+div.entete {
+	background-color: #633;
+}
+
+.contenu {
+	width: 100%;
+	background: LightSlateGray none repeat fixed;
+	color: Black;
+}
+
+div.piedDePage {
+	background-color: DarkGray;
+	color: #222;
+}
+
+.cadreGueuloir {
+	background-color: Gainsboro;
+	background-image: url('images/background_simple-1.png');
+}
+
+.cadreExplications {
+	background-image: url('images/background_simple-1.png');
+}
+
+.B25-cadre {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-color: silver;
+	border-style: solid;
+	border-width: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+	color: #111;
+}
+
+.B25-cadre-inverse {
+	background-color: rgba(204, 204, 204, 0.8);
+	border-color: gray;
+	border-style: solid;
+	border-width: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	color: #000;
+}
+
+.utilisateurs {
+	border: 1px dotted #FFDDDD;
+	background-color: Gray;
+	color: #000;
+}
+
+.utilisateursInverse {
+	border: 1px dotted #FFDDDD;
+	background-color: DarkGray;
+	color: #222;
+}
+
+.navigationListe {
+	border: 1px dotted #FFDDDD;
+	background-color: DarkGoldenRod;
+}
+
+.pseudo {
+	color: AntiqueWhite;
+}
+
+.image3d {
+	background-color: LightSlateGray;
+}
+
+.imageRacine {
+	background-color: LightSlateGray;
+}
+
+td.titreTableau {
+	border: 1px solid #FFDDDD;
+	background-color: gray;
+}
+
+td.ecriture {
+	border: 1px dotted #FFDDDD;
+	background-color: gray;
+}
+
+td.ecritureInverse {
+	border: 1px dotted #FFDDDD;
+	background-color: silver;
+}
+
+td.gris {
+	background-color: #CCCCCC;
+}
+
+td.fondgris {
+	background-color: #CCCCCC;
+}
+
+td.breves {
+	background-color: #666666;
+}
+
+td.breve {
+	border: 1px solid #DDDDDD;
+	background-color: #CCCCCC;
+}
