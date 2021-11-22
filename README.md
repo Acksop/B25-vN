@@ -13,7 +13,9 @@ Avec certainement des erreurs d'ergonomie aussi.
 
 Cette idée naquit alors je programmais et bricolais quelques grapĥismes pendant les nuits des attentats de 2015 contre Chalie Hebdo ...
 
-Cette ébauche de projet est disponible gratuitement pour ceux ou celui qui souhaitera tenter l'expérience de programmation autour d'une interface similiaire au B25. tout fork ou tout push sur ce dépot sera grandement apprécié.
+Cette ébauche de projet est disponible gratuitement pour ceux ou celui qui souhaitera tenter l'expérience de programmation autour d'une interface similiaire au B25.
+
+Tout fork et/ou tout push sur ce dépot sera grandement apprécié.
 
 Mes sincères salutations aux autres qui voudront bien s'y intéresser..
 
