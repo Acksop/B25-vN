@@ -101,7 +101,7 @@ if( $rand > 2 ){
   function gtag(){dataLayer.push(arguments)};
   gtag('js', new Date());
 
-  gtag('config', 'UA-43709598-1');
+  gtag('config', '');
 </script>
 
 
