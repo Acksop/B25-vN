@@ -543,8 +543,8 @@ echo "</div>";
 
 			<table border='0'>
 				<tr>
-					<td><a href="http://s08.flagcounter.com/more/Uoc8"><img
-							src="http://s08.flagcounter.com/count/Uoc8/bg_CCCCCC/txt_000000/border_CCCCCC/columns_8/maxflags_248/viewers_Visiteurs/labels_0/pageviews_1/flags_0/"
+					<td><a href="http://s08.flagcounter.com/"><img
+							src="http://s08.flagcounter.com/count//bg_CCCCCC/txt_000000/border_CCCCCC/columns_8/maxflags_248/viewers_Visiteurs/labels_0/pageviews_1/flags_0/"
 							alt="Free counters!" border="0"></a></td>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					<td>
