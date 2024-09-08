@@ -1,0 +1,70 @@
+div.limiteur{
+background-color: black;
+position: absolute;
+top: 400px;
+right: 0px;
+width: 100%;
+height: 35px;
+z-index: 2;
+}
+div.menu{
+background-color: #663333;
+position: absolute;
+top: 0px;
+right: 10px;
+width: 100%;
+height: 400px;
+z-index: 3;
+}
+div.menu div.logoMenu{
+position: absolute;
+right: 20px;
+}
+div.menu div.boutonsMenu{
+position: absolute;
+top: 50px;
+right: 200px;
+}
+div.sousmenu{
+position: absolute;
+top: 330px;
+left: 5px;
+z-index: 3;
+}
+div.corps{
+position: absolute;
+top: 450px;
+left: 50px;
+width:80%;
+z-index: 3;
+}
+div.article{
+position:relative;
+}
+div.gueuloir{
+position:relative;
+display:none;
+}
+
+div.imagebd{
+background-color: none;
+position: absolute;
+top: 400px;
+right: 270px;
+z-index: 2;
+}
+div.cadreArrondi{
+border-width: 1px;
+}
+div.formulaire{
+display: block;
+}
+div.telechargementEnCours{
+display: none;
+}
+div.piedDePage{
+position: absolute;
+right: 300px;
+top: 295px;
+z-index: 4;
+}

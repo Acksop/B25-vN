@@ -30,17 +30,13 @@
  * If things go wrong, print "UNEXPECTED OUTCOME" and display the
  * error's information.
  *
- * @param object $e
- *            the DB_Error object from the query
- * @param int $expected_db_code
- *            the DB_ERROR* constant to expect
- * @param boolean $should_be_error
- *            does the DBMS consider this an error?
- *            
+ * @param object  $e                 the DB_Error object from the query
+ * @param int     $expected_db_code  the DB_ERROR* constant to expect
+ * @param boolean $should_be_error   does the DBMS consider this an error?
+ *
  * @return void
  */
-function check_error($e, $expected_db_code, $should_be_error = true)
-{
+function check_error($e, $expected_db_code, $should_be_error = true) {
     if ($should_be_error) {
         if (DB::isError($e)) {
             if ($e->getCode() == $expected_db_code) {
@@ -66,21 +62,21 @@ function check_error($e, $expected_db_code, $should_be_error = true)
 
 /**
  * Local error callback handler
- *
- * @param object $o
- *            PEAR error object automatically passed to this method
+ * 
+ * @param object  $o  PEAR error object automatically passed to this method
  * @return void
  * @see PEAR::setErrorHandling()
  */
-function pe($o)
-{
+function pe($o) {
     print "\n---------------\n";
     print "Having problems creating a table for testing...\n";
     print $o->getDebugInfo() . "\n";
     print "---------------\n";
 }
 
+
 $dbh->setErrorHandling(PEAR_ERROR_RETURN);
+
 
 print 'DB_ERROR_NOSUCHTABLE for select:  ';
 $res = $dbh->query('SELECT * FROM tableThatsBogus');
@@ -114,6 +110,7 @@ switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
 }
 check_error($res, DB_ERROR_NOT_FOUND);
 
+
 print 'DB_ERROR_ALREADY_EXISTS for create table:  ';
 $res = $dbh->query($test_mktable_query);
 check_error($res, DB_ERROR_ALREADY_EXISTS);
@@ -135,6 +132,7 @@ switch ($dbh->phptype) {
 }
 $res = drop_table($dbh, 'a');
 
+
 print 'DB_ERROR_CONSTRAINT for primary key insert duplicate:  ';
 $res = drop_table($dbh, 'a');
 $dbh->pushErrorHandling(PEAR_ERROR_CALLBACK, 'pe');
@@ -151,10 +149,12 @@ $res = $dbh->query('INSERT INTO a VALUES (1)');
 $res = $dbh->query('INSERT INTO a VALUES (1)');
 check_error($res, DB_ERROR_CONSTRAINT);
 
+
 print 'DB_ERROR_CONSTRAINT for primary key update duplicate:  ';
 $res = $dbh->query('INSERT INTO a VALUES (2)');
 $res = $dbh->query('UPDATE a SET a=1 WHERE a=2');
 check_error($res, DB_ERROR_CONSTRAINT);
+
 
 print 'DB_ERROR_CONSTRAINT for unique key insert duplicate:  ';
 $res = drop_table($dbh, 'a');
@@ -172,10 +172,12 @@ $res = $dbh->query('INSERT INTO a VALUES (1)');
 $res = $dbh->query('INSERT INTO a VALUES (1)');
 check_error($res, DB_ERROR_CONSTRAINT);
 
+
 print 'DB_ERROR_CONSTRAINT for unique key update duplicate:  ';
 $res = $dbh->query('INSERT INTO a VALUES (2)');
 $res = $dbh->query('UPDATE a SET a=1 WHERE a=2');
 check_error($res, DB_ERROR_CONSTRAINT);
+
 
 print 'DB_ERROR_CONSTRAINT for foreign key on insert:  ';
 $res = drop_table($dbh, 'b');
@@ -184,11 +186,16 @@ $dbh->pushErrorHandling(PEAR_ERROR_CALLBACK, 'pe');
 switch ($dbh->phptype) {
     case 'mysql':
     case 'mysqli':
-        $res = $dbh->query('CREATE TABLE a (a INT NOT NULL, ' . 'PRIMARY KEY (a)) ' . 'TYPE=INNODB');
-        $res = $dbh->query('CREATE TABLE b (b INT, ' . 'INDEX par_ind (b), ' . 'FOREIGN KEY (b) REFERENCES a (a)) ' . 'TYPE=INNODB');
+        $res = $dbh->query('CREATE TABLE a (a INT NOT NULL, '
+                    . 'PRIMARY KEY (a)) '
+                    . 'TYPE=INNODB');
+        $res = $dbh->query('CREATE TABLE b (b INT, '
+                    . 'INDEX par_ind (b), '
+                    . 'FOREIGN KEY (b) REFERENCES a (a)) '
+                    . 'TYPE=INNODB');
         $dbh->popErrorHandling();
         break;
-    
+
     case 'msql':
         // msql does not support foreign keys
         $res = $dbh->query('CREATE TABLE a (a INTEGER NOT NULL)');
@@ -203,7 +210,7 @@ switch ($dbh->phptype) {
             print "WOW, it seems mSQL now supports references\n";
         }
         break;
-    
+
     default:
         $res = $dbh->query('CREATE TABLE a (a INTEGER NOT NULL, PRIMARY KEY (a))');
         $res = $dbh->query('CREATE TABLE b (b INTEGER REFERENCES a (a))');
@@ -219,8 +226,8 @@ if ($dbh->phptype != 'msql') {
             break;
         default:
             check_error($res, DB_ERROR_CONSTRAINT);
-    }
-    
+    }   
+
     print 'DB_ERROR_CONSTRAINT for foreign key on delete:  ';
     $res = $dbh->query('INSERT INTO b (b) values (1)');
     $res = $dbh->query('DELETE FROM a WHERE a = 1');
@@ -233,6 +240,7 @@ if ($dbh->phptype != 'msql') {
     }
 }
 
+
 print 'DB_ERROR_CONSTRAINT_NOT_NULL on insert:  ';
 $res = drop_table($dbh, 'peartestnull');
 $dbh->pushErrorHandling(PEAR_ERROR_CALLBACK, 'pe');
@@ -240,6 +248,7 @@ $res = $dbh->query('CREATE TABLE peartestnull (a CHAR(3) NOT NULL)');
 $dbh->popErrorHandling();
 $res = $dbh->query('INSERT INTO peartestnull VALUES (NULL)');
 check_error($res, DB_ERROR_CONSTRAINT_NOT_NULL);
+
 
 print 'DB_ERROR_CONSTRAINT_NOT_NULL on update:  ';
 $res = $dbh->query("INSERT INTO peartestnull VALUES ('one')");
@@ -253,6 +262,7 @@ switch ($dbh->phptype) {
         check_error($res, DB_ERROR_CONSTRAINT_NOT_NULL);
 }
 
+
 print 'DB_ERROR_NOSUCHFIELD joining ON bogus column:  ';
 $res = $dbh->query('SELECT * FROM phptest JOIN a ON (phptest.a = a.b)');
 switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
@@ -263,6 +273,7 @@ switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
     default:
         check_error($res, DB_ERROR_NOSUCHFIELD);
 }
+
 
 print 'DB_ERROR_NOSUCHFIELD joining USING bogus column:  ';
 $res = $dbh->query('SELECT * FROM phptest JOIN a USING (b)');
@@ -286,6 +297,7 @@ switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
     default:
         check_error($res, DB_ERROR_NOSUCHFIELD);
 }
+
 
 print 'DB_ERROR_DIVZERO:  ';
 // Interbase detects the error on fetching
@@ -318,6 +330,7 @@ switch ($dbh->phptype) {
         check_error($res, DB_ERROR_DIVZERO);
 }
 
+
 print 'DB_ERROR_INVALID_NUMBER putting chars in INT column:  ';
 $res = $dbh->query("UPDATE phptest SET a = 'abc' WHERE a = 42");
 switch ($dbh->phptype) {
@@ -329,6 +342,7 @@ switch ($dbh->phptype) {
     default:
         check_error($res, DB_ERROR_INVALID_NUMBER);
 }
+
 
 print 'DB_ERROR_INVALID_NUMBER putting float in INT column:  ';
 $res = $dbh->query("UPDATE phptest SET a = 8.9 WHERE a = 42");
@@ -348,6 +362,7 @@ switch ($dbh->phptype) {
     default:
         check_error($res, DB_ERROR_INVALID_NUMBER);
 }
+
 
 print 'DB_ERROR_INVALID_NUMBER putting excessive int in INT column:  ';
 $res = $dbh->query("UPDATE phptest SET a = 18446744073709551616 WHERE a = 42");
@@ -371,6 +386,7 @@ switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
         check_error($res, DB_ERROR_INVALID_NUMBER);
 }
 
+
 print 'DB_ERROR_INVALID_NUMBER putting int in CHAR column:  ';
 $res = $dbh->query("UPDATE phptest SET b = 8 WHERE a = 42");
 switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
@@ -390,13 +406,16 @@ switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
         check_error($res, DB_ERROR_INVALID_NUMBER);
 }
 
+
 print 'DB_ERROR_NOSUCHFIELD:  ';
 $res = $dbh->query('SELECT e FROM phptest');
 check_error($res, DB_ERROR_NOSUCHFIELD);
 
+
 print 'DB_ERROR_SYNTAX:  ';
 $res = $dbh->query('CREATE');
 check_error($res, DB_ERROR_SYNTAX);
+
 
 print 'DB_ERROR_VALUE_COUNT_ON_ROW:  ';
 $res = $dbh->query('INSERT INTO phptest (a) VALUES (678, 2)');
@@ -407,6 +426,7 @@ switch ($dbh->phptype) {
     default:
         check_error($res, DB_ERROR_VALUE_COUNT_ON_ROW);
 }
+
 
 print 'DB_ERROR_INVALID on CHAR column data too long:  ';
 $res = $dbh->query("INSERT INTO phptest (b) VALUES ('123456789.123456789.123456789.123456789.1')");
@@ -428,6 +448,7 @@ switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
         check_error($res, DB_ERROR_INVALID);
 }
 
+
 print 'DB_ERROR_INVALID on VARCHAR column data too long:  ';
 $res = $dbh->query("INSERT INTO phptest (d) VALUES ('123456789.123456789.1')");
 switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
@@ -447,6 +468,8 @@ switch ($dbh->phptype . ':' . $dbh->dbsyntax) {
     default:
         check_error($res, DB_ERROR_INVALID);
 }
+
+
 
 drop_table($dbh, 'phptest');
 drop_table($dbh, 'b');

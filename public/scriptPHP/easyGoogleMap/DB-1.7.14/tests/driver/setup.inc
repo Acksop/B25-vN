@@ -26,7 +26,8 @@
  * @version    $Id: setup.inc 315483 2011-08-25 15:46:09Z danielc $
  * @link       http://pear.php.net/package/DB
  */
-if (! defined('PATH_SEPARATOR')) {
+
+if (!defined('PATH_SEPARATOR')) {
     if (stristr(PHP_OS, 'WIN')) {
         /**
          * The string used to delimit elements of the path.
@@ -43,20 +44,25 @@ if (! defined('PATH_SEPARATOR')) {
 /*
  * If the path to your PEAR installation is found in the left hand
  * portion of the if() expression below, that means this file has
- * come from the PEAR installer. Therefore, let's use the
+ * come from the PEAR installer.  Therefore, let's use the
  * installed version of DB, which should be found via the
- * computer's default include_path. Add '.' to the include_path
+ * computer's default include_path.  Add '.' to the include_path
  * to ensure '.' is in there.
- *
+ * 
  * If the path has not been substituted in the if() expression,
  * this file has likely come from a CVS checkout or a .tar file.
  * Therefore, we'll assume the tests should use the version of
  * DB that has come from there as well.
  */
-if ('@include_path@' != '@' . 'include_path' . '@') {
-    ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . '.');
+if ('@include_path@' != '@'.'include_path'.'@') {
+    ini_set('include_path', ini_get('include_path')
+            . PATH_SEPARATOR . '.'
+    );
 } else {
-    ini_set('include_path', realpath(dirname(__FILE__) . '/../..') . PATH_SEPARATOR . '.' . PATH_SEPARATOR . ini_get('include_path'));
+    ini_set('include_path', realpath(dirname(__FILE__) . '/../..')
+            . PATH_SEPARATOR . '.' . PATH_SEPARATOR
+            . ini_get('include_path')
+    );
 }
 
 /**
@@ -66,38 +72,21 @@ require_once 'DB.php';
 
 // Options used when connecting
 $options = array(
-    // 'optimize' => 'portability',
+    //'optimize' => 'portability',
     'portability' => DB_PORTABILITY_ALL,
-    'debug' => 2
+    'debug' => 2,
 );
 
 $dbasedsn = array(
-    'phptype' => 'dbase',
+    'phptype'  => 'dbase',
     'database' => '/path/and/name/of/dbase/file',
-    'mode' => 2,
-    'fields' => array(
-        array(
-            'a',
-            'N',
-            5,
-            0
-        ),
-        array(
-            'b',
-            'C',
-            40
-        ),
-        array(
-            'c',
-            'C',
-            255
-        ),
-        array(
-            'd',
-            'C',
-            20
-        )
-    )
+    'mode'     => 2,
+    'fields'   => array(
+        array('a', 'N', 5, 0),
+        array('b', 'C', 40),
+        array('c', 'C', 255),
+        array('d', 'C', 20),
+    ),
 );
 
 /*
@@ -106,21 +95,21 @@ $dbasedsn = array(
  * When running the multiconnect.php test, all uncommented elements are used.
  */
 $dsns = array(
-    // 'dbase' => $dbasedsn,
-    // 'fbsql' => 'fbsql://_system:@/db',
+    // 'dbase'    => $dbasedsn,
+    // 'fbsql'    => 'fbsql://_system:@/db',
     // 'firebird' => 'ibase(firebird)://SYSDBA:masterkey@//opt/interbase/examples/employee.gdb?dialect=3',
-    // 'ifx' => 'ifx://user:pw@localhost/db',
-    // 'msql' => 'msql:///db',
-    
+    // 'ifx'      => 'ifx://user:pw@localhost/db',
+    // 'msql'     => 'msql:///db',
+
     // It's advisable to use only one of the following at a time:
-    // 'mssql' => 'mssql://sa@somehost/pubs',
-    // 'sybase' => 'sybase://sa@somehost/pubs',
-    
-    // 'mysql' => 'mysql://root@localhost/test',
-    // 'mysqli' => 'mysqli://root@localhost/test',
-    // 'oci8' => 'oci8://system:manager@',
-    // 'access' => 'odbc(access)://admin@/SystemDsnName',
-    // 'db2' => 'odbc(db2)://db2inst1:XXXX@/SAMPLE',
-    // 'pgsql' => 'pgsql://postgres@localhost/test',
-    'sqlite' => 'sqlite://dummy:@localhost/' . getcwd() . DIRECTORY_SEPARATOR . 'test.db?mode=0644'
+    // 'mssql'    => 'mssql://sa@somehost/pubs',
+    // 'sybase'   => 'sybase://sa@somehost/pubs',
+
+    // 'mysql'    => 'mysql://root@localhost/test',
+    // 'mysqli'   => 'mysqli://root@localhost/test',
+    // 'oci8'     => 'oci8://system:manager@',
+    // 'access'   => 'odbc(access)://admin@/SystemDsnName',
+    // 'db2'      => 'odbc(db2)://db2inst1:XXXX@/SAMPLE',
+    // 'pgsql'    => 'pgsql://postgres@localhost/test',
+    'sqlite'   => 'sqlite://dummy:@localhost/' . getcwd() . DIRECTORY_SEPARATOR . 'test.db?mode=0644',
 );

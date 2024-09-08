@@ -2,23 +2,28 @@
 //--
 check_session();
 //--
-function LancerAffichageDuCorps(){
-	include(dirname(__FILE__).'/../scriptPHP/w-code/wcode.inc.php');
-	include(dirname(__FILE__).'/../scriptPHP/w-code/wcode.implementation.php');
+function AfficheFormModificationDossier(){
+	include('scriptPHP/w-code/wcode.inc.php');
+	include('scriptPHP/w-code/wcode.implementation.php');
 	echo wcode_javascript();
 	echo wcode_css();
-	if(isset($_GET['id'])){
-		$res = recuperationDossierTemporaire($_GET['id']);
-		$data = exploiterLigneResultatBDD($res);
+	
+	if(!isset($_POST['id'])){
+		return(0);
 	}
+	$data = recuperationDossier($_POST['id']);
+	$data = mysql_fetch_assoc($data);
+	
 	$wcode = $data['bbcode'];
 	$wcode = check_ChaineDeCaracteresDownload($wcode);
 	$wc = new wcode();
-	$wc->charger_configuration("wcode.config.php");
+	$wc->charger_configuration("scriptPHP/w-code/wcode.config.php");
 	$wc->definir_code($wcode);
 	$r = $wc->lire_code();
 
-	if(isset($_GET['modification'])){
+print_r($wcode);
+
+	if(isset($_POST['modification'])){
 		//modification du dossier
 		echo "<form method='post' name='dossier' action='controlleurs/traitementModificationDossierSauvegarder.php'>"
 		."<h3>Modification d'un Dossier:</h3>"

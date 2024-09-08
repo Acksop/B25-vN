@@ -1,0 +1,327 @@
+    <table class='gueuloirCentrer' align='center' border='0' cellpadding='0' cellspacing='0'><tr><td width='5px' height='5px'><img src='images/coinHGgris.png' border='0px'/></td><td width='100%' height='5px' class='gris'></td><td width='5px' height='5px'><img src='images/coinHDgris.png' border='0px'/></td></tr><tr><td width='5px' height='100%' class='gris'></td><td width='100%' border='0' height='100%' class='fondgris'><div class="menumain">
+  <div style='display:inline; float:left;'>
+  	<dl>
+  		<dt><a href="index.php?page=statistiques&navig=0&amp;period=3&amp;site=1&amp;graphpos=0">Choix période</a></dt>
+  			<dd id="smenu7">
+  				<ul>
+
+    					<li><a href="index.php?page=statistiques&navig=23&amp;period=0&amp;site=1&amp;crawler=0&amp;graphpos=0">Jour</a></li>
+    					<li><a href="index.php?page=statistiques&navig=23&amp;period=4&amp;site=1&amp;crawler=0&amp;graphpos=0">Depuis 8 jours</a></li>
+    					<li><a href="index.php?page=statistiques&navig=23&amp;period=1&amp;site=1&amp;crawler=0&amp;graphpos=0">Semaine</a></li>
+    					<li><a href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=1&amp;crawler=0&amp;graphpos=0">Mois</a></li>
+    					<li><a href="index.php?page=statistiques&navig=23&amp;period=3&amp;site=1&amp;crawler=0&amp;graphpos=0">Année</a></li>
+    					<li><a href="index.php?page=statistiques&navig=23&amp;period=5&amp;site=1&amp;crawler=0&amp;graphpos=0">Tout</a></li>
+
+  				</ul>
+  			</dd>
+  	</dl>
+  </div>
+<div style='display:inline; float:right;'>
+		<a href="index.php?page=statistiques&navig=5&amp;site=1&amp;graphpos=0"><img src="scriptPHP/crawltrack3-3-2/images/magnifier.png" width="16" height="16" border="0" title="Faire une recherche dans la base de données de CrawlTrack" alt="Faire une recherche dans la base de données de CrawlTrack"></a>
+		<a href="scriptPHP/crawltrack3-3-2/php/refresh.php?navig=23&amp;period=3&amp;site=1&amp;crawler=0&amp;graphpos=0"><img src="scriptPHP/crawltrack3-3-2/images/refresh.png" width="16" height="16" border="0" title="Vider le cache et recalculer les données" alt="Vider le cache et recalculer les données"></a>
+		<a href="index.php?page=statistiques&navig=6&amp;site=1&amp;crawler=0&amp;graphpos=0"><img src="scriptPHP/crawltrack3-3-2/images/wrench.png" width="16" height="16" border="0" title="Accèder à la page d'administration de votre CrawlTrack" alt="Accèder à la page d'administration de votre CrawlTrack"></a>
+		<a onclick="window.print()" href="#"><img src="scriptPHP/crawltrack3-3-2/images/printer.png" width="16" height="16" border="0" title="Imprimer la page en cours" alt="Imprimer la page en cours"></a>
+		<a href="http://www.crawltrack.net/fr/documentation.php"><img src="scriptPHP/crawltrack3-3-2/images/information.png" width="16" height="16" border="0" title="Documentation sur www.crawltrack.net" alt="Documentation sur www.crawltrack.net"></a>
+		<a onclick="return window.open('scriptPHP/crawltrack3-3-2/html/infofr.htm','CrawlTrack','top=300,left=350,height=200,width=350')" href="#"><img src="scriptPHP/crawltrack3-3-2/images/help.png" width="16" height="16" border="0" title="A propos de CrawlTrack" alt="A propos de CrawlTrack"></a>
+		<a href="index.php?page=statistiques&navig=7"><img src="scriptPHP/crawltrack3-3-2/images/cross.png" width="16" height="16" border="0" title="Se déconnecter" alt="Se déconnecter"></a>
+</div>
+<div style='display:inline; float:right;' ><br>
+<div class='title'><img src="scriptPHP/crawltrack3-3-2/images/application_cascade.png" width="16" height="16" border="0" alt="application_cascade.png">&nbsp;</div>           
+            <h2>&nbsp;&nbsp;2014            	
+            <a href="index.php?page=statistiques&navig=23&amp;period=200&amp;site=1&amp;crawler=0&amp;graphpos=0"><img src="scriptPHP/crawltrack3-3-2/images/control_back_blue.png" width="16" height="16" border="0" alt="back"></a>
+            <img src="scriptPHP/crawltrack3-3-2/images/control_play.png" width="16" height="16" border="0" alt="play">
+            <img src="scriptPHP/crawltrack3-3-2/images/control_end.png" width="16" height="16" border="0" alt="end"></h2></div><br>
+<br><br><br>
+</div>
+   </td><td width='5px' height='100%' class='gris'></td></tr><tr><td width='5px' height='5px'><img src='images/coinBGgris.png' border='0px'/></td><td width='100%' height='5px' class='gris'></td><td width='5px' height='5px'><img src='images/coinBDgris.png' border='0px'/></td></tr></table><br /><br /><div style='display:inline; float:right;' >
+<span style='font-size: 9px;margin-right: 25px;'>Dernier calcul : 22:32 </span>
+Vous êtes identifié&nbsp;</div>
+<div class="content2"><br>
+    <table class='gueuloirCentrer' align='center' border='0' cellpadding='0' cellspacing='0'><tr><td width='5px' height='5px'><img src='images/coinHGgris.png' border='0px'/></td><td width='100%' height='5px' class='gris'></td><td width='5px' height='5px'><img src='images/coinHDgris.png' border='0px'/></td></tr><tr><td width='5px' height='100%' class='gris'></td><td width='100%' border='0' height='100%' class='fondgris'><div class='tableaularge2' align='center' onmouseout="javascript:montre();">
+<div class='tableaularge' align='center' onmouseout="javascript:montre();">
+<table   cellpadding='0px' cellspacing='0' width='100%'>
+<tr><th>&nbsp;</th><th class='tableau1' colspan='3'>
+Visiteurs
+</th>
+<th class='tableau1'  colspan='3'>
+Robots
+</th>
+<th class='tableau2' rowspan='2'>
+Tentatives de piratage
+</th></tr>
+<tr><th class='tableau1' >
+Nom du site
+</th>
+<th class='tableau20' >
+Visites
+</th>
+<th class='tableau20' >
+Visiteurs uniques
+</th>
+<th class='tableau20'>
+Pages vues
+</th>
+<th class='tableau20'>
+Total hits
+</th>
+<th class='tableau20' >
+Robots
+</th>
+<th class='tableau20'>
+Pages vues
+</th></tr>
+<tr><td class='tableau3g'>&nbsp;&nbsp;<a href='index.php?page=statistiques&navig=0&amp;period=3&amp;site=4&amp;crawler=0&amp;graphpos=0' rel='nofollow'>B25 - Informationnel</a></td>
+<td class='tableau3'>86</td>
+<td class='tableau3'>86</td>
+<td class='tableau3'>128</td>
+<td class='tableau3'>392</td>
+<td class='tableau3'>5</td>
+<td class='tableau3'>1</td>
+<td class='tableau5'>0</td></tr>
+<tr><td class='tableau30g'>&nbsp;&nbsp;<a href='index.php?page=statistiques&navig=0&amp;period=3&amp;site=2&amp;crawler=0&amp;graphpos=0' rel='nofollow'>B25 - Petites Annonces</a></td>
+<td class='tableau30'>161</td>
+<td class='tableau30'>157</td>
+<td class='tableau30'>250</td>
+<td class='tableau30'>408</td>
+<td class='tableau30'>6</td>
+<td class='tableau30'>3</td>
+<td class='tableau50'>0</td></tr>
+<tr><td class='tableau3g'>&nbsp;&nbsp;<a href='index.php?page=statistiques&navig=0&amp;period=3&amp;site=5&amp;crawler=0&amp;graphpos=0' rel='nofollow'>B25 - Publicités</a></td>
+<td class='tableau3'>98</td>
+<td class='tableau3'>98</td>
+<td class='tableau3'>148</td>
+<td class='tableau3'>138</td>
+<td class='tableau3'>8</td>
+<td class='tableau3'>1</td>
+<td class='tableau5'>3</td></tr>
+<tr><td class='tableau30g'>&nbsp;&nbsp;<a href='index.php?page=statistiques&navig=0&amp;period=3&amp;site=1&amp;crawler=0&amp;graphpos=0' rel='nofollow'>B25 - Site Mère</a></td>
+<td class='tableau30'>548</td>
+<td class='tableau30'>519</td>
+<td class='tableau30'>78,777</td>
+<td class='tableau30'>835</td>
+<td class='tableau30'>11</td>
+<td class='tableau30'>52</td>
+<td class='tableau50'>1</td></tr>
+<tr><td class='tableau3g'>&nbsp;&nbsp;<a href='index.php?page=statistiques&navig=0&amp;period=3&amp;site=3&amp;crawler=0&amp;graphpos=0' rel='nofollow'>B25 - Évènementiels</a></td>
+<td class='tableau3'>179</td>
+<td class='tableau3'>178</td>
+<td class='tableau3'>1,682</td>
+<td class='tableau3'>373</td>
+<td class='tableau3'>8</td>
+<td class='tableau3'>71</td>
+<td class='tableau5'>17</td></tr>
+<tr><td class='tableau30g'>&nbsp;&nbsp;<a href='index.php?page=statistiques&navig=0&amp;period=3&amp;site=6&amp;crawler=0&amp;graphpos=0' rel='nofollow'>Wikini - B25</a></td>
+<td class='tableau30'>3,427</td>
+<td class='tableau30'>3,422</td>
+<td class='tableau30'>167,763</td>
+<td class='tableau30'>4,888</td>
+<td class='tableau30'>14</td>
+<td class='tableau30'>3,136</td>
+<td class='tableau50'>12</td></tr>
+<tr><td class='tableau3g'>&nbsp;&nbsp;<a href='index.php?page=statistiques&navig=0&amp;period=3&amp;site=7&amp;crawler=0&amp;graphpos=0' rel='nofollow'>Wkii-B25</a></td>
+<td class='tableau3'>24</td>
+<td class='tableau3'>23</td>
+<td class='tableau3'>6,077</td>
+<td class='tableau3'>250</td>
+<td class='tableau3'>1</td>
+<td class='tableau3'>194</td>
+<td class='tableau5'>0</td></tr>
+<tr><td class='tableau30d'>Total :&nbsp;&nbsp;</td>
+<td class='tableau30'>4,523</td>
+<td class='tableau30'>4,483</td>
+<td class='tableau30'>254,825</td>
+<td class='tableau30'>7,284</td>
+<td class='tableau30'>-</td>
+<td class='tableau30'>3,458</td>
+<td class='tableau50'>33</td></tr>
+</table><br><br>
+<div class='graphvisits'>
+<h2>Visites cumulées sur l'ensemble des sites</h2><map id="seoentry" name="seoentry">
+<area shape="rect" coords="65.3,31,132.3,211" onmouseover="javascript:montre('smenu131');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=102&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="132.3,31,199.3,211" onmouseover="javascript:montre('smenu132');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=101&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="199.3,31,266.3,211" onmouseover="javascript:montre('smenu133');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=100&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="266.3,31,333.3,211" onmouseover="javascript:montre('smenu134');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="333.3,31,400.3,211" onmouseover="javascript:montre('smenu135');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="400.3,31,467.3,211" onmouseover="javascript:montre('smenu136');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="467.3,31,534.3,211" onmouseover="javascript:montre('smenu137');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="534.3,31,601.3,211" onmouseover="javascript:montre('smenu138');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="601.3,31,668.3,211" onmouseover="javascript:montre('smenu139');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="668.3,31,735.3,211" onmouseover="javascript:montre('smenu140');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="735.3,31,802.3,211" onmouseover="javascript:montre('smenu141');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+<area shape="rect" coords="802.3,31,869.3,211" onmouseover="javascript:montre('smenu142');" onmouseout="javascript:montre();"href="index.php?page=statistiques&navig=23&amp;period=2&amp;site=7&amp;graphpos=0" alt="go">
+</map>
+<div id="smenu131"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;01/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;3
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;8
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;95&nbsp;
+&nbsp;Entrées directes:&nbsp;1456
+</div>
+<div id="smenu132"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;02/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;1
+&nbsp;Bing:&nbsp;1
+&nbsp;Google:&nbsp;11
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;4&nbsp;
+&nbsp;Sites internet:&nbsp;61&nbsp;
+&nbsp;Entrées directes:&nbsp;888
+</div>
+<div id="smenu133"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;03/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;2
+&nbsp;Google:&nbsp;5
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;2&nbsp;
+&nbsp;Sites internet:&nbsp;107&nbsp;
+&nbsp;Entrées directes:&nbsp;1175
+</div>
+<div id="smenu134"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;04/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;1
+&nbsp;Bing:&nbsp;1
+&nbsp;Google:&nbsp;6
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;2&nbsp;
+&nbsp;Sites internet:&nbsp;65&nbsp;
+&nbsp;Entrées directes:&nbsp;629
+</div>
+<div id="smenu135"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;05/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;0
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;0&nbsp;
+&nbsp;Entrées directes:&nbsp;0
+</div>
+<div id="smenu136"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;06/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;0
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;0&nbsp;
+&nbsp;Entrées directes:&nbsp;0
+</div>
+<div id="smenu137"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;07/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;0
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;0&nbsp;
+&nbsp;Entrées directes:&nbsp;0
+</div>
+<div id="smenu138"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;08/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;0
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;0&nbsp;
+&nbsp;Entrées directes:&nbsp;0
+</div>
+<div id="smenu139"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;09/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;0
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;0&nbsp;
+&nbsp;Entrées directes:&nbsp;0
+</div>
+<div id="smenu140"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;10/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;0
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;0&nbsp;
+&nbsp;Entrées directes:&nbsp;0
+</div>
+<div id="smenu141"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;11/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;0
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;0&nbsp;
+&nbsp;Entrées directes:&nbsp;0
+</div>
+<div id="smenu142"  style="display:none; padding-left:5px; font-size:11px; color:#003399; font-family:Verdana,Geneva, Arial, Helvetica, Sans-Serif; text-align:left; border:2px solid navy; position:absolute; top:30px; left:-35px; background:#eee; width:970px;">
+Origine des visites:&nbsp;12/2014&nbsp;
+&nbsp;Aol:&nbsp;0
+&nbsp;Ask:&nbsp;0
+&nbsp;Baidu:&nbsp;0
+&nbsp;Bing:&nbsp;0
+&nbsp;Google:&nbsp;0
+&nbsp;Google-Images:&nbsp;0
+&nbsp;Yahoo:&nbsp;0&nbsp;
+&nbsp;Yandex:&nbsp;0&nbsp;
+&nbsp;Sites internet:&nbsp;0&nbsp;
+&nbsp;Entrées directes:&nbsp;0
+</div>
+<img src="scriptPHP/crawltrack3-3-2/graphs/seo-graph.php?typegraph=entry&amp;crawltlang=frenchiso&amp;period=3&amp;graphname=entry-233Monday16frenchiso" USEMAP="#seoentry" border="0" alt="graph" >
+&nbsp;<br><br>
+&nbsp;</div><br>
+<div class='imprimgraph'>
+&nbsp;<br><br><br><br></div>
+<br><br>
+<hr></div><div class='tableaularge2' align='center'>
+<table   cellpadding='0' cellspacing='0' cellmargin='0'>
+<tr><td valign='top'>
+<div align="center">
+<br><br><b>Charge serveur</b><br><img src="scriptPHP/crawltrack3-3-2/graphs/crawler-graph.php?graphname=charge1-233Monday16frenchiso&amp;crawltlang=frenchiso" alt="graph" style="border:0; width:450px; height:220px">
+<p>Total : 1,249,229 Hits</p><br></div>
+</td><td valign='top'>
+<div align='center'>
+<br><br><b>Tendance nombre de visiteurs uniques</b><br><img src="scriptPHP/crawltrack3-3-2/graphs/tendance-graph.php?tendance7=14.82&amp;tendance30=0.19" alt="graph" style="border:0; width:480px; height:220px">
+<p>30 derniers jours : <span id='green'>+ 0.19 %</span> par jour<br>7 derniers jours : <span id='green'>+ 14.82 %</span> par jour</p><br></div>
+</td></tr></table>
+</div></div>
+   </td><td width='5px' height='100%' class='gris'></td></tr><tr><td width='5px' height='5px'><img src='images/coinBGgris.png' border='0px'/></td><td width='100%' height='5px' class='gris'></td><td width='5px' height='5px'><img src='images/coinBDgris.png' border='0px'/></td></tr></table>

@@ -1,6 +1,7 @@
 <?php
-require '../variablesApplication.php';
+
 session_start();
+include "../../localisation_Domaines_externes_B25.php";
 include("../scriptPHP/connectionBDD.php");
 include("../scriptPHP/objets/Fichiers_classes.php");
 
@@ -15,11 +16,19 @@ $description = check_ChaineDeCaracteresUpload($_POST['description']);
 $prix = check_ChaineDeCaracteresUpload($_POST['prix']);
 if($_FILES['image'] != NULL && $_FILES['image']['name'] !== ''){
 	
-	$repertoire_destination = RADIEURAE_REP_PATH."upload_utilisateurs/".$_SESSION['repertoire']."/images/";
+	$repertoire_destination = SVNRADIEURAE_DIR."upload_utilisateurs/".$_SESSION['repertoire']."/images/";
+	/*echo $repertoire_destination;
+	echo "<br /><pre>";
+	print_r( $_FILES );
+	echo "</pre><br />";*/
 	$Fichier = new Fichier( $_FILES['image'] , $repertoire_destination , 0 , 1 , 250 , 1, 0);
-	
 	$Fichier->ecritureSurLeServeur();
-	
+	/*echo "<br /><pre>";
+	print_r( $Fichier );
+	echo "</pre><br />";
+	echo 'Current script owner: ' . get_current_user();
+	die();
+	*/
 	$image = "upload_utilisateurs/".$_SESSION['repertoire']."/images/".$Fichier->nom;
 	$largeur = $Fichier->tailleX;
 	$hauteur = $Fichier->tailleY;
@@ -33,7 +42,6 @@ if($_FILES['image'] != NULL && $_FILES['image']['name'] !== ''){
 
 if($erreurDL == 0){
 
-	//modifierInfoAsso($image,"logo",$id);
 	modifierArticleArtisans($id_article,$image,$largeur,$hauteur,$libelle,$description,$prix,$id);
 	header("location: ../index.php?page=compte#ancre_article_{$id_article}");
 

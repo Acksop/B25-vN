@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /*
-Disallow: /*/
 Disallow: /*/*
 Disallow: /*/*/
 Disallow: /*/*/*
@@ -12,4 +10,3 @@ Disallow: /*/*/*/*/*/
 Disallow: /*/*/*/*/*/*
 Disallow: /*/*/*/*/*/*/
 Disallow: /*/*/*/*/*/*/*
-Allow: /w-code/wcode.inc.php

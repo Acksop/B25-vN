@@ -1,5 +1,4 @@
 <?php
-
 /**
  * jsmin.php - PHP implementation of Douglas Crockford's JSMin.
  *
@@ -50,38 +49,26 @@
  * @license http://opensource.org/licenses/mit-license.php MIT License
  * @link http://code.google.com/p/jsmin-php/
  */
-class JSMin
-{
 
-    const ORD_LF = 10;
-
-    const ORD_SPACE = 32;
-
-    const ACTION_KEEP_A = 1;
-
-    const ACTION_DELETE_A = 2;
-
+class JSMin {
+    const ORD_LF            = 10;
+    const ORD_SPACE         = 32;
+    const ACTION_KEEP_A     = 1;
+    const ACTION_DELETE_A   = 2;
     const ACTION_DELETE_A_B = 3;
-
-    protected $a = "\n";
-
-    protected $b = '';
-
-    protected $input = '';
-
-    protected $inputIndex = 0;
-
+    
+    protected $a           = "\n";
+    protected $b           = '';
+    protected $input       = '';
+    protected $inputIndex  = 0;
     protected $inputLength = 0;
-
-    protected $lookAhead = null;
-
-    protected $output = '';
-
+    protected $lookAhead   = null;
+    protected $output      = '';
+    
     /**
      * Minify Javascript
      *
-     * @param string $js
-     *            Javascript to be minified
+     * @param string $js Javascript to be minified
      * @return string
      */
     public static function minify($js)
@@ -89,16 +76,16 @@ class JSMin
         $jsmin = new JSMin($js);
         return $jsmin->min();
     }
-
+    
     /**
      * Setup process
      */
     public function __construct($input)
     {
-        $this->input = str_replace("\r\n", "\n", $input);
+        $this->input       = str_replace("\r\n", "\n", $input);
         $this->inputLength = strlen($this->input);
     }
-
+    
     /**
      * Perform minification, return result
      */
@@ -119,11 +106,14 @@ class JSMin
             } elseif ($this->a === "\n") {
                 if ($this->b === ' ') {
                     $command = self::ACTION_DELETE_A_B;
-                } elseif (false === strpos('{[(+-', $this->b) && ! $this->isAlphaNum($this->b)) {
+                } elseif (false === strpos('{[(+-', $this->b) 
+                          && ! $this->isAlphaNum($this->b)) {
                     $command = self::ACTION_DELETE_A;
                 }
             } elseif (! $this->isAlphaNum($this->a)) {
-                if ($this->b === ' ' || ($this->b === "\n" && (false === strpos('}])+-"\'', $this->a)))) {
+                if ($this->b === ' '
+                    || ($this->b === "\n" 
+                        && (false === strpos('}])+-"\'', $this->a)))) {
                     $command = self::ACTION_DELETE_A_B;
                 }
             }
@@ -132,10 +122,9 @@ class JSMin
         $this->output = trim($this->output);
         return $this->output;
     }
-
+    
     /**
-     * ACTION_KEEP_A = Output A.
-     * Copy B to A. Get the next B.
+     * ACTION_KEEP_A = Output A. Copy B to A. Get the next B.
      * ACTION_DELETE_A = Copy B to A. Get the next B.
      * ACTION_DELETE_A_B = Get the next B.
      */
@@ -144,29 +133,30 @@ class JSMin
         switch ($command) {
             case self::ACTION_KEEP_A:
                 $this->output .= $this->a;
-            // fallthrough
+                // fallthrough
             case self::ACTION_DELETE_A:
                 $this->a = $this->b;
                 if ($this->a === "'" || $this->a === '"') { // string literal
                     $str = $this->a; // in case needed for exception
                     while (true) {
                         $this->output .= $this->a;
-                        $this->a = $this->get();
+                        $this->a       = $this->get();
                         if ($this->a === $this->b) { // end quote
                             break;
                         }
                         if (ord($this->a) <= self::ORD_LF) {
-                            throw new JSMin_UnterminatedStringException('Unterminated String: ' . var_export($str, true));
+                            throw new JSMin_UnterminatedStringException(
+                                'Unterminated String: ' . var_export($str, true));
                         }
                         $str .= $this->a;
                         if ($this->a === '\\') {
                             $this->output .= $this->a;
-                            $this->a = $this->get();
+                            $this->a       = $this->get();
                             $str .= $this->a;
                         }
                     }
                 }
-            // fallthrough
+                // fallthrough
             case self::ACTION_DELETE_A_B:
                 $this->b = $this->next();
                 if ($this->b === '/' && $this->isRegexpLiteral()) { // RegExp literal
@@ -179,10 +169,11 @@ class JSMin
                             break; // while (true)
                         } elseif ($this->a === '\\') {
                             $this->output .= $this->a;
-                            $this->a = $this->get();
-                            $pattern .= $this->a;
+                            $this->a       = $this->get();
+                            $pattern      .= $this->a;
                         } elseif (ord($this->a) <= self::ORD_LF) {
-                            throw new JSMin_UnterminatedRegExpException('Unterminated RegExp: ' . var_export($pattern, true));
+                            throw new JSMin_UnterminatedRegExpException(
+                                'Unterminated RegExp: '. var_export($pattern, true));
                         }
                         $this->output .= $this->a;
                     }
@@ -191,7 +182,7 @@ class JSMin
             // end case ACTION_DELETE_A_B
         }
     }
-
+    
     protected function isRegexpLiteral()
     {
         if (false !== strpos("\n{;(,=:[!&|?", $this->a)) { // we aren't dividing
@@ -216,10 +207,9 @@ class JSMin
         }
         return false;
     }
-
+    
     /**
-     * Get next char.
-     * Convert ctrl char to space.
+     * Get next char. Convert ctrl char to space.
      */
     protected function get()
     {
@@ -241,17 +231,16 @@ class JSMin
         }
         return $c;
     }
-
+    
     /**
-     * Get next char.
-     * If is ctrl character, translate to a space or newline.
+     * Get next char. If is ctrl character, translate to a space or newline.
      */
     protected function peek()
     {
         $this->lookAhead = $this->get();
         return $this->lookAhead;
     }
-
+    
     /**
      * Is $c a letter, digit, underscore, dollar sign, escape, or non-ASCII?
      */
@@ -259,7 +248,7 @@ class JSMin
     {
         return (preg_match('/^[0-9a-zA-Z_\\$\\\\]$/', $c) || ord($c) > 126);
     }
-
+    
     protected function singleLineComment()
     {
         $comment = '';
@@ -267,7 +256,7 @@ class JSMin
             $get = $this->get();
             $comment .= $get;
             if (ord($get) <= self::ORD_LF) { // EOL reached
-                                             // if IE conditional comment
+                // if IE conditional comment
                 if (preg_match('/^\\/@(?:cc_on|if|elif|else|end)\\b/', $comment)) {
                     return "/{$comment}";
                 }
@@ -275,7 +264,7 @@ class JSMin
             }
         }
     }
-
+    
     protected function multipleLineComment()
     {
         $this->get();
@@ -301,7 +290,7 @@ class JSMin
             $comment .= $get;
         }
     }
-
+    
     /**
      * Get the next character, skipping over comments.
      * Some comments may be preserved.
@@ -313,24 +302,13 @@ class JSMin
             return $get;
         }
         switch ($this->peek()) {
-            case '/':
-                return $this->singleLineComment();
-            case '*':
-                return $this->multipleLineComment();
-            default:
-                return $get;
+            case '/': return $this->singleLineComment();
+            case '*': return $this->multipleLineComment();
+            default: return $get;
         }
     }
 }
 
-class JSMin_UnterminatedStringException extends Exception
-{
-}
-
-class JSMin_UnterminatedCommentException extends Exception
-{
-}
-
-class JSMin_UnterminatedRegExpException extends Exception
-{
-}
+class JSMin_UnterminatedStringException extends Exception {}
+class JSMin_UnterminatedCommentException extends Exception {}
+class JSMin_UnterminatedRegExpException extends Exception {}

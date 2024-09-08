@@ -29,9 +29,9 @@ if (empty($dsns)) {
     die('skip At least one element of $dsns must be defined in setup.inc');
 }
 
-list ($dbms, $dsn) = each($dsns);
+list($dbms, $dsn) = each($dsns);
 
-$dbh = & DB::connect($dsn, $options);
+$dbh =& DB::connect($dsn, $options);
 if (DB::isError($dbh)) {
     die('skip ' . $dbh->getUserInfo());
 }

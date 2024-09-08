@@ -103,6 +103,18 @@ $sql26 = "CREATE TABLE IF NOT EXISTS `artistes` (
   PRIMARY KEY (`id_artiste`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;";
 
+$sql36 = "INSERT INTO `artistes` (`id_artiste`, `nom`, `prenom`, `pseudo`, `telephone`, `voir_telephone`, `site_web_only`, `voir_tweets`, `affichage_tweets`, `nb_affichage_tweet`, `description`, `email`, `siteInterWeb`, `id_utilisateur`) VALUES
+	(7, 'ROY', 'Emmanuel', 'Manol&#039;s', '0662105700', 0, 1, 0, 0, 0, 'Musicien Amateur , Peintre Amateur , VJ Amateur', 'acksop@gmail.com', 'trooltower.infoartsmedia.fr', 2),
+	(9, 'THERR', 'Florian', 'Flopy', '0645578149', 1, 1, 0, 0, 0, 'Musicien Amateur', 'flopy25000@hotmail.fr', 'unilever.besancon25.fr', 5),
+	(10, 'JEANNOT', 'Claire', 'Shiatsu25', '0685655414', 1, 0, 0, 0, 0, 'Shiatsu (humain) et Shiatsu pour chevaux', 'claire-shiatsu@live.fr', 'http://shiatsu25.fr/', 7),
+	(11, 'THONI', 'Irene', 'Irene', '0678106722', 0, 0, 0, 0, 0, 'photo réaliste', 'irene.thoni@gmail.com', 'invertebrae.com', 8),
+	(12, 'Perdu?', '', 'Where are you thru ?', '', 1, 0, 0, 0, 0, '', '', 'dijon21.com', 2010),
+	(13, 'LAMBERT', 'Greg', 'Tineuil', '0610457430', 1, 0, 0, 0, 0, 'Musicien amateur', 'lambert_gregory@hotmail.f', 'invertebrae.com', 10),
+	(15, '', '', '', '', 1, 0, 0, 0, 0, '', '', '', 18),
+	(17, 'PERRIN', 'Jérèmy', 'Jejen', '0638862887', 1, 0, 0, 0, 0, 'Reïki', 'jejenvibes@hotmail.fr', '', 2035),
+	(18, 'COULON', 'RAPHAEL', 'Héyoka', '0630429688', 1, 0, 0, 0, 0, 'Lutherie,ébénisterie acoustique,création d&#039;oeuvre d&#039;art sur bois', '0630429688@orange.fr', '', 2039),
+	(19, 'Boucard', 'vincent', 'Flashbouc', '0662?#@{![', 1, 1, 0, 0, 0, 'Lien pluridisciplinaire', 'vincent.boucard@live.fr', 'flashbouc.com', 2050);";
+
 $sql17 = "DROP TABLE associations ;";
 $sql27 = "CREATE TABLE `associations` (
   `id_association` int(11) NOT NULL auto_increment,
@@ -118,6 +130,22 @@ $sql27 = "CREATE TABLE `associations` (
   PRIMARY KEY  (`id_association`)
 ) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;";
 
+$sql37 = "INSERT INTO `associations` (`id_association`, `nom`, `description`, `telephone`, `email`, `siteInterWeb`, `adresse`, `codePostal`, `ville`, `id_utilisateur`) VALUES
+	(6, 'Brin d&#039;air', 'Education Environnement, et plus encore...', '0689287357', 'asso.brindair@yahoo.fr', '', '1bis rue de la république', 63720, 'ENNEZAT', 3),
+	(9, 'GENEPI', 'Groupement Etudiant National d&#039;Enseignement aux Personnes Incarcérées', '0682188714', 'genepi-besancon@no-log.org', 'genepi.fr', '5 rue Louis Pergaud', 25000, 'Besançon', 16),
+	(10, 'Maha Ayanam', 'Théâtre et échanges culturels', '0682930648', 'mahaayanam@gmail.com', '', '11 rue Péclet', 25000, 'Besançon', 17),
+	(11, 'AGEFC (Association Gabonaise des Étudiants de Franche-Comté)', 'Promotion de la culture gabonaise, intégration dans la franche comté, découverte estudiantine.', '0659223407', 'bureau@agefc.fr', 'www.agefc.fr', '36 A, avenue de l&#039;observatoire ', 25000, 'Besançon', 18),
+	(14, '', '', '', '', '', '', 0, '', 18),
+	(17, 'As Andorinhas', 'groupe folklorique portugais', '0603025584', 'lindadossantos@hotmail.fr', 'http://as-andorinhas.new.fr/', 'maison pour tous,\r\nSur la Place Cassin', 25000, 'Besançon', 2042),
+	(16, 'Théâtre des Sources', 'Création, Résidence, diffusion', '06.33.03.14.76', 'theatre.des.sources@free.fr', 'http://theatre.des.sources.free.fr', '19-D , Rue du chapitre', 25000, 'Besançon', 2041),
+	(18, 'LES HIBISCUS', 'PROMOTION CULTURE ANTILLAISE', '0683230535', 'crican00007@orange.fr', '', 'AVE DUCAT - MAISON DE QUARTIER ST FERJEUX', 25000, 'BESANCON', 2043),
+	(19, 'Trivial Compost', 'Solutions pour un compostage Urbain', '09.51.81.35.63', 'trivialcompost@gmail.com', 'http://trivialcompost.canalblog.com', '13, rue de la liberté', 25000, 'Besançon', 2044),
+	(20, 'Le Citron Vert', 'Musiques Electroniques', '09 51 31 02 21', 'lcv.communication@gmail.com', 'www.lecitronvert.org', '58 rue Battant', 25000, 'Besancon', 2045),
+	(21, 'AMEB', 'Association Multiculturelle des Étudiants de Besançon', '', 'DiscussionsAMEB@yahoogroupes.fr', '', '', 25000, 'BESANÇON', 2047),
+	(22, 'orchestre universitaire de Besançon', 'orchestre et jazz au campus', '03 81 57 30 86', 'orchestre.universitaire@univ-fcomte.fr', 'http://orchestre.assos.univ-fcomte.fr/ ', '36 a av. de l&#039;observatoire', 25030, 'besancon cedex', 2049),
+	(23, 'THEATRE DE LA MENTEUSE', 'ASSOCIATION RECHERCHE SUR LE THEATRE', '0381833941 ', 'thea.menteuse@orange.fr', '', '4 A faubourg tarragnoz', 25000, '', 2052),
+	(24, '', '', '0', 'anniepaillard@hotmail.fr', '', '', 0, '', 2053);";
+
 $sql18 = "DROP TABLE utilisateur ;";
 $sql28 = "CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT,
@@ -130,6 +158,51 @@ $sql28 = "CREATE TABLE IF NOT EXISTS `utilisateur` (
   `statut` int(11) NOT NULL COMMENT '0: admis ; 1: kické ; 2:banni ; 3:déinscrit',
   PRIMARY KEY (`id_utilisateur`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2043 ;";
+
+$sql38 = "INSERT INTO `utilisateur` (`id_utilisateur`, `pseudo`, `password`, `dateInscription`, `dateDerniereConnexion`, `nbConnexions`, `type_compte`, `statut`) VALUES
+	(1, 'Acksop', '&zoneA0', 'Jeudi 1 janvier 1970', '0000-00-00 00:00:00', 0, 0, 1),
+	(2, 'Manols', '&Eff(e)ctL0w', 'Vendredi 18 Juin 2010 - 03:04', '0000-00-00 00:00:00', 0, 2, 1),
+	(3, 'brindair', 'mina', 'Vendredi 18 Juin 2010 - 03:05', '0000-00-00 00:00:00', 0, 3, 1),
+	(4, 'arthunosaure', 'thcni', 'Vendredi 18 Juin 2010 - 03:05', '0000-00-00 00:00:00', 0, 1, 1),
+	(5, 'flopy', 'guitare', 'Mardi 29 Juin 2010 - 19:05', '0000-00-00 00:00:00', 0, 2, 1),
+	(6, 'effectlow', 'flyingflo', 'Mercredi 30 Juin 2010 - 08:50', '0000-00-00 00:00:00', 0, 1, 1),
+	(7, 'Shiatsu25', 'plume', 'Mercredi 30 Juin 2010 - 14:03', '0000-00-00 00:00:00', 0, 4, 1),
+	(8, 'irene', 'playmobil', 'Lundi 05 Juillet 2010 - 20:23', '0000-00-00 00:00:00', 0, 2, 1),
+	(9, 'Faberi', 'fabio-bobo', 'Mardi 06 Juillet 2010 - 20:40', '0000-00-00 00:00:00', 0, 1, 1),
+	(10, 'Tineuil', 'wriggles', 'Vendredi 8 Juillet 2010', '0000-00-00 00:00:00', 0, 2, 1),
+	(11, 'folken', 'animesanctuary', 'Vendredi 09 Juillet 2010 - 02:09', '0000-00-00 00:00:00', 0, 1, 1),
+	(12, 'Mayorem', '&R3m4nu11', 'lundi 4 octobre 1982 3:14:07', '0000-00-00 00:00:00', 0, 1, 1),
+	(13, 'Arthur', 'maltese', 'Jeudi 02 Septembre 2010 - 00:04', '0000-00-00 00:00:00', 0, 1, 1),
+	(14, 'LadinDenis', 'azerty01', 'Jeudi 09 Septembre 2010 - 13:55', '0000-00-00 00:00:00', 0, 1, 1),
+	(15, 'Butterfly', 'azerty02', 'Jeudi 09 Septembre 2010 - 13:56', '0000-00-00 00:00:00', 0, 1, 1),
+	(16, 'génépi de besac', 'macvin', 'Mercredi 29 Septembre 2010 - 10:35', '0000-00-00 00:00:00', 0, 3, 1),
+	(17, 'Maha Ayanam', 'vesantio', 'Mercredi 29 Septembre 2010 - 10:41', '0000-00-00 00:00:00', 0, 3, 1),
+	(18, 'agefc', '20102011', 'Samedi 16 Octobre 2010 - 11:06', '0000-00-00 00:00:00', 0, 3, 1),
+	(2043, 'LESHIBISCUS', '1984', 'Mercredi 22 Juin 2011 - 07:53', '0000-00-00 00:00:00', 0, 3, 1),
+	(20, 'Gaouelle', 'azerty', 'Dimanche 07 Novembre 2010 - 16:37', '0000-00-00 00:00:00', 0, 1, 1),
+	(21, 'Gui', 'floriane', 'Mardi 16 Novembre 2010 - 16:12', '0000-00-00 00:00:00', 0, 1, 1),
+	(22, 'Flo', 'fresard', 'Mardi 23 Novembre 2010 - 02:36', '0000-00-00 00:00:00', 0, 1, 1),
+	(24, 'titi', 'anarchie', 'Mardi 22 Mars 2011 - 09:36', '0000-00-00 00:00:00', 0, 1, 2),
+	(25, 'Sana', 'cigare25', 'Mercredi 23 Mars 2011 - 16:42', '0000-00-00 00:00:00', 0, 1, 1),
+	(26, 'dvb', 'dvb', 'Lundi 28 Mars 2011 - 13:11', '0000-00-00 00:00:00', 0, 1, 1),
+	(2042, 'andorinhas', 'andorinhasdu25', 'Mardi 21 Juin 2011 - 20:06', '0000-00-00 00:00:00', 0, 3, 1),
+	(29, '', '', '19 janvier 2038 3:14:07 GMT', '0000-00-00 00:00:00', 0, 1, 1),
+	(2035, 'Jejen', 'vibes', 'Samedi 23 Avril 2011 - 13:14', '0000-00-00 00:00:00', 0, 4, 1),
+	(2036, 'PômPaul', 'pomme', 'Vendredi 06 Mai 2011 - 10:36', '0000-00-00 00:00:00', 0, 1, 1),
+	(2037, 'Taadj', 'Tiébo', 'Mercredi 25 Mai 2011 - 13:06', '0000-00-00 00:00:00', 0, 1, 1),
+	(2038, 'Nina', 'ninouille', 'Jeudi 09 Juin 2011 - 00:54', '0000-00-00 00:00:00', 0, 1, 1),
+	(2039, 'héyoka', 'freefight', 'Mardi 14 Juin 2011 - 18:05', '0000-00-00 00:00:00', 0, 4, 1),
+	(2040, 'Lucy', 'FIMU', 'Mardi 14 Juin 2011 - 18:49', '0000-00-00 00:00:00', 0, 1, 1),
+	(2041, 'Théâtre des Sources', 'coyotte', 'Mardi 21 Juin 2011 - 17:24', '0000-00-00 00:00:00', 0, 3, 1),
+	(2044, 'TrivialCompost', 'vermicompost*01', 'Mercredi 22 Juin 2011 - 15:41', '0000-00-00 00:00:00', 0, 3, 0),
+	(2045, 'lecitronvert', '232323', 'Jeudi 23 Juin 2011 - 10:09', '0000-00-00 00:00:00', 0, 3, 1),
+	(2047, 'ameb', 'ameb', 'Vendredi 24 Juin 2011 - 05:33', '0000-00-00 00:00:00', 0, 3, 0),
+	(2048, 'D''Gil', 'cigigi', 'Vendredi 24 Juin 2011 - 14:55', '0000-00-00 00:00:00', 0, 1, 1),
+	(2049, 'OUBFC', 'OUBFC', 'Mardi 05 Juillet 2011 - 09:37', '0000-00-00 00:00:00', 0, 3, 1),
+	(2050, 'flashbouc', 'flashbouc', 'Samedi 20 Ao&ucirc;t 2011 - 15:17', '0000-00-00 00:00:00', 0, 2, 1),
+	(2052, 'THEATRE DE LA MENTEUSE', '0655', 'Mardi 06 Septembre 2011 - 10:33', '0000-00-00 00:00:00', 0, 3, 1),
+	(2053, 'Association Art Monie', 'harmoniedomi25', 'Vendredi 09 Septembre 2011 - 21:55', '0000-00-00 00:00:00', 0, 3, 0),
+	(2054, 'Théosophe', 'Battant', 'Vendredi 21 Octobre 2011 - 03:04', '0000-00-00 00:00:00', 0, 1, 0);";
 
 //CREATION DES TABLES N'EXISTANT PAS : association_*
 //			AVEC UNE INSERTION : Brind'AIR
@@ -174,13 +247,18 @@ $sql10000 = "INSERT INTO `association_descriptif` (`id_association`, `logo`, `lo
 
 $requetesDROP = array($sql1,$sql10,$sql11,$sql12,$sql13,$sql14,$sql15,$sql16,$sql17,$sql18);
 $requetesCREATE = array($sql2,$sql20,$sql21,$sql22,$sql23,$sql24,$sql25,$sql26,$sql27,$sql28,$sql10001,$sql10002,$sql10003,$sql10004);
-
+$requetesINSERT = array($sql36,$sql37,$sql38,$sql10000);
 
 foreach($requetesDROP as $valeur){
 	faireUneRequeteOffLine($valeur);
 	echo $valeur;
 }
 foreach($requetesCREATE as $valeur){
+	faireUneRequeteOffLine($valeur);
+	echo $valeur;
+}
+
+foreach($requetesINSERT as $valeur){
 	faireUneRequeteOffLine($valeur);
 	echo $valeur;
 }

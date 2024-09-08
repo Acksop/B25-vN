@@ -28,22 +28,21 @@
  * Drops the phptest table, prints out an error message and kills the
  * process.
  *
- * @param object $o
- *            PEAR error object automatically passed to this method
+ * @param object  $o  PEAR error object automatically passed to this method
  * @return void
  * @see PEAR::setErrorHandling()
  */
-function pe($o)
-{
+function pe($o) {
     global $dbh;
-    
+
     $dbh->setErrorHandling(PEAR_ERROR_RETURN);
     drop_table($dbh, 'phptest');
-    
+
     die($o->toString());
 }
 
 $dbh->setErrorHandling(PEAR_ERROR_CALLBACK, 'pe');
+
 
 $sth = $dbh->simpleQuery("SELECT * FROM phptest");
 
@@ -62,6 +61,7 @@ switch ($dbh->phptype) {
             print "PROBLEM\n";
         }
 }
+
 
 switch ($dbh->phptype) {
     case 'ibase':

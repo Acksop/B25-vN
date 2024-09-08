@@ -1,294 +1,239 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
-<head>
-<title>Aide pour le W-Code :: v0.4</title>
-<meta http-equiv="Content-Type" content="text/html charset=iso-8859-15" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Language" content="fr" />
-<style type="text/css" media="screen" title="Style par d&eacute;faut">
-@import url("wcode.style.css");
+ <head>
+  <title>Aide pour le W-Code :: v0.4</title>
+  <meta http-equiv="Content-Type" content="text/html charset=iso-8859-15" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Language" content="fr" />
+  <style type="text/css" media="screen" title="Style par d&eacute;faut">
+     @import url("wcode.style.css");
+     @import url("wcode.style.aide.css");
+  </style>
+ </head>
+ <body>
+ <div class="wcode">
+  <h1>Aide pour le W-Code</h1>
+  <hr noshade="noshade" size="1" />
+  <p class="centrer">[ <a href="#i">Les balises</a> | <a href="#ii">Les smileys</a> | <a href="#iii">Les caractères spéciaux</a> | <a href="#iv">L'éditeur</a> ]</p>
+  <hr noshade="noshade" size="1" />
+  <h2><a name="i">i. Les balises</a></h2>
+  <p>Grâce au WCode, vous pouvez mettre en forme votre texte. Pour cela, il vous suffit d'insérer le code désiré, en vous référant au tableau suivant :</p>
+  <table width="700" cellspacing="0">
+   <tr class="titre">
+    <td width="200">Code</td>
+	<td width="200">Description</td>
+	<td width="300">Resultat</td>
+   </tr>
 
-@import url("wcode.style.aide.css");
-</style>
-</head>
-<body>
-	<div class="wcode">
-		<h1>Aide pour le W-Code</h1>
-		<hr noshade="noshade" size="1" />
-		<p class="centrer">
-			[ <a href="#i">Les balises</a> | <a href="#ii">Les smileys</a> | <a
-				href="#iii">Les caractï¿œres spï¿œciaux</a> | <a href="#iv">L'ï¿œditeur</a>
-			]
-		</p>
-		<hr noshade="noshade" size="1" />
-		<h2>
-			<a name="i">i. Les balises</a>
-		</h2>
-		<p>Grï¿œce au WCode, vous pouvez mettre en forme votre texte. Pour
-			cela, il vous suffit d'insï¿œrer le code dï¿œsirï¿œ, en vous rï¿œfï¿œrant au
-			tableau suivant :</p>
-		<table width="700" cellspacing="0">
-			<tr class="titre">
-				<td width="200">Code</td>
-				<td width="200">Description</td>
-				<td width="300">Resultat</td>
-			</tr>
+   <tr class="categorie"><td colspan="3">Mise en forme basique</td></tr>
 
-			<tr class="categorie">
-				<td colspan="3">Mise en forme basique</td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[g]Texte[/g]</td>
+	<td class="description">Met le texte en gras</td>
+	<td class="resultat"><span class="gras">Texte</span></td>
+   </tr>
 
-			<tr class="gris">
-				<td class="code">[g]Texte[/g]</td>
-				<td class="description">Met le texte en gras</td>
-				<td class="resultat"><span class="gras">Texte</span></td>
-			</tr>
+   <tr class="blanc">
+    <td class="code">[i]Texte[/i]</td>
+	<td class="description">Met le texte en italique</td>
+	<td class="resultat"><span class="italique">Texte</span></td>
+   </tr>
 
-			<tr class="blanc">
-				<td class="code">[i]Texte[/i]</td>
-				<td class="description">Met le texte en italique</td>
-				<td class="resultat"><span class="italique">Texte</span></td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[s]Texte[/s]</td>
+	<td class="description">Met le texte en souligné</td>
+	<td class="resultat"><span class="souligne">Texte</span></td>
+   </tr>
 
-			<tr class="gris">
-				<td class="code">[s]Texte[/s]</td>
-				<td class="description">Met le texte en soulignï¿œ</td>
-				<td class="resultat"><span class="souligne">Texte</span></td>
-			</tr>
+   <tr class="blanc">
+    <td class="code">[fluo]Texte[/fluo]</td>
+	<td class="description">Met le texte en fluo</td>
+	<td class="resultat"><span class="fluo">Texte</span></td>
+   </tr>
 
-			<tr class="blanc">
-				<td class="code">[fluo]Texte[/fluo]</td>
-				<td class="description">Met le texte en fluo</td>
-				<td class="resultat"><span class="fluo">Texte</span></td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[couleur=#ff0000]Texte[/couleur]</td>
+	<td class="description">Met le texte dans la couleur indiquée <br />( utiliser la palette )</td>
+	<td class="resultat"><span style="color: #ff0000;">Texte</span></td>
+   </tr>
 
-			<tr class="gris">
-				<td class="code">[couleur=#ff0000]Texte[/couleur]</td>
-				<td class="description">Met le texte dans la couleur indiquï¿œe <br />(
-					utiliser la palette )
-				</td>
-				<td class="resultat"><span style="color: #ff0000;">Texte</span></td>
-			</tr>
+   <tr class="blanc">
+    <td class="code">[taille=20]Texte[/taille]</td>
+	<td class="description">Met le texte dans la taille indiquée <br />( en pixels )</td>
+	<td class="resultat"><span style="font-size: 20px;">Texte</span></td>
+   </tr>
 
-			<tr class="blanc">
-				<td class="code">[taille=20]Texte[/taille]</td>
-				<td class="description">Met le texte dans la taille indiquï¿œe <br />(
-					en pixels )
-				</td>
-				<td class="resultat"><span style="font-size: 20px;">Texte</span></td>
-			</tr>
+   <tr class="categorie"><td colspan="3">Alignements</td></tr>
 
-			<tr class="categorie">
-				<td colspan="3">Alignements</td>
-			</tr>
+    <tr class="gris">
+    <td class="code">[aligner=gauche]Texte[/aligner]</td>
+        <td class="description">Aligner le texte à gauche</td>
+        <td class="resultat"><p class="gauche">Texte</p></td>
+   </tr>
 
-			<tr class="gris">
-				<td class="code">[aligner=gauche]Texte[/aligner]</td>
-				<td class="description">Aligner le texte ï¿œ gauche</td>
-				<td class="resultat"><p class="gauche">Texte</p></td>
-			</tr>
+    <tr class="blanc">
+    <td class="code">[aligner=centre]Texte[/aligner]</td>
+        <td class="description">Aligner le texte au centre</td>
+        <td class="resultat"><p class="centre">Texte</p></td>
+   </tr>
 
-			<tr class="blanc">
-				<td class="code">[aligner=centre]Texte[/aligner]</td>
-				<td class="description">Aligner le texte au centre</td>
-				<td class="resultat"><p class="centre">Texte</p></td>
-			</tr>
+    <tr class="gris">
+    <td class="code">[aligner=droite]Texte[/aligner]</td>
+        <td class="description">Aligner le texte à droite</td>
+        <td class="resultat"><p class="droite">Texte</p></td>
+   </tr>
 
-			<tr class="gris">
-				<td class="code">[aligner=droite]Texte[/aligner]</td>
-				<td class="description">Aligner le texte ï¿œ droite</td>
-				<td class="resultat"><p class="droite">Texte</p></td>
-			</tr>
-
-			<tr class="blanc">
-				<td class="code">[aligner=justifier]Texte[/aligner]</td>
-				<td class="description">Justifier le texte</td>
-				<td class="resultat"><p class="justifier">Texte</p></td>
-			</tr>
+    <tr class="blanc">
+    <td class="code">[aligner=justifier]Texte[/aligner]</td>
+        <td class="description">Justifier le texte</td>
+        <td class="resultat"><p class="justifier">Texte</p></td>
+   </tr>
 
 
-			<tr class="categorie">
-				<td colspan="3">Textes</td>
-			</tr>
+   <tr class="categorie"><td colspan="3">Textes</td></tr>
 
-			<tr class="gris">
-				<td class="code">[citation=Jim]Citation[/citation]</td>
-				<td class="description">Cite le texte</td>
-				<td class="resultat">
-					<div class="citation">
-						<b>Jim a dit :</b><br />Citation
-					</div>
-				</td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[citation=Jim]Citation[/citation]</td>
+	<td class="description">Cite le texte</td>
+	<td class="resultat">
+	 <div class="citation"><b>Jim a dit :</b><br />Citation</div>
+	</td>
+   </tr>
 
-			<tr class="blanc">
-				<td class="code">[code]Texte[/code]</td>
-				<td class="description">Insï¿œre du code</td>
-				<td class="resultat"><pre>for ($i=0;$i&lt;14;$i++) {<br />&nbsp;write("Le numï¿œro $i : ".$res[$i]);<br />}</pre></td>
-			</tr>
+   <tr class="blanc">
+    <td class="code">[code]Texte[/code]</td>
+	<td class="description">Insère du code</td>
+	<td class="resultat"><pre>for ($i=0;$i&lt;14;$i++) {<br />&nbsp;write("Le numéro $i : ".$res[$i]);<br />}</pre></td>
+   </tr>
 
-			<tr class="categorie">
-				<td colspan="3">Listes</td>
-			</tr>
+   <tr class="categorie"><td colspan="3">Listes</td></tr>
 
-			<tr class="gris">
-				<td class="code">[liste]<br />[*]Bleu<br />[*]Rouge<br />[*]Vert<br />[/liste]
-				</td>
-				<td class="description">Liste non ordonnï¿œe</td>
-				<td class="resultat" style="text-align: left;">
-					<ul class="normal">
-						<li>Bleu</li>
-						<li>Rouge</li>
-						<li>Vert</li>
-					</ul>
-				</td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[liste]<br />[*]Bleu<br />[*]Rouge<br />[*]Vert<br />[/liste]</td>
+	<td class="description">Liste non ordonnée</td>
+	<td class="resultat" style="text-align: left;">
+	 <ul class="normal">
+	  <li>Bleu</li>
+	  <li>Rouge</li>
+	  <li>Vert</li>
+         </ul>
+	</td>
+   </tr>
 
-			<tr class="blanc">
-				<td class="code">[liste=1]<br />[*]Bleu<br />[*]Rouge<br />[*]Vert<br />[/liste]
-				</td>
-				<td class="description">Liste ordonnï¿œe par numï¿œros</td>
-				<td class="resultat" style="text-align: left;">
-					<ul class="numeros">
-						<li>Bleu</li>
-						<li>Rouge</li>
-						<li>Vert</li>
-					</ul>
-				</td>
-			</tr>
+   <tr class="blanc">
+    <td class="code">[liste=1]<br />[*]Bleu<br />[*]Rouge<br />[*]Vert<br />[/liste]</td>
+	<td class="description">Liste ordonnée par numéros</td>
+	<td class="resultat" style="text-align: left;">
+	 <ul class="numeros">
+	  <li>Bleu</li>
+	  <li>Rouge</li>
+	  <li>Vert</li>
+         </ul>
+	</td>
+   </tr>
 
-			<tr class="gris">
-				<td class="code">[liste=a]<br />[*]Bleu<br />[*]Rouge<br />[*]Vert<br />[/liste]
-				</td>
-				<td class="description">Liste ordonnï¿œe par lettres</td>
-				<td class="resultat" style="text-align: left;">
-					<ul class="lettres">
-						<li>Bleu</li>
-						<li>Rouge</li>
-						<li>Vert</li>
-					</ul>
-				</td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[liste=a]<br />[*]Bleu<br />[*]Rouge<br />[*]Vert<br />[/liste]</td>
+	<td class="description">Liste ordonnée par lettres</td>
+	<td class="resultat" style="text-align: left;">
+	 <ul class="lettres">
+	  <li>Bleu</li>
+	  <li>Rouge</li>
+	  <li>Vert</li>
+         </ul>
+	</td>
+   </tr>
 
-			<tr class="categorie">
-				<td colspan="3">Liens</td>
-			</tr>
+   <tr class="categorie"><td colspan="3">Liens</td></tr>
 
-			<tr class="gris">
-				<td class="code">[lien=http://www.google.fr]Contenu[/lien]</td>
-				<td class="description">Ajoute un lien</td>
-				<td class="resultat"><a href="http://www.google.fr"
-					target="_blank">Contenu</a></td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[lien=http://www.google.fr]Contenu[/lien]</td>
+	<td class="description">Ajoute un lien</td>
+	<td class="resultat"><a href="http://www.google.fr" target="_blank">Contenu</a></td>
+   </tr>
 
-			<tr class="blanc">
-				<td class="code">[email=wodkaist@gmail.com]</td>
-				<td class="description">Ajoute un E-mail</td>
-				<td class="resultat"><a href="mailto:wodkaist@gmail.com">wodkaist@gmail.com</a></td>
-			</tr>
+   <tr class="blanc">
+    <td class="code">[email=wodkaist@gmail.com]</td>
+	<td class="description">Ajoute un E-mail</td>
+	<td class="resultat"><a href="mailto:wodkaist@gmail.com">wodkaist@gmail.com</a></td>
+   </tr>
 
-			<tr class="categorie">
-				<td colspan="3">Multimï¿œdia</td>
-			</tr>
+   <tr class="categorie"><td colspan="3">Multimédia</td></tr>
 
-			<tr class="gris">
-				<td class="code">[img=logo.gif]</td>
-				<td class="description">Insï¿œre une image</td>
-				<td class="resultat"><img src="wcode_images/logo.gif" alt="" /></td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[img=logo.gif]</td>
+	<td class="description">Insère une image</td>
+	<td class="resultat"><img src="wcode_images/logo.gif" alt="" /></td>
+   </tr>
 
-			<tr class="categorie">
-				<td colspan="3">Divers</td>
-			</tr>
+   <tr class="categorie"><td colspan="3">Divers</td></tr>
 
-			<tr class="gris">
-				<td class="code">[hr]</td>
-				<td class="description">Insï¿œre une barre horizontale</td>
-				<td class="resultat"><hr /></td>
-			</tr>
+   <tr class="gris">
+    <td class="code">[hr]</td>
+        <td class="description">Insère une barre horizontale</td>
+        <td class="resultat"><hr /></td>
+   </tr>
 
-			<tr class="blanc">
-				<td class="code">x[indice]a[/indice]</td>
-				<td class="description">Met en indice</td>
-				<td class="resultat">x<sub>a</sub></td>
-			</tr>
+   <tr class="blanc">
+    <td class="code">x[indice]a[/indice]</td>
+        <td class="description">Met en indice</td>
+        <td class="resultat">x<sub>a</sub></td>
+   </tr>
 
-			<tr class="gris">
-				<td class="code">x[exposant]2[/exposant]</td>
-				<td class="description">Met en exposant</td>
-				<td class="resultat">x<sup>2</sup></td>
-			</tr>
+   <tr class="gris">
+    <td class="code">x[exposant]2[/exposant]</td>
+        <td class="description">Met en exposant</td>
+        <td class="resultat">x<sup>2</sup></td>
+   </tr>
 
-		</table>
-		<br />
-		<hr noshade="noshade" size="1" />
-		<br />
-		<h2>
-			<a name="ii">ii. Les smileys</a>
-		</h2>
-		<p>Voici la liste des smileys automatiquement remplacï¿œ par leur
-			image correspondante :</p>
-		<table cellspacing="0" align="center">
-			<tr class="titre">
-				<td class="smiley"><img src="wcode_images/01.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/02.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/03.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/04.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/05.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/06.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/07.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/08.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/09.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/10.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/11.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/12.gif" alt="" /></td>
-				<td class="smiley"><img src="wcode_images/13.gif" alt="" /></td>
-			</tr>
-			<tr>
-				<td class="description">:-D</td>
-				<td class="description">;-)</td>
-				<td class="description">?-)</td>
-				<td class="description">$-)</td>
-				<td class="description">B-)</td>
-				<td class="description">:'(</td>
-				<td class="description">X-)</td>
-				<td class="description">:-*</td>
-				<td class="description">^^</td>
-				<td class="description">:-|</td>
-				<td class="description">:-)</td>
-				<td class="description">Z-)</td>
-				<td class="description">:-(</td>
-			</tr>
-		</table>
-		<br />
-		<h2>
-			<a name="iii">iii. Les caractï¿œres spï¿œciaux</a>
-		</h2>
-		<p>
-			L'utilisation d'une syntaxe entraï¿œne l'utilisation dite de
-			"caractï¿œres spï¿œciaux". Ces caractï¿œres sont pour le WCode par exemple
-			<b>[</b> et <b>]</b> - Mais parfois, vous pouvez avoir besoin de ces
-			caractï¿œres ! Alors si par exemple vous devez faire une citation de
-			Kim[62], faites comme ceci : [citation=Kim<span class="fluo">\</span>[62<span
-				class="fluo">\</span>]]...[/citation]
-		</p>
-		<br />
-		<h2>
-			<a name="iv">iv. L'ï¿œditeur</a>
-		</h2>
-		<p>L'ï¿œditeur est un outil puissant pour utiliser le WCode ! Voici
-			les choses bonnes ï¿œ savoir pour l'utiliser de maniï¿œre optimale :</p>
-		<p>1 - Pour les textes ( Citation &amp; Code ), utilisez les
-			panneau d'insertion ! Le script se chargera d'insï¿œrer le code en
-			remplaï¿œant les caractï¿œres spï¿œciaux.</p>
-		<p>2 - Pour la mise en forme basique, sï¿œlectionnez le texte sur
-			lequel vous souhaitez appliquer la mise en forme, et cliquez sur le
-			bouton dï¿œsirï¿œ.</p>
-		<hr noshade="noshade" size="1" />
-		<p>
-			Rï¿œalisï¿œ par <a href="mailto:wodkaist@gmail.com">Alexandre SALOME</a>
-			- <a href="http://wodkaist.free.fr" target="_blank">http://wodkaist.free.fr</a>
-		</p>
-	</div>
-</body>
+  </table>
+  <br />
+  <hr noshade="noshade" size="1" />
+  <br />
+  <h2><a name="ii">ii. Les smileys</a></h2>
+  <p> Voici la liste des smileys automatiquement remplacé par leur image correspondante :</p>
+  <table cellspacing="0" align="center">
+   <tr class="titre">
+    <td class="smiley"><img src="wcode_images/01.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/02.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/03.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/04.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/05.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/06.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/07.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/08.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/09.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/10.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/11.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/12.gif" alt="" /></td>
+    <td class="smiley"><img src="wcode_images/13.gif" alt="" /></td>
+   </tr>
+   <tr>
+    <td class="description">:-D</td>
+    <td class="description">;-)</td>
+    <td class="description">?-)</td>
+    <td class="description">$-)</td>
+    <td class="description">B-)</td>
+    <td class="description">:'(</td>
+    <td class="description">X-)</td>
+    <td class="description">:-*</td>
+    <td class="description">^^</td>
+    <td class="description">:-|</td>
+    <td class="description">:-)</td>
+    <td class="description">Z-)</td>
+    <td class="description">:-(</td>
+   </tr>
+  </table>
+  <br />
+  <h2><a name="iii">iii. Les caractères spéciaux</a></h2>
+  <p>L'utilisation d'une syntaxe entraîne l'utilisation dite de "caractères spéciaux". Ces caractères sont pour le WCode par exemple <b>[</b> et <b>]</b> - Mais parfois, vous pouvez avoir besoin de ces caractères ! Alors si par exemple vous devez faire une citation de Kim[62], faites comme ceci : [citation=Kim<span class="fluo">\</span>[62<span class="fluo">\</span>]]...[/citation] </p>
+  <br />
+  <h2><a name="iv">iv. L'éditeur</a></h2>
+  <p>L'éditeur est un outil puissant pour utiliser le WCode ! Voici les choses bonnes à savoir pour l'utiliser de manière optimale :</p>
+  <p> 1 - Pour les textes ( Citation &amp; Code ), utilisez les panneau d'insertion ! Le script se chargera d'insérer le code en remplaçant les caractères spéciaux.</p>
+  <p> 2 - Pour la mise en forme basique, sélectionnez le texte sur lequel vous souhaitez appliquer la mise en forme, et cliquez sur le bouton désiré.</p>
+  <hr noshade="noshade" size="1" />
+  <p>Réalisé par <a href="mailto:wodkaist@gmail.com">Alexandre SALOME</a> - <a href="http://wodkaist.free.fr" target="_blank">http://wodkaist.free.fr</a></p>
+ </div>
+ </body>
 </html>

@@ -17,175 +17,94 @@
  * Base class
  */
 require_once 'PEAR/Task/Common.php';
-
 /**
  * Implements the replace file task.
- * 
- * @category pear
- * @package PEAR
- * @author Greg Beaver <cellog@php.net>
- * @copyright 1997-2009 The Authors
- * @license http://opensource.org/licenses/bsd-license.php New BSD License
- * @version Release: 1.9.4
- * @link http://pear.php.net/package/PEAR
- * @since Class available since Release 1.4.0a1
+ * @category   pear
+ * @package    PEAR
+ * @author     Greg Beaver <cellog@php.net>
+ * @copyright  1997-2009 The Authors
+ * @license    http://opensource.org/licenses/bsd-license.php New BSD License
+ * @version    Release: 1.9.4
+ * @link       http://pear.php.net/package/PEAR
+ * @since      Class available since Release 1.4.0a1
  */
 class PEAR_Task_Replace extends PEAR_Task_Common
 {
-
     var $type = 'simple';
-
     var $phase = PEAR_TASK_PACKAGEANDINSTALL;
-
     var $_replacements;
 
     /**
      * Validate the raw xml at parsing-time.
-     * 
-     * @param
-     *            PEAR_PackageFile_v2
-     * @param
-     *            array raw, parsed xml
-     * @param
-     *            PEAR_Config
+     * @param PEAR_PackageFile_v2
+     * @param array raw, parsed xml
+     * @param PEAR_Config
      * @static
-     *
      */
     function validateXml($pkg, $xml, $config, $fileXml)
     {
-        if (! isset($xml['attribs'])) {
-            return array(
-                PEAR_TASK_ERROR_NOATTRIBS
-            );
+        if (!isset($xml['attribs'])) {
+            return array(PEAR_TASK_ERROR_NOATTRIBS);
         }
-        if (! isset($xml['attribs']['type'])) {
-            return array(
-                PEAR_TASK_ERROR_MISSING_ATTRIB,
-                'type'
-            );
+        if (!isset($xml['attribs']['type'])) {
+            return array(PEAR_TASK_ERROR_MISSING_ATTRIB, 'type');
         }
-        if (! isset($xml['attribs']['to'])) {
-            return array(
-                PEAR_TASK_ERROR_MISSING_ATTRIB,
-                'to'
-            );
+        if (!isset($xml['attribs']['to'])) {
+            return array(PEAR_TASK_ERROR_MISSING_ATTRIB, 'to');
         }
-        if (! isset($xml['attribs']['from'])) {
-            return array(
-                PEAR_TASK_ERROR_MISSING_ATTRIB,
-                'from'
-            );
+        if (!isset($xml['attribs']['from'])) {
+            return array(PEAR_TASK_ERROR_MISSING_ATTRIB, 'from');
         }
         if ($xml['attribs']['type'] == 'pear-config') {
-            if (! in_array($xml['attribs']['to'], $config->getKeys())) {
-                return array(
-                    PEAR_TASK_ERROR_WRONG_ATTRIB_VALUE,
-                    'to',
-                    $xml['attribs']['to'],
-                    $config->getKeys()
-                );
+            if (!in_array($xml['attribs']['to'], $config->getKeys())) {
+                return array(PEAR_TASK_ERROR_WRONG_ATTRIB_VALUE, 'to', $xml['attribs']['to'],
+                    $config->getKeys());
             }
         } elseif ($xml['attribs']['type'] == 'php-const') {
             if (defined($xml['attribs']['to'])) {
                 return true;
             } else {
-                return array(
-                    PEAR_TASK_ERROR_WRONG_ATTRIB_VALUE,
-                    'to',
-                    $xml['attribs']['to'],
-                    array(
-                        'valid PHP constant'
-                    )
-                );
+                return array(PEAR_TASK_ERROR_WRONG_ATTRIB_VALUE, 'to', $xml['attribs']['to'],
+                    array('valid PHP constant'));
             }
         } elseif ($xml['attribs']['type'] == 'package-info') {
-            if (in_array($xml['attribs']['to'], array(
-                'name',
-                'summary',
-                'channel',
-                'notes',
-                'extends',
-                'description',
-                'release_notes',
-                'license',
-                'release-license',
-                'license-uri',
-                'version',
-                'api-version',
-                'state',
-                'api-state',
-                'release_date',
-                'date',
-                'time'
-            ))) {
+            if (in_array($xml['attribs']['to'],
+                array('name', 'summary', 'channel', 'notes', 'extends', 'description',
+                    'release_notes', 'license', 'release-license', 'license-uri',
+                    'version', 'api-version', 'state', 'api-state', 'release_date',
+                    'date', 'time'))) {
                 return true;
             } else {
-                return array(
-                    PEAR_TASK_ERROR_WRONG_ATTRIB_VALUE,
-                    'to',
-                    $xml['attribs']['to'],
-                    array(
-                        'name',
-                        'summary',
-                        'channel',
-                        'notes',
-                        'extends',
-                        'description',
-                        'release_notes',
-                        'license',
-                        'release-license',
-                        'license-uri',
-                        'version',
-                        'api-version',
-                        'state',
-                        'api-state',
-                        'release_date',
-                        'date',
-                        'time'
-                    )
-                );
+                return array(PEAR_TASK_ERROR_WRONG_ATTRIB_VALUE, 'to', $xml['attribs']['to'],
+                    array('name', 'summary', 'channel', 'notes', 'extends', 'description',
+                    'release_notes', 'license', 'release-license', 'license-uri',
+                    'version', 'api-version', 'state', 'api-state', 'release_date',
+                    'date', 'time'));
             }
         } else {
-            return array(
-                PEAR_TASK_ERROR_WRONG_ATTRIB_VALUE,
-                'type',
-                $xml['attribs']['type'],
-                array(
-                    'pear-config',
-                    'package-info',
-                    'php-const'
-                )
-            );
+            return array(PEAR_TASK_ERROR_WRONG_ATTRIB_VALUE, 'type', $xml['attribs']['type'],
+                array('pear-config', 'package-info', 'php-const'));
         }
         return true;
     }
 
     /**
      * Initialize a task instance with the parameters
-     * 
-     * @param
-     *            array raw, parsed xml
-     * @param
-     *            unused
+     * @param array raw, parsed xml
+     * @param unused
      */
     function init($xml, $attribs)
     {
-        $this->_replacements = isset($xml['attribs']) ? array(
-            $xml
-        ) : $xml;
+        $this->_replacements = isset($xml['attribs']) ? array($xml) : $xml;
     }
 
     /**
      * Do a package.xml 1.0 replacement, with additional package-info fields available
      *
      * See validateXml() source for the complete list of allowed fields
-     * 
-     * @param
-     *            PEAR_PackageFile_v1|PEAR_PackageFile_v2
-     * @param
-     *            string file contents
-     * @param
-     *            string the eventual final file location (informational only)
+     * @param PEAR_PackageFile_v1|PEAR_PackageFile_v2
+     * @param string file contents
+     * @param string the eventual final file location (informational only)
      * @return string|false|PEAR_Error false to skip this file, PEAR_Error to fail
      *         (use $this->throwError), otherwise return the new contents
      */
@@ -201,7 +120,7 @@ class PEAR_Task_Replace extends PEAR_Task_Common
                 }
                 if ($a['to'] == 'master_server') {
                     $chan = $this->registry->getChannel($pkg->getChannel());
-                    if (! PEAR::isError($chan)) {
+                    if (!PEAR::isError($chan)) {
                         $to = $chan->getServer();
                     } else {
                         $this->logger->log(0, "$dest: invalid pear-config replacement: $a[to]");
@@ -241,12 +160,13 @@ class PEAR_Task_Replace extends PEAR_Task_Common
                     return false;
                 }
             }
-            if (! is_null($to)) {
+            if (!is_null($to)) {
                 $subst_from[] = $a['from'];
                 $subst_to[] = $to;
             }
         }
-        $this->logger->log(3, "doing " . sizeof($subst_from) . " substitution(s) for $dest");
+        $this->logger->log(3, "doing " . sizeof($subst_from) .
+            " substitution(s) for $dest");
         if (sizeof($subst_from)) {
             $contents = str_replace($subst_from, $subst_to, $contents);
         }

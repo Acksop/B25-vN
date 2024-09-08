@@ -1,23 +1,14 @@
 <?php
-if (DEV_verificationINCLUSIONS) {
-    $page = explode("/", __FILE__);
-    $fichier_inclus = array_pop($page);
-    echo $fichier_inclus . " >>> OK!";
-}
 
-function ecrireScriptJSTinyMCE()
-{
-    
-    /**
-     * *********************************************************************************************
-     */
-    /* ."<!-- Gets replaced with TinyMCE, remember HTML in a textarea should be encoded -->" */
-    /* ."<textarea id='elm1' name='elm1' rows='15' cols='80' style='width: 100%'>" */
-    /* ."</textarea>" */
-    /**
-     * *********************************************************************************************
-     */
-    echo "	<!-- TinyMCE -->
+function ecrireScriptJSTinyMCE(){
+
+/************************************************************************************************/
+/*	."<!-- Gets replaced with TinyMCE, remember HTML in a textarea should be encoded -->"	*/
+/*	."<textarea id='elm1' name='elm1' rows='15' cols='80' style='width: 100%'>"		*/
+/*	."</textarea>"										*/
+/************************************************************************************************/
+
+echo 	"	<!-- TinyMCE -->
 	<script type='text/javascript' src='scriptPHP/tiny_mce/tiny_mce.js'></script>
 	<script type='text/javascript'>
 		tinyMCE.init({
@@ -27,22 +18,18 @@ function ecrireScriptJSTinyMCE()
 	</script>
 	<!-- /TinyMCE -->
 	";
-    return;
+	return;
 }
 
-function ecrireScriptJSTinyMCEAdvanced()
-{
-    
-    /**
-     * *********************************************************************************************
-     */
-    /* ."<!-- Gets replaced with TinyMCE, remember HTML in a textarea should be encoded -->" */
-    /* ."<textarea id='elm1' name='elm1' rows='15' cols='80' style='width: 100%'>" */
-    /* ."</textarea>" */
-    /**
-     * *********************************************************************************************
-     */
-    echo "	<!-- TinyMCE -->
+function ecrireScriptJSTinyMCEAdvanced(){
+
+/************************************************************************************************/
+/*	."<!-- Gets replaced with TinyMCE, remember HTML in a textarea should be encoded -->"	*/
+/*	."<textarea id='elm1' name='elm1' rows='15' cols='80' style='width: 100%'>"		*/
+/*	."</textarea>"										*/
+/************************************************************************************************/
+
+echo 	"	<!-- TinyMCE -->
 	<script type='text/javascript' src='scriptPHP/tiny_mce/tiny_mce.js'></script>
 	<script type='text/javascript'>
 		tinyMCE.init({
@@ -55,20 +42,16 @@ function ecrireScriptJSTinyMCEAdvanced()
 	</script>
 	<!-- /TinyMCE -->
 	";
-    return;
+	return;
 }
 
-function ecrireScriptJSArtsMedia()
-{
-    
-    /**
-     * *****************************************************************************
-     */
-    /* ."<div id='Animation' style='font-size:8px;'>Initialisation...</div>" */
-    /**
-     * *****************************************************************************
-     */
-    echo "<!-- ArtsMedia -->
+function ecrireScriptJSArtsMedia(){
+
+/********************************************************************************/
+/*	."<div id='Animation' style='font-size:8px;'>Initialisation...</div>"	*/
+/********************************************************************************/
+
+echo	"<!-- ArtsMedia -->
 	<script type='text/javascript'>
 		window.setInterval('AnimationTxt()', 1000);
 		var compteur = 0;
@@ -97,12 +80,12 @@ function ecrireScriptJSArtsMedia()
 	</script>
 	<!-- /ArtsMedia -->
 	";
-    return;
+	return;
 }
 
-function ecriceScriptJSNavigationSelect()
-{
-    echo "<!-- Navigation par s&eacute;lection pour aper&ccedil;u de l'image de l'article -->
+function ecriceScriptJSNavigationSelect(){
+
+echo	"<!-- Navigation par s&eacute;lection pour aper&ccedil;u de l'image de l'article -->
 	<script type='text/javascript'>
 		function naviguerApercu(composantSelect){
 			var image = composantSelect.options[composantSelect.selectedIndex].value;
@@ -114,7 +97,7 @@ function ecriceScriptJSNavigationSelect()
 	</script>
 	<!-- /Navigation par s&eactue;lection pour aper&ccedil;u de l'image de l'article -->
 	";
-    return;
+	return;
 }
 
 ?>

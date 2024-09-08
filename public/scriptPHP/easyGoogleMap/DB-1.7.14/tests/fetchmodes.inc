@@ -28,18 +28,16 @@
  * Drops the phptest table, prints out an error message and kills the
  * process.
  *
- * @param object $o
- *            PEAR error object automatically passed to this method
+ * @param object  $o  PEAR error object automatically passed to this method
  * @return void
  * @see PEAR::setErrorHandling()
  */
-function pe($o)
-{
+function pe($o) {
     global $dbh;
-    
+
     $dbh->setErrorHandling(PEAR_ERROR_RETURN);
     drop_table($dbh, 'phptest');
-    
+
     die($o->toString());
 }
 
@@ -52,7 +50,7 @@ $dbh->query("INSERT INTO phptest VALUES (3, 'three', 'Three', '2001-02-14')");
 
 print "testing fetchrow:\n";
 $sth = $dbh->query("SELECT * FROM phptest");
-for ($i = 1; $i <= 5; $i ++) {
+for ($i = 1; $i <= 5; $i++) {
     print "row $i: ";
     $row = $sth->fetchRow();
     if (DB::isError($row)) {
@@ -65,15 +63,16 @@ for ($i = 1; $i <= 5; $i ++) {
         var_dump($row);
     }
 }
-$sth->free(); // keep fbsql happy.
+$sth->free();  // keep fbsql happy.
 
 $dbh->query('DELETE FROM phptest WHERE a <> 42');
+
 
 print "testing fetchmodes: fetchrow default default, portability mode DB_PORTABILITY_ALL ^ DB_PORTABILITY_RTRIM\n";
 $dbh->setOption('portability', DB_PORTABILITY_ALL ^ DB_PORTABILITY_RTRIM);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = $sth->fetchRow();
-print implode(" ", array_keys($row)) . "\n";
+print implode(" ", array_keys($row))."\n";
 $actual = implode(' ', array_values($row));
 switch ($dbh->phptype) {
     case 'fbsql':
@@ -94,76 +93,76 @@ if ($actual == $expected) {
 } else {
     echo "DIDN'T MATCH!  Expected output: '$expected'.  Actual output: '$actual'.\n";
 }
-$sth->free(); // keep fbsql happy.
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchinto default default\n";
 $dbh->setOption('portability', DB_PORTABILITY_ALL);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = array();
 $sth->fetchInto($row);
-print implode(" ", array_keys($row)) . "\n";
-print implode(' ', array_values($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+print implode(' ', array_values($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchrow ordered default\n";
 $dbh->setFetchMode(DB_FETCHMODE_ORDERED);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = $sth->fetchRow();
-print implode(" ", array_keys($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchrow assoc default\n";
 $dbh->setFetchMode(DB_FETCHMODE_ASSOC);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = $sth->fetchRow();
-print implode(" ", array_keys($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchrow ordered default with assoc specified\n";
 $dbh->setFetchMode(DB_FETCHMODE_ORDERED);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = $sth->fetchRow(DB_FETCHMODE_ASSOC);
-print implode(" ", array_keys($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchrow assoc default with ordered specified\n";
 $dbh->setFetchMode(DB_FETCHMODE_ASSOC);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = $sth->fetchRow(DB_FETCHMODE_ORDERED);
-print implode(" ", array_keys($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchinto ordered default\n";
 $dbh->setFetchMode(DB_FETCHMODE_ORDERED);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = array();
 $sth->fetchInto($row);
-print implode(" ", array_keys($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchinto assoc default\n";
 $dbh->setFetchMode(DB_FETCHMODE_ASSOC);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = array();
 $sth->fetchInto($row);
-print implode(" ", array_keys($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchinto ordered default with assoc specified\n";
 $dbh->setFetchMode(DB_FETCHMODE_ORDERED);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = array();
 $sth->fetchInto($row, DB_FETCHMODE_ASSOC);
-print implode(" ", array_keys($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchinto assoc default with ordered specified\n";
 $dbh->setFetchMode(DB_FETCHMODE_ASSOC);
 $sth = $dbh->query("SELECT * FROM phptest");
 $row = array();
 $sth->fetchInto($row, DB_FETCHMODE_ORDERED);
-print implode(" ", array_keys($row)) . "\n";
-$sth->free(); // keep fbsql happy.
+print implode(" ", array_keys($row))."\n";
+$sth->free();  // keep fbsql happy.
 
 print "testing fetchmodes: fetchrow assoc quoted identifiers\n";
 if ($dbh->phptype == 'msql' || $dbh->phptype == 'ibase' || $dbh->phptype == 'oci8') {
@@ -171,13 +170,19 @@ if ($dbh->phptype == 'msql' || $dbh->phptype == 'ibase' || $dbh->phptype == 'oci
     echo "a b cc d\n";
 } else {
     $dbh->setFetchMode(DB_FETCHMODE_ASSOC);
-    $sql = sprintf('SELECT %s, %s, %s, %s FROM %s', $dbh->quoteIdentifier('a'), $dbh->quoteIdentifier('b'), $dbh->quoteIdentifier('cc'), $dbh->quoteIdentifier('d'), $dbh->quoteIdentifier('phptest'));
+    $sql = sprintf('SELECT %s, %s, %s, %s FROM %s',
+        $dbh->quoteIdentifier('a'),
+        $dbh->quoteIdentifier('b'),
+        $dbh->quoteIdentifier('cc'),
+        $dbh->quoteIdentifier('d'),
+        $dbh->quoteIdentifier('phptest'));
     $sth = $dbh->query($sql);
     $row = $sth->fetchRow();
-    print implode(" ", array_keys($row)) . "\n";
-    $sth->free(); // keep fbsql happy.
-                      // keep ibase happy: can't drop tbl that has results open against it.
+    print implode(" ", array_keys($row))."\n";
+    $sth->free();  // keep fbsql happy.
+                   // keep ibase happy: can't drop tbl that has results open against it.
 }
+
 
 $dbh->setErrorHandling(PEAR_ERROR_RETURN);
 drop_table($dbh, 'phptest');

@@ -1,6 +1,6 @@
 <?php
 // example of how to use advanced selector features
-include ('../simple_html_dom.php');
+include('../simple_html_dom.php');
 
 // -----------------------------------------------------------------------------
 // descendant selector
@@ -14,9 +14,9 @@ HTML;
 
 $html = str_get_html($str);
 echo $html->find('div div div', 0)->innertext . '<br>'; // result: "ok"
-                                                        
+
 // -----------------------------------------------------------------------------
-                                                        // nested selector
+// nested selector
 $str = <<<HTML
 <ul id="ul1">
     <li>item:<span>1</span></li>
@@ -29,8 +29,8 @@ $str = <<<HTML
 HTML;
 
 $html = str_get_html($str);
-foreach ($html->find('ul') as $ul) {
-    foreach ($ul->find('li') as $li)
+foreach($html->find('ul') as $ul) {
+    foreach($ul->find('li') as $li)
         echo $li->innertext . '<br>';
 }
 
@@ -45,7 +45,7 @@ $str = <<<HTML
 HTML;
 
 $html = str_get_html($str);
-foreach ($html->find('input[type=checkbox]') as $checkbox) {
+foreach($html->find('input[type=checkbox]') as $checkbox) {
     if ($checkbox->checked)
         echo $checkbox->name . ' is checked<br>';
     else

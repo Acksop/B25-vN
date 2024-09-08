@@ -1,0 +1,11 @@
+
+
+DEBUT REQUETE SERVEUR : 1388099234 VENANT de 72.46.134.172 pour la PAGE: /index.php?page=reactionArticle&id=44
+-	 Memoire_Utilisé au Début: 1031740 (0.984Mo) - 1432140 (1.366Mo)
+-	 Début de calcul: 2w 2d 1h 34m 59s 234ms 604µs - 	 Request_time: 1388099234.2125
+
+FIN REQUETE SERVEUR : 1388099234 VENANT de72.46.134.172 pour la ---- PAGE:/index.php?page=reactionArticle&id=44
+-	 Memoire_Utilisé à la fin: 1033964 (0.986Mo) - fin_de_pic_memoire (1.366Mo)
+-	 Fin de calcul: 2w 2d 1h 34m 59s 234ms 676µs - 	 Request_time: 1388099234.2849
+-	 Mémoire Consommée : 2224 (2.172Ko) - 0 (0Ko)
+-	 Temps Consommée   : 72µs - 	 en Ms : 0.072407007217407

@@ -1,9 +1,9 @@
 <?php
-require SCRIPTPHPPATH . DIRECTORY_SEPARATOR . 'objets/myException.class.php';
 
-function throwmyException($message = null, $code = null)
-{
-    throw new Exception($message, $code);
+require SCRIPTPHPPATH. DIRECTORY_SEPARATOR.'objets/myException.class.php';
+
+function throwmyException($message = null,$code = null) {
+		throw new Exception($message,$code);
 }
 
 /************************EXEMPLE UTILISATION ************ DO NOT SEND !
@@ -13,7 +13,10 @@ ob_start();
     	try {
     	$contents = @file_get_contents($url, $use_include_path, $context, $offset) OR throwmyException();
     	} catch ( Exception $theOriginalZendException) {
+    		
+    		
     		/*  Bizarrement cette portion de code me sort 1 : buffer et Exceptions ne sont pas compatibles ?
+    		  
     		ob_start();
     		echo $theOriginalZendException;
     		$stacktraceZendException = ob_end_flush();
@@ -33,8 +36,10 @@ ob_start();
     			++$i;
     		}
     		$theOriginalZendException = implode(' ',$stacktrace_tab);
+    		
     		*/
     		/*
+    		
     		echo "<table><tr><td><p>".$theOriginalZendException."</p></td></tr><table>";
     		throw new myException($message,$code);
     	}
@@ -43,6 +48,6 @@ ob_start();
     	//$e->traceLaSondeEcho();
     	$contents = "";
 		}
-		*/
 		
+		*/
 		

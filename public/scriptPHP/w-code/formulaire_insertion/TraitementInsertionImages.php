@@ -1,9 +1,9 @@
 <?php
-require "../../../variablesApplication.php";
+include "../../../../localisation_Domaines_externes_B25.php";
 
 include("../../chaineDeCaracteres.php");
 include("../../fichiersImages.php");
-include("../../objets/Fichiers.class.php");
+include("../../objets/Fichiers_classes.php");
 include("../../alertesIntrusions.php");
 
 session_start();

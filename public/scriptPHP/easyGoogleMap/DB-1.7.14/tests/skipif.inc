@@ -25,6 +25,6 @@
  */
 require_once dirname(__FILE__) . '/include.inc';
 
-if (! include_once 'DB.php') {
+if (!include_once 'DB.php') {
     print 'skip could not find DB.php';
 }

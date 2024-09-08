@@ -113,10 +113,10 @@ function wcode_inserer(formulaire,champ,quoi){
 
         }
 }
-/* Script cr  par KevBrok ;-) -->
-<!-- Un pti peu adapt ...        -->
+<!-- Script créé par KevBrok ;-) -->
+<!-- Un pti peu adapté...        -->
 
-<!-- Et MERCI A TOI KEVBROK !!!! */
+<!-- Et MERCI A TOI KEVBROK !!!! -->
 function wcode_div( nom, quoi ){
         if (document.getElementById && document.getElementById(nom)){
                 Pdiv = document.getElementById( nom );
@@ -167,15 +167,6 @@ function wcode_mp3(){
  var Option = 'width=700,height=800,scrollbars=yes';
  FenetreChoix = window.open("scriptPHP/w-code/formulaire_insertion/formulaireMp3.php","ExtraitsMusicauxAChoisir",Option);
 }
-/*ou une video*/
-function wcode_video(){
-	 var Option = 'width=700,height=800,scrollbars=yes';
-	 FenetreChoix = window.open("scriptPHP/w-code/formulaire_insertion/formulaireVideo.php","ExtraitsVideoAChoisir",Option);
-	}
-/*Les fonction d'insertion dans la zone de texte*/
-function wcode_videoInsere(f,c,video){
-	 if (video!=null)  wcode_inserer(f,c,'[avi='+video+']');
-	}
 function wcode_mp3Insere(f,c,mp3){
  if (mp3!=null) wcode_inserer(f,c,'[mp3='+mp3+']');
 }

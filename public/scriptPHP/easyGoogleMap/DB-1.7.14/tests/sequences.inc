@@ -25,22 +25,25 @@
 /**
  * Local error handler
  */
-function error_handler(&$obj)
-{
+function error_handler(&$obj) {
     print "sequences.inc error_handler:\n    ";
     print $obj->getDebugInfo() . "\n\n";
 }
 ob_implicit_flush(true);
 
 $drop = $dbh->dropSequence('test');
-if (DB::isError($drop) && $drop->getCode() != DB_ERROR_NOSUCHTABLE) {
+if (DB::isError($drop) &&
+    $drop->getCode() != DB_ERROR_NOSUCHTABLE)
+{
     print "Could not drop sequence...\n";
     print $drop->getDebugInfo() . "\n\n";
-    if ($dbh->phptype == 'ibase' && $drop->getCode() == DB_ERROR_ACCESS_VIOLATION) {
+    if ($dbh->phptype == 'ibase' &&
+        $drop->getCode() == DB_ERROR_ACCESS_VIOLATION)
+    {
         print "Use this query to provide the permissions needed:\n";
         print '   grant all on RDB$GENERATORS to <USERNAME>';
     }
-    exit();
+    exit;
 }
 
 // 1) test that sequences are not created if "ondemand" is false
@@ -67,9 +70,10 @@ if (DB::isError($e) && $e->getCode() == DB_ERROR_NOSUCHTABLE) {
 
 // 2) test that the sequence is not created but the error is
 // handled by the class error handler
-$dbh->setErrorHandling(PEAR_ERROR_PRINT, "an error cought by the error handler is good\n");
+$dbh->setErrorHandling(PEAR_ERROR_PRINT,
+                       "an error cought by the error handler is good\n");
 $e = $dbh->nextId("test", false);
-if (! DB::isError($e)) {
+if (!DB::isError($e)) {
     print "test 2) failed!\n";
 }
 $dbh->_default_error_mode = null;
@@ -88,8 +92,8 @@ if (DB::isError($b)) {
 } else {
     print "b=$b\n";
 }
-if (! DB::isError($a) && ! DB::isError($b)) {
-    print 'b-a=' . ($b - $a) . "\n";
+if (!DB::isError($a) && !DB::isError($b)) {
+    print 'b-a=' . ($b-$a) . "\n";
 }
 
 // 4) test that the user-specified error handler is really disabled
@@ -98,13 +102,13 @@ $dbh->dropSequence("test");
 
 $dbh->setErrorHandling(PEAR_ERROR_CALLBACK, 'error_handler');
 $c = $dbh->nextId("test");
-if (! DB::isError($c)) {
+if (!DB::isError($c)) {
     print "c=$c\n";
 }
 $dbh->dropSequence("test");
 $dbh->_default_error_mode = null;
 $d = $dbh->nextId("test");
-if (! DB::isError($d)) {
+if (!DB::isError($d)) {
     print "d=$d\n";
 }
 

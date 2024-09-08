@@ -1,9 +1,9 @@
 <?php
-//--
-check_session();
-//--
 
-function LancerAffichageDuCorps(){
+function AfficheFormExplicationSuppressionArticleEnAttente(){
+	//--
+	check_session();
+	//--
 	echo	"<table><tr><td width='600px' class='utilisateurs'>
 	<h1 class='utilisateurs'>Raison(s) de la supression</h1>
 	<form method='post' action='controlleurs/traitementSuppressionArticleEnAttente.php'>

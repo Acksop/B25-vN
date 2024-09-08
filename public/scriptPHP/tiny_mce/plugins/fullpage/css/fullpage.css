@@ -3,8 +3,7 @@
 	display: none;
 }
 
-#metatitle, #metakeywords, #metadescription, #metaauthor, #metacopyright
-	{
+#metatitle, #metakeywords, #metadescription, #metaauthor, #metacopyright {
 	width: 280px;
 }
 
@@ -17,7 +16,7 @@
 }
 
 #bgimage {
-	width: 220px;
+	width: 220px;	
 }
 
 #fontface {
@@ -37,6 +36,7 @@
 }
 
 /* Head list classes */
+
 .headlistwrapper {
 	width: 100%;
 }
@@ -57,8 +57,7 @@
 	width: 200px;
 }
 
-.addbutton:hover, .removebutton:hover, .moveupbutton:hover,
-	.movedownbutton:hover {
+.addbutton:hover, .removebutton:hover, .moveupbutton:hover, .movedownbutton:hover {
 	border: 1px solid #0A246A;
 	background-color: #B6BDD2;
 }
@@ -100,8 +99,7 @@
 	font-size: 11px;
 }
 
-#info, #title_element, #meta_element, #script_element, #style_element,
-	#base_element, #link_element, #comment_element, #unknown_element {
+#info, #title_element, #meta_element, #script_element, #style_element, #base_element, #link_element, #comment_element, #unknown_element {
 	display: none;
 }
 
@@ -162,9 +160,7 @@
 	height: 100px;
 }
 
-#element_title, #element_script_src, #element_meta_name,
-	#element_meta_content, #element_base_href, #element_link_href,
-	#element_link_title {
+#element_title, #element_script_src, #element_meta_name, #element_meta_content, #element_base_href, #element_link_href, #element_link_title {
 	width: 250px;
 }
 
@@ -173,8 +169,8 @@
 }
 
 /* MSIE specific styles */
-* html .addbutton, * html .removebutton, * html .moveupbutton, * html .movedownbutton
-	{
+
+* html .addbutton, * html .removebutton, * html .moveupbutton, * html .movedownbutton {
 	width: 22px;
 	height: 22px;
 }
@@ -183,6 +179,4 @@ textarea {
 	height: 55px;
 }
 
-.panel_wrapper div.current {
-	height: 420px;
-}
+.panel_wrapper div.current {height:420px;}

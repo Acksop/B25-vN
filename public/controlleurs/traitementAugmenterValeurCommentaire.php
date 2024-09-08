@@ -1,5 +1,4 @@
 <?php
-require '../variablesApplication.php';
 session_start();
 include("../scriptPHP/connectionBDD.php");
 

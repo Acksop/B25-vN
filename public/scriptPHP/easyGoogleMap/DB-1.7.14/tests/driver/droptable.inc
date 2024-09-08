@@ -23,15 +23,12 @@
 /**
  * Drops the requested table
  *
- * @param object $dbh
- *            the PEAR DB object currently in use
- * @param string $table
- *            the name of the table to be dropped
- *            
- * @return int DB_OK on success. DB_Error object on failure.
+ * @param object $dbh    the PEAR DB object currently in use
+ * @param string $table  the name of the table to be dropped
+ *
+ * @return int  DB_OK on success.  DB_Error object on failure.
  */
-function drop_table($dbh, $table)
-{
+function drop_table($dbh, $table) {
     switch ($dbh->phptype) {
         case 'fbsql':
             $res = $dbh->query("DROP TABLE $table CASCADE");

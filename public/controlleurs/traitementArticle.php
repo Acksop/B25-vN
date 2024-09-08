@@ -1,5 +1,4 @@
 <?php
-require '../variablesApplication.php';
 include("../scriptPHP/connectionBDD.php");
 include("../scriptPHP/alertesIntrusions.php");
 session_start();

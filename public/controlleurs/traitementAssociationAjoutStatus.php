@@ -1,5 +1,4 @@
 <?php
-require '../variablesApplication.php';
 session_start();
 include_once('../scriptPHP/connectionBDD.php');
 include_once('../scriptPHP/chaineDeCaracteres.php');

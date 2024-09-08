@@ -1,5 +1,4 @@
 <?php
-require '../variablesApplication.php';
 session_start();
 include '../scriptPHP/sessions.php';
 $sql = "DELETE FROM dossiersTemporaires WHERE id_dossier = '{$_POST['id']}'";

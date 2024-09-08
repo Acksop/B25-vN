@@ -21,6 +21,7 @@
  * @version    $Id: limit.inc 239211 2007-07-06 05:19:21Z aharvey $
  * @link       http://pear.php.net/package/DB
  */
+
 error_reporting(E_ALL);
 
 /**
@@ -29,20 +30,19 @@ error_reporting(E_ALL);
  * Drops the phptest table, prints out an error message and kills the
  * process.
  *
- * @param object $o
- *            PEAR error object automatically passed to this method
+ * @param object  $o  PEAR error object automatically passed to this method
  * @return void
  * @see PEAR::setErrorHandling()
  */
-function pe($o)
-{
+function pe($o) {
     global $dbh;
-    
+
     $dbh->setErrorHandling(PEAR_ERROR_RETURN);
     drop_table($dbh, 'phptest');
-    
+
     die($o->toString());
 }
+
 
 $dbh->setErrorHandling(PEAR_ERROR_RETURN);
 drop_table($dbh, 'php_limit');
@@ -51,14 +51,15 @@ $dbh->setErrorHandling(PEAR_ERROR_CALLBACK, 'pe');
 
 $dbh->query('CREATE TABLE php_limit (a CHAR(20))');
 
-$from = 0;
-$count = 10;
+
+$from    = 0;
+$count   = 10;
 $numrows = 30;
 
-for ($i = 0; $i <= $numrows + 2; $i ++) {
+for ($i=0; $i<=$numrows+2; $i++) {
     $dbh->query("INSERT INTO php_limit VALUES('result $i')");
 }
-for ($i = 0; $i <= 3; $i ++) {
+for ($i = 0; $i <= 3; $i++) {
     $from = 10 * $i;
     $res = $dbh->limitQuery("select * from php_limit", $from, $count);
     echo "======= From: $from || Number of rows to fetch: $count =======\n";
@@ -67,34 +68,30 @@ for ($i = 0; $i <= 3; $i ++) {
     }
     $count = $res->numRows();
     echo "Row count for limited result: $count\n";
-    $res->free(); // keep fbsql happy.
+    $res->free();  // keep fbsql happy.
 }
 
-$from = 11;
+
+$from  = 11;
 $count = 3;
 
 echo "======= Passing \$params || From: $from || Number of rows to fetch: $count =======\n";
-$res = $dbh->limitQuery('SELECT * FROM php_limit WHERE a < ?', $from, $count, array(
-    'result 99'
-));
+$res = $dbh->limitQuery('SELECT * FROM php_limit WHERE a < ?', $from, $count, array('result 99'));
 while ($row = $res->fetchRow(DB_FETCHMODE_ASSOC)) {
     echo $res->getRowCounter() . '.- ' . $row['a'] . "\n";
 }
 
-$res->free(); // keep fbsql happy.
-              // keep ibase happy: can't drop tbl that has results open against it.
-              
+$res->free();  // keep fbsql happy.
+               // keep ibase happy: can't drop tbl that has results open against it.
+
 // Regression test for bug #7502.
-$from = 0;
+$from  = 0;
 $count = 3;
-$iter = 10;
+$iter  = 10;
 echo "======= From: $from || Number of rows to fetch: $count || Iterations: $iter =======\n";
 $res = $dbh->limitQuery("select * from php_limit", $from, $count);
-if (! in_array($dbh->phptype, array(
-    'ibase',
-    'oci8'
-))) {
-    for ($i = 0; $i < $iter; ++ $i) {
+if (!in_array($dbh->phptype, array('ibase', 'oci8'))) {
+    for ($i = 0; $i < $iter; ++$i) {
         if (is_null($row = $res->fetchRow(DB_FETCHMODE_ASSOC, 1))) {
             echo "Error in iteration $i: {$row['a']}\n";
         }
@@ -102,7 +99,7 @@ if (! in_array($dbh->phptype, array(
 }
 $count = $res->numRows();
 echo "Row count for limited result: $count\n";
-$res->free(); // keep fbsql happy.
+$res->free();  // keep fbsql happy.
 
 $dbh->setErrorHandling(PEAR_ERROR_RETURN);
 drop_table($dbh, 'php_limit');

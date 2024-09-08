@@ -1,12 +1,4 @@
 <?php
-
-if(DEV_verificationINCLUSIONS){
-	$page = explode("/",__FILE__);
-	$fichier_inclus = array_pop($page);
-	echo $fichier_inclus." >>> OK!";
-	}
-
-
 include_once("chaineDeCaracteres.php");
 
 function emailValide($email){

@@ -1,12 +1,11 @@
 <?php
-require '../variablesApplication.php';
 session_start();
-include ('../scriptPHP/connectionBDD.php');
+include('../scriptPHP/connectionBDD.php');
 $_SESSION['id_utilisateur'] = $_GET['id'];
 
-$sql = "SELECT id_utilisateur,repertoirePersonnel,pseudo,type_compte,statut FROM utilisateur WHERE id_utilisateur = '" . $_GET['id'] . "'";
+$sql = "SELECT id_utilisateur,repertoirePersonnel,pseudo,type_compte,statut FROM utilisateur WHERE id_utilisateur = '".$_GET['id']."'";
 $req = faireUneRequeteOffLine($sql);
-$resultat = exploiterLigneResultatBDD_row($req);
+$resultat = mysql_fetch_row($req);
 
 $_SESSION['identifiant'] = $resultat[2];
 $_SESSION['type_compte'] = $resultat[3];

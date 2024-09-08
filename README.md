@@ -1,21 +1,71 @@
-# B25-VNaN build with MVC---Procedural
+# B25-V1.5 build with MVC---Procedural
 
-Cette coquille pleine de bugs est le fruit d'un travail inachevé anciennement disponible à l'adresse http://ancien.besancon25.fr/index.php
-J'ai effectivement travaillé sur une nouvelle interface de type BigCalm dont la représentation est disponible à l'adresse https://www.calm.com/
+Cette coquille-template complète est le fruit d'un travail qui n'est plus disponible sur les toiles du réseau des réseaux, il est aussi le fruit d'un travail d'archarné pendant près de 5ans avec toutes les casquettes possibles et imaginables qu'ils sont possible d'imaginer lorsque l'on crééé un site informatique depuis une simple page vide. Réellement personne ne m'a aidé sur le long terme, programmatiquement parlant....
 
-Durant une année entière j'ai fait avec les moyens du bord, dont un téléphone de type smartphone sans trépied et le fameux Gimp sous Linux Mint, ces 8 GIF animé que l'on peut choisr dans les options d'affichage de l'interface....
+Il est installable sur un poste en local afin de comprendre comment le B25.fr a été codé mais n'est plus maintenu, veuiller choisir la vN si vous voulez participer au projet...
 
-Le reste de la programmation de cette coquille provient de la version 1.5 du B25 (https://github.com/Acksop/B25-v1.5), qui as été la première que j'ai voulu partager avec Justin Windle programeur à Google Irland et le défunt Jean-Claude BELLAMY (MVP Microsoft) par courriel, sans les connaître. Parce que leurs travaux me plaisait et que je voulais leur offrir quelque chose en échange de ce qu'il m'ont permis d'ajouter ou de corriger...
+Les fichiers SQL des bases de données utilisées sont dans le dossier `/version1` ce sont les fichiers `dump*`... Vous remarquerez peut être que le B25 utilise 3 bases de données, une pour les maps Google (http://bradwedell.com/php-google-maps-api/), une autre pour les statistiques Crawltrack (projet qui est malheureusement maintenant abandonné -- http://www.crawltrack.fr/), et la dernière pour le site lui-même.
 
-Quelques modifications au niveau de l'automate de l'interface-utilisateur ont été réalisées ici sans grandes nouveautés...
-Avec certainement des erreurs d'ergonomie aussi.
+Afin de réaliser les connexions Mysql avec le programme vous devrez modifier les fichers contenant les identifiants de chaque base de données dans le dossier `/version1`, ces fichiers commencent par `identifiants*`.
 
-Cette idée naquit alors je programmais et bricolais quelques graphismes-papier pendant les nuits des attentats de 2015 envers Chalie Hebdo ...
+Le dossier `/radieurae` doit-être disponible sur un virtual host. Tout comme que le dossier `/version1/public/` .
 
-Cette ébauche de projet est disponible gratuitement pour ceux ou celui qui souhaiteraient tenter l'expérience de programmation autour d'une interface similiaire au B25. Et si vous voulez tenter de recoder le B25 depuis la base vous pouvez aller faire un tour sur le code du MVC Procédural (https://github.com/Acksop/MVC---Procedural) ayant permis de développer les deux versions libres actuelles du B25.
+Le dossier `/radieurae` contient les upload-utilisateurs de la plate-forme et le dossier `/version1/public` contient lui la version 1.5 (aussi nommé 3.0c en raison du nombre d'interfaces) du site-mère original.
 
-Tout fork et/ou tout push sur ce dépot sera grandement apprécié.
+Il vous faudra aussi réferencer les FQDN de la radieurae dans le fichier `/version1/localisation_Domaines_externes_B25.php`, et si vous ne changez pas l'emplacement du dossier `/radieurae`vous n'aurez pas besoin de modifier la constante SVNRADIEURAE_DIR.
 
-Mes sincères salutations aux autres qui voudront bien s'y intéresser..
+Enfin vous devrez dans ce même fichier (`/version1/localisation_Domaines_externes_B25.php` ) référencer le FQDN local du virtualhost du FR que vous avez précédemment créé. Je vous conseille vivement des FQDN du type `v1.besancon25.local` et `radieaurae.besancon25.local` . Les `.dev` étant dépréciés depuis 2016, voir même avant...
 
-PS: Très estimé Jean-Claude BELLAMY, avec tout le respect que je vous doit, je vous souhaite la paix éternelle la plus douce qui soit ....
+Cette version du projet est disponible gratuitement pour celui qui souhaitera tenter l'expérience de programmation de groupe autour du B25.
+
+Afin de travailler sur la vN (https://github.com/Acksop/B25-vN) : il vous suffit de copier le dossier `version1/public` à la place du précédent. C'est un peu hasardeux mais c'est comme çà. Pour les plus courageux vous pouvez cloner le dépot du vN à coté de  `/version1` et ajouter les fichiers identifiants manquants, qui sont quasiment les mêmes. Et s'il y a erreur, je suis disposé à la corriger.
+
+
+> ## **La plate-forme du B25**
+> 
+> est un **annuaire unique** pour les artistes, artisans, associations,
+> groupe musicaux **de Besançon et de ses
+> alentours**.   Elle s'articule autour d'une présentation simple et
+> personnalisable d'une page personnelle différente pour chaque
+> catégorie d'acteur socio-économique Bisontins.
+
+![Souris de Noël](https://besançon25.fr/images/NouvelAn/2015/sourisDeNoel.png)
+
+
+## Remerciements 
+
+
+Remerciement Javascript:
+
+>  - SortTable http://www.kryogenix.org/code/browser/sorttable/
+>  - MooTools 1.2.4 http://mootools.net
+>  - MootoolsCarousel , MootoolsPeriodicalExecuter  https://github.com/tbela99
+>  - LiveJs http://livejs.com
+>  - JsChart http://jscharts.com
+>  - Ajax-xHR https://www.xul.fr/Objet-XMLHttpRequest.php
+>  - Recursion Toy http://soulwire.co.uk/experiments/recursion-toy/
+
+Remerciement PHP
+
+>  - Crawltrack 3-3-2 http://www.crawltrack.fr/ 
+>  - EasyGoogleMap http://bradwedell.com/php-google-maps-api/ 
+>  - SimpleHtmlDom https://simplehtmldom.sourceforge.io/
+>  - TinyMCE https://www.tiny.cloud/
+>  - W-code  https://codes-sources.commentcamarche.net/source/30779-wcode-mise-en-forme-a-la-bbcode
+
+Remerciement CSS
+
+> - Gabarit Elephorm CSS [Florens Verschelde](https://fvsch.com/)
+> > http://blog.elephorm.com/apprendre-xhtml-css/
+> > https://fvsch.com/gabarits-html/html/
+
+Remerciement Personnel:
+
+> - Nicolas GAINON pour son idée originale
+> - Florian VENTURI pour son petit plus
+
+
+Vous pouvez aussi consulter la documentation fonctionnelle de cette version du B25, sur la page dédié à celle-ci à l'adresse suivante : https://wikini.besançon25.fr/wakka.php?wiki=SiteMere ...
+
+
+Mes sincères salutations à ceux qui voudront bien s'y intéresser...

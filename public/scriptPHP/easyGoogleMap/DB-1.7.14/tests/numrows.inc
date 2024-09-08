@@ -28,19 +28,17 @@
  * Drops the phptest table, prints out an error message and kills the
  * process.
  *
- * @param object $o
- *            PEAR error object automatically passed to this method
+ * @param object  $o  PEAR error object automatically passed to this method
  * @return void
  * @see PEAR::setErrorHandling()
  */
-function pe($o)
-{
+function pe($o) {
     global $dbh, $res;
-    
+
     $dbh->setErrorHandling(PEAR_ERROR_RETURN);
     $res->free();
     drop_table($dbh, 'phptest');
-    
+
     print "\n------------\n";
     if ($o->getCode() == DB_ERROR_UNSUPPORTED) {
         print "This DBMS does not support numRows().";
@@ -56,41 +54,38 @@ function pe($o)
     } else {
         print $o->getDebugInfo() . "\n";
     }
-    exit();
+    exit;
 }
 
 $dbh->setErrorHandling(PEAR_ERROR_CALLBACK, 'pe');
 
+
 $res = $dbh->query("SELECT a FROM phptest");
-if (! DB::isError($rows = $res->numRows())) {
+if (!DB::isError($rows = $res->numRows())) {
     print "(want 1) got $rows from first\n";
 } else {
     print "\n";
 }
-for ($i = 0; $i < 5; $i ++) {
+for ($i = 0; $i < 5; $i++) {
     $dbh->query("INSERT INTO phptest (a) VALUES ($i)");
     $res = $dbh->query("SELECT a FROM phptest");
-    if (! DB::isError($rows = $res->numRows())) {
+    if (!DB::isError($rows = $res->numRows())) {
         print '(want ' . ($i + 2) . ") got $rows from $i\n";
     } else {
         print "\n";
     }
 }
 
-$res = $dbh->query('SELECT a FROM phptest WHERE a > ?', array(
-    0
-));
-if (! DB::isError($rows = $res->numRows())) {
+$res = $dbh->query('SELECT a FROM phptest WHERE a > ?', array(0));
+if (!DB::isError($rows = $res->numRows())) {
     print "(want 5) got $rows from > 0 (passing params to query)\n";
 } else {
     print "\n";
 }
 
 $sth = $dbh->prepare('SELECT a FROM phptest WHERE a < ?');
-$res = $dbh->execute($sth, array(
-    4
-));
-if (! DB::isError($rows = $res->numRows())) {
+$res = $dbh->execute($sth, array(4));
+if (!DB::isError($rows = $res->numRows())) {
     print "(want 4) got $rows from < 4 (doing prepare/execute)\n";
 } else {
     print "\n";
@@ -98,16 +93,17 @@ if (! DB::isError($rows = $res->numRows())) {
 
 $dbh->query("DELETE FROM phptest WHERE a < 4");
 $res = $dbh->query("SELECT a FROM phptest");
-if (! DB::isError($rows = $res->numRows())) {
+if (!DB::isError($rows = $res->numRows())) {
     print "(want 2) got $rows from 5 and 6 not deleted\n";
 } else {
     print "\n";
 }
 $res = $dbh->query("SELECT a FROM phptest where a < 0");
-if (! DB::isError($rows = $res->numRows())) {
+if (!DB::isError($rows = $res->numRows())) {
     print "(want 0) got $rows from < 0\n";
 } else {
     print "\n";
 }
+
 
 drop_table($dbh, 'phptest');

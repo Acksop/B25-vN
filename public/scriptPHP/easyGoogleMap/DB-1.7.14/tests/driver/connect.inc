@@ -19,6 +19,7 @@
  * @version    $Id: connect.inc 284375 2009-07-19 16:26:16Z danielc $
  * @link       http://pear.php.net/package/DB
  */
+
 error_reporting(E_ALL);
 
 // Setting of $options and requiring DB are done in setup.inc
@@ -32,14 +33,14 @@ if (empty($dsns)) {
     die('At least one element of $dsns must be defined in setup.inc');
 }
 
-list ($dbms, $dsn) = each($dsns);
+list($dbms, $dsn) = each($dsns);
 
 if ($dbms == 'mssql') {
     ini_set('mssql.textlimit', 4096);
     ini_set('mssql.textsize', 4096);
 }
 
-$dbh = & DB::connect($dsn, $options);
+$dbh =& DB::connect($dsn, $options);
 if (DB::isError($dbh)) {
     die('connect.inc: ' . $dbh->toString());
 }

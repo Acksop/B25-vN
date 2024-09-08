@@ -1,2 +1,3 @@
 <?php
-define('DSNBDDGOOGLEMAP',"mysqli://GOOGLE:passwordb@localhost/GOOGLE");
+
+include dirname(__FILE__)."/../../entreprise/config/identifiants_GoogleAdress_B25.php";

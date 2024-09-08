@@ -9,23 +9,23 @@
  *
  * LICENSE: This source file is subject to version 3.0 of the PHP license
  * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt. If you did not receive a copy of
+ * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
  * the PHP License and are unable to obtain it through the web, please
  * send a note to license@php.net so we can mail you a copy immediately.
  *
- * @category Database
- * @package DB
- * @author Stig Bakken <stig@php.net>
- * @copyright 1997-2007 The PHP Group
- * @license http://www.php.net/license/3_0.txt PHP License 3.0
- * @version CVS: $Id: storage.php 241120 2007-08-12 05:27:25Z aharvey $
- * @link http://pear.php.net/package/DB
+ * @category   Database
+ * @package    DB
+ * @author     Stig Bakken <stig@php.net>
+ * @copyright  1997-2007 The PHP Group
+ * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
+ * @version    CVS: $Id: storage.php 241120 2007-08-12 05:27:25Z aharvey $
+ * @link       http://pear.php.net/package/DB
  */
 
 /**
  * Obtain the DB class so it can be extended from
  */
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../DB.php';
+require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'../DB.php';
 
 /**
  * Provides an object interface to a table row
@@ -33,84 +33,66 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../DB.php';
  * It lets you add, delete and change rows using objects rather than SQL
  * statements.
  *
- * @category Database
- * @package DB
- * @author Stig Bakken <stig@php.net>
- * @copyright 1997-2007 The PHP Group
- * @license http://www.php.net/license/3_0.txt PHP License 3.0
- * @version Release: 1.7.14
- * @link http://pear.php.net/package/DB
+ * @category   Database
+ * @package    DB
+ * @author     Stig Bakken <stig@php.net>
+ * @copyright  1997-2007 The PHP Group
+ * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
+ * @version    Release: 1.7.14
+ * @link       http://pear.php.net/package/DB
  */
 class DB_storage extends PEAR
 {
     // {{{ properties
-    
-    /**
-     * the name of the table (or view, if the backend database supports
-     * updates in views) we hold data from
-     */
+
+    /** the name of the table (or view, if the backend database supports
+        updates in views) we hold data from */
     var $_table = null;
 
-    /**
-     * which column(s) in the table contains primary keys, can be a
-     * string for single-column primary keys, or an array of strings
-     * for multiple-column primary keys
-     */
+    /** which column(s) in the table contains primary keys, can be a
+        string for single-column primary keys, or an array of strings
+        for multiple-column primary keys */
     var $_keycolumn = null;
 
-    /**
-     * DB connection handle used for all transactions
-     */
+    /** DB connection handle used for all transactions */
     var $_dbh = null;
 
-    /**
-     * an assoc with the names of database fields stored as properties
-     * in this object
-     */
+    /** an assoc with the names of database fields stored as properties
+        in this object */
     var $_properties = array();
 
-    /**
-     * an assoc with the names of the properties in this object that
-     * have been changed since they were fetched from the database
-     */
+    /** an assoc with the names of the properties in this object that
+        have been changed since they were fetched from the database */
     var $_changes = array();
 
-    /**
-     * flag that decides if data in this object can be changed.
-     * objects that don't have their table's key column in their
-     * property lists will be flagged as read-only.
-     */
+    /** flag that decides if data in this object can be changed.
+        objects that don't have their table's key column in their
+        property lists will be flagged as read-only. */
     var $_readonly = false;
 
-    /**
-     * function or method that implements a validator for fields that
-     * are set, this validator function returns true if the field is
-     * valid, false if not
-     */
+    /** function or method that implements a validator for fields that
+        are set, this validator function returns true if the field is
+        valid, false if not */
     var $_validator = null;
-    
+
     // }}}
     // {{{ constructor
-    
+
     /**
      * Constructor
      *
-     * @param $table string
-     *            the name of the database table
-     *            
-     * @param $keycolumn mixed
-     *            string with name of key column, or array of
-     *            strings if the table has a primary key of more than one column
-     *            
-     * @param $dbh object
-     *            database connection object
-     *            
-     * @param $validator mixed
-     *            function or method used to validate
-     *            each new value, called with three parameters: the name of the
-     *            field/column that is changing, a reference to the new value and
-     *            a reference to this object
-     *            
+     * @param $table string the name of the database table
+     *
+     * @param $keycolumn mixed string with name of key column, or array of
+     * strings if the table has a primary key of more than one column
+     *
+     * @param $dbh object database connection object
+     *
+     * @param $validator mixed function or method used to validate
+     * each new value, called with three parameters: the name of the
+     * field/column that is changing, a reference to the new value and
+     * a reference to this object
+     *
      */
     function DB_storage($table, $keycolumn, &$dbh, $validator = null)
     {
@@ -121,10 +103,10 @@ class DB_storage extends PEAR
         $this->_readonly = false;
         $this->_validator = $validator;
     }
-    
+
     // }}}
     // {{{ _makeWhere()
-    
+
     /**
      * Utility method to build a "WHERE" clause to locate ourselves in
      * the table.
@@ -137,12 +119,12 @@ class DB_storage extends PEAR
     {
         if (is_array($this->_keycolumn)) {
             if ($keyval === null) {
-                for ($i = 0; $i < sizeof($this->_keycolumn); $i ++) {
+                for ($i = 0; $i < sizeof($this->_keycolumn); $i++) {
                     $keyval[] = $this->{$this->_keycolumn[$i]};
                 }
             }
             $whereclause = '';
-            for ($i = 0; $i < sizeof($this->_keycolumn); $i ++) {
+            for ($i = 0; $i < sizeof($this->_keycolumn); $i++) {
                 if ($i > 0) {
                     $whereclause .= ' AND ';
                 }
@@ -170,17 +152,16 @@ class DB_storage extends PEAR
         }
         return $whereclause;
     }
-    
+
     // }}}
     // {{{ setup()
-    
+
     /**
      * Method used to initialize a DB_storage object from the
      * configured table.
      *
-     * @param $keyval mixed
-     *            the key[s] of the row to fetch (string or array)
-     *            
+     * @param $keyval mixed the key[s] of the row to fetch (string or array)
+     *
      * @return int DB_OK on success, a DB error if not
      */
     function setup($keyval)
@@ -195,8 +176,9 @@ class DB_storage extends PEAR
         if (DB::isError($row)) {
             return $row;
         }
-        if (! $row) {
-            return $this->raiseError(null, DB_ERROR_NOT_FOUND, null, null, $query, null, true);
+        if (!$row) {
+            return $this->raiseError(null, DB_ERROR_NOT_FOUND, null, null,
+                                     $query, null, true);
         }
         foreach ($row as $key => $value) {
             $this->_properties[$key] = true;
@@ -204,10 +186,10 @@ class DB_storage extends PEAR
         }
         return DB_OK;
     }
-    
+
     // }}}
     // {{{ insert()
-    
+
     /**
      * Create a new (empty) row in the configured table for this
      * object.
@@ -217,16 +199,16 @@ class DB_storage extends PEAR
         if (is_array($this->_keycolumn)) {
             $primarykey = $this->_keycolumn;
         } else {
-            $primarykey = array(
-                $this->_keycolumn
-            );
+            $primarykey = array($this->_keycolumn);
         }
         settype($newpk, "array");
-        for ($i = 0; $i < sizeof($primarykey); $i ++) {
+        for ($i = 0; $i < sizeof($primarykey); $i++) {
             $pkvals[] = $this->_dbh->quote($newpk[$i]);
         }
-        
-        $sth = $this->_dbh->query("INSERT INTO $this->_table (" . implode(",", $primarykey) . ") VALUES(" . implode(",", $pkvals) . ")");
+
+        $sth = $this->_dbh->query("INSERT INTO $this->_table (" .
+                                  implode(",", $primarykey) . ") VALUES(" .
+                                  implode(",", $pkvals) . ")");
         if (DB::isError($sth)) {
             return $sth;
         }
@@ -235,13 +217,12 @@ class DB_storage extends PEAR
         }
         $this->setup($newpk);
     }
-    
+
     // }}}
     // {{{ toString()
-    
+
     /**
      * Output a simple description of this DB_storage object.
-     * 
      * @return string object description
      */
     function toString()
@@ -267,7 +248,7 @@ class DB_storage extends PEAR
             $keyname = $this->_keycolumn;
             if (is_array($keyname)) {
                 $info .= "(";
-                for ($i = 0; $i < sizeof($keyname); $i ++) {
+                for ($i = 0; $i < sizeof($keyname); $i++) {
                     if ($i > 0) {
                         $info .= ",";
                     }
@@ -284,10 +265,10 @@ class DB_storage extends PEAR
         }
         return $info;
     }
-    
+
     // }}}
     // {{{ dump()
-    
+
     /**
      * Dump the contents of this object to "standard output".
      */
@@ -299,16 +280,14 @@ class DB_storage extends PEAR
             print "<br />\n";
         }
     }
-    
+
     // }}}
     // {{{ &create()
-    
+
     /**
      * Static method used to create new DB storage objects.
-     * 
-     * @param $data assoc.
-     *            array where the keys are the names
-     *            of properties/columns
+     * @param $data assoc. array where the keys are the names
+     *              of properties/columns
      * @return object a new instance of DB_storage or a subclass of it
      */
     function &create($table, &$data)
@@ -321,65 +300,62 @@ class DB_storage extends PEAR
         }
         return $obj;
     }
-    
+
     // }}}
     // {{{ loadFromQuery()
-    
+
     /**
-     * Loads data into this object from the given query.
-     * If this
+     * Loads data into this object from the given query.  If this
      * object already contains table data, changes will be saved and
      * the object re-initialized first.
      *
-     * @param $query SQL
-     *            query
-     *            
-     * @param $params parameter
-     *            list in case you want to use
-     *            prepare/execute mode
-     *            
+     * @param $query SQL query
+     *
+     * @param $params parameter list in case you want to use
+     * prepare/execute mode
+     *
      * @return int DB_OK on success, DB_WARNING_READ_ONLY if the
-     *         returned object is read-only (because the object's specified
-     *         key column was not found among the columns returned by $query),
-     *         or another DB error code in case of errors.
+     * returned object is read-only (because the object's specified
+     * key column was not found among the columns returned by $query),
+     * or another DB error code in case of errors.
      */
-    // XXX commented out for now
-    /*
-     * function loadFromQuery($query, $params = null)
-     * {
-     * if (sizeof($this->_properties)) {
-     * if (sizeof($this->_changes)) {
-     * $this->store();
-     * $this->_changes = array();
-     * }
-     * $this->_properties = array();
-     * }
-     * $rowdata = $this->_dbh->getRow($query, DB_FETCHMODE_ASSOC, $params);
-     * if (DB::isError($rowdata)) {
-     * return $rowdata;
-     * }
-     * reset($rowdata);
-     * $found_keycolumn = false;
-     * while (list($key, $value) = each($rowdata)) {
-     * if ($key == $this->_keycolumn) {
-     * $found_keycolumn = true;
-     * }
-     * $this->_properties[$key] = true;
-     * $this->$key = &$value;
-     * unset($value); // have to unset, or all properties will
-     * // refer to the same value
-     * }
-     * if (!$found_keycolumn) {
-     * $this->_readonly = true;
-     * return DB_WARNING_READ_ONLY;
-     * }
-     * return DB_OK;
-     * }
-     */
-    
+// XXX commented out for now
+/*
+    function loadFromQuery($query, $params = null)
+    {
+        if (sizeof($this->_properties)) {
+            if (sizeof($this->_changes)) {
+                $this->store();
+                $this->_changes = array();
+            }
+            $this->_properties = array();
+        }
+        $rowdata = $this->_dbh->getRow($query, DB_FETCHMODE_ASSOC, $params);
+        if (DB::isError($rowdata)) {
+            return $rowdata;
+        }
+        reset($rowdata);
+        $found_keycolumn = false;
+        while (list($key, $value) = each($rowdata)) {
+            if ($key == $this->_keycolumn) {
+                $found_keycolumn = true;
+            }
+            $this->_properties[$key] = true;
+            $this->$key = &$value;
+            unset($value); // have to unset, or all properties will
+                           // refer to the same value
+        }
+        if (!$found_keycolumn) {
+            $this->_readonly = true;
+            return DB_WARNING_READ_ONLY;
+        }
+        return DB_OK;
+    }
+ */
+
     // }}}
     // {{{ set()
-    
+
     /**
      * Modify an attriute value.
      */
@@ -388,40 +364,49 @@ class DB_storage extends PEAR
         // only change if $property is known and object is not
         // read-only
         if ($this->_readonly) {
-            return $this->raiseError(null, DB_WARNING_READ_ONLY, null, null, null, null, true);
+            return $this->raiseError(null, DB_WARNING_READ_ONLY, null,
+                                     null, null, null, true);
         }
         if (@isset($this->_properties[$property])) {
             if (empty($this->_validator)) {
                 $valid = true;
             } else {
-                $valid = @call_user_func($this->_validator, $this->_table, $property, $newvalue, $this->$property, $this);
+                $valid = @call_user_func($this->_validator,
+                                         $this->_table,
+                                         $property,
+                                         $newvalue,
+                                         $this->$property,
+                                         $this);
             }
             if ($valid) {
                 $this->$property = $newvalue;
                 if (empty($this->_changes[$property])) {
                     $this->_changes[$property] = 0;
                 } else {
-                    $this->_changes[$property] ++;
+                    $this->_changes[$property]++;
                 }
             } else {
-                return $this->raiseError(null, DB_ERROR_INVALID, null, null, "invalid field: $property", null, true);
+                return $this->raiseError(null, DB_ERROR_INVALID, null,
+                                         null, "invalid field: $property",
+                                         null, true);
             }
             return true;
         }
-        return $this->raiseError(null, DB_ERROR_NOSUCHFIELD, null, null, "unknown field: $property", null, true);
+        return $this->raiseError(null, DB_ERROR_NOSUCHFIELD, null,
+                                 null, "unknown field: $property",
+                                 null, true);
     }
-    
+
     // }}}
     // {{{ &get()
-    
+
     /**
      * Fetch an attribute value.
      *
-     * @param
-     *            string attribute name
-     *            
+     * @param string attribute name
+     *
      * @return attribute contents, or null if the attribute name is
-     *         unknown
+     * unknown
      */
     function &get($property)
     {
@@ -432,10 +417,10 @@ class DB_storage extends PEAR
         $tmp = null;
         return $tmp;
     }
-    
+
     // }}}
     // {{{ _DB_storage()
-    
+
     /**
      * Destructor, calls DB_storage::store() if there are changes
      * that are to be kept.
@@ -449,10 +434,10 @@ class DB_storage extends PEAR
         $this->_changes = array();
         $this->_table = null;
     }
-    
+
     // }}}
     // {{{ store()
-    
+
     /**
      * Stores changes to this object in the database.
      *
@@ -467,7 +452,9 @@ class DB_storage extends PEAR
             $vars[] = $name . ' = ?';
         }
         if ($vars) {
-            $query = 'UPDATE ' . $this->_table . ' SET ' . implode(', ', $vars) . ' WHERE ' . $this->_makeWhere();
+            $query = 'UPDATE ' . $this->_table . ' SET ' .
+                implode(', ', $vars) . ' WHERE ' .
+                $this->_makeWhere();
             $stmt = $this->_dbh->prepare($query);
             $res = $this->_dbh->execute($stmt, $params);
             if (DB::isError($res)) {
@@ -477,10 +464,10 @@ class DB_storage extends PEAR
         }
         return DB_OK;
     }
-    
+
     // }}}
     // {{{ remove()
-    
+
     /**
      * Remove the row represented by this object from the database.
      *
@@ -489,9 +476,11 @@ class DB_storage extends PEAR
     function remove()
     {
         if ($this->_readonly) {
-            return $this->raiseError(null, DB_WARNING_READ_ONLY, null, null, null, null, true);
+            return $this->raiseError(null, DB_WARNING_READ_ONLY, null,
+                                     null, null, null, true);
         }
-        $query = 'DELETE FROM ' . $this->_table . ' WHERE ' . $this->_makeWhere();
+        $query = 'DELETE FROM ' . $this->_table .' WHERE '.
+            $this->_makeWhere();
         $res = $this->_dbh->query($query);
         if (DB::isError($res)) {
             return $res;
@@ -503,7 +492,7 @@ class DB_storage extends PEAR
         $this->_changes = array();
         return DB_OK;
     }
-    
+
     // }}}
 }
 

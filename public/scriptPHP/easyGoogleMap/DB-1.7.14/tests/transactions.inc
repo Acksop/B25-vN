@@ -23,7 +23,7 @@
  */
 
 // Testing here due to skip not working currently in head
-if (! $dbh->features['transactions']) {
+if (!$dbh->features['transactions']) {
     die('this driver does not support transactions');
 }
 
@@ -31,16 +31,14 @@ if (! $dbh->features['transactions']) {
 // the transaction.
 $dbh2 = DB::connect($dbh->dsn);
 
-function error_handler(&$obj)
-{
+function error_handler(&$obj) {
     print "\n" . $obj->getDebugInfo() . "\n";
 }
 
-function dumptable($expected)
-{
+function dumptable($expected) {
     global $dbh, $dbh2;
     print implode(' ', $dbh->getCol('SELECT b FROM phptest'));
-    
+
     if (isset($dbh->transaction_opcount)) {
         if ($expected == $dbh->transaction_opcount) {
             print ".  ops=ok\n";
@@ -53,6 +51,7 @@ function dumptable($expected)
 }
 
 $dbh->setErrorHandling(PEAR_ERROR_CALLBACK, 'error_handler');
+
 
 $dbh->autoCommit(true);
 $dbh->query("INSERT INTO phptest VALUES(1, 'one', 'One', '2001-02-19')");

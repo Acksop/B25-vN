@@ -59,15 +59,15 @@ require_once dirname(__FILE__) . '/droptable.inc';
  *
  * Prints out an error message and dies.
  */
-function debug_die($o)
-{
+function debug_die($o){
     die($o->toString());
 }
+
 
 $dbh->setErrorHandling(PEAR_ERROR_RETURN);
 drop_table($dbh, 'phptest');
 
-// $dbh->setErrorHandling(PEAR_ERROR_TRIGGER);
+//$dbh->setErrorHandling(PEAR_ERROR_TRIGGER);
 $dbh->setErrorHandling(PEAR_ERROR_CALLBACK, 'debug_die');
 
 if ($dbh->phptype == 'odbc') {
@@ -79,6 +79,7 @@ if ($dbh->phptype == 'odbc') {
 } else {
     $type = $dbh->phptype;
 }
+
 
 switch ($type) {
     case 'access':
@@ -125,7 +126,7 @@ switch ($type) {
         $chrc = 'VARCHAR(255)';
         $chrd = 'VARCHAR(20)';
         $default = "DEFAULT 'def' NOT NULL";
-        if (! empty($needinnodb)) {
+        if (!empty($needinnodb)) {
             $tabletype = 'TYPE=INNODB';
         } else {
             $tabletype = '';
@@ -152,6 +153,7 @@ switch ($dbh->phptype) {
               d $chrd $null) $tabletype
         ";
 }
+
 
 $dbh->query($test_mktable_query);
 $dbh->query("INSERT INTO phptest VALUES(42, 'bing', 'This is a test', '1999-11-21')");
