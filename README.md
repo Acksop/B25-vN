@@ -18,7 +18,7 @@ Enfin vous devrez dans ce même fichier (`/version1/localisation_Domaines_extern
 
 Cette version du projet est disponible gratuitement pour celui qui souhaitera tenter l'expérience de programmation de groupe autour du B25.
 
-Afin de travailler sur la vN (https://github.com/Acksop/B25-vN) : il vous suffit de copier le dossier `version1/public` à la place du précédent. C'est un peu hasardeux mais c'est comme çà. Pour les plus courageux vous pouvez cloner le dépot du vN à coté de  `/version1` et ajouter les fichiers identifiants manquants, qui sont quasiment les mêmes. Et s'il y a erreur, je suis disposé à la corriger.
+Afin de travailler sur la vN ([https://github.com/Acksop/B25-vN](https://github.com/Acksop/B25-vN/tree/master)) : il vous suffit de copier le dossier `version1/public` à la place du précédent. C'est un peu hasardeux mais c'est comme çà. Pour les plus courageux vous pouvez cloner le dépot du vN à coté de  `/version1` et ajouter les fichiers identifiants manquants, qui sont quasiment les mêmes. Et s'il y a erreur, je suis disposé à la corriger.
 
 
 > ## **La plate-forme du B25**
